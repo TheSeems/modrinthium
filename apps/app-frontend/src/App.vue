@@ -75,8 +75,8 @@ import { useCheckDisableMouseover } from '@/composables/macCssFix.js'
 import { config } from '@/config'
 import { debugAnalytics, initAnalytics, trackEvent } from '@/helpers/analytics'
 import { check_reachable } from '@/helpers/auth.js'
-import { get_user, get_version } from '@/helpers/cache.js'
-import { command_listener, notification_listener, warning_listener } from '@/helpers/events.js'
+import { get_version } from '@/helpers/cache.js'
+import { command_listener, warning_listener } from '@/helpers/events.js'
 import { install_create_modpack_instance, install_get_modpack_preview } from '@/helpers/install'
 import { run } from '@/helpers/instance'
 import { get as getCreds } from '@/helpers/mr_auth.ts'
@@ -209,8 +209,6 @@ const {
 	handleModpackDuplicateCreateAnyway,
 	handleModpackDuplicateGoToInstance,
 } = setupProviders(notificationManager, popupNotificationManager)
-
-const displayedServerInviteNotifications = new Set()
 
 const offline = ref(!navigator.onLine)
 window.addEventListener('offline', () => {
@@ -621,85 +619,6 @@ const accounts = ref(null)
 provide('accountsCard', accounts)
 
 command_listener(handleCommand)
-notification_listener(handleLiveNotification)
-
-async function markLiveNotificationRead(notification) {
-	try {
-		await tauriApiClient.labrinth.notifications_v2.markAsRead(notification.id)
-	} catch (error) {
-		if (error instanceof ModrinthApiError && error.statusCode === 404) {
-			console.warn(`notification ${notification.id} could not be marked as read`, error)
-			return
-		}
-		throw error
-	}
-}
-
-async function respondToServerInvite(notification, action) {
-	const serverId = notification.body?.server_id
-	if (typeof serverId !== 'string') {
-		throw new Error('Missing server ID for invite notification.')
-	}
-
-	await tauriApiClient.request(`/servers/${serverId}/invites/${action}`, {
-		api: 'archon',
-		version: 1,
-		method: 'POST',
-	})
-	await markLiveNotificationRead(notification)
-
-	return serverId
-}
-
-async function acceptServerInviteNotification(notification) {
-	try {
-		const serverId = await respondToServerInvite(notification, 'accept')
-		await router.push(`/hosting/manage/${encodeURIComponent(serverId)}`)
-		queryClient.invalidateQueries({ queryKey: ['servers'] })
-	} catch (error) {
-		handleError(error)
-	}
-}
-
-async function declineServerInviteNotification(notification) {
-	try {
-		await respondToServerInvite(notification, 'decline')
-	} catch (error) {
-		handleError(error)
-	}
-}
-
-function openServerInviteInviterProfile(inviterName) {
-	if (!inviterName) return
-	openUrl(`${config.siteUrl}/user/${encodeURIComponent(inviterName)}`)
-}
-
-async function handleLiveNotification(notification) {
-	if (notification?.body?.type !== 'server_invite' || notification.read) return
-	if (displayedServerInviteNotifications.has(notification.id)) return
-
-	displayedServerInviteNotifications.add(notification.id)
-
-	const serverName =
-		typeof notification.body.server_name === 'string' ? notification.body.server_name : 'a server'
-	const inviterId = notification.body.invited_by
-	const invitedBy =
-		typeof inviterId === 'string' ? await get_user(inviterId, 'bypass').catch(() => null) : null
-
-	addPopupNotification({
-		title: serverName,
-		autoCloseMs: null,
-		toast: {
-			type: 'server-invite',
-			actorName: invitedBy?.username ?? null,
-			actorAvatarUrl: invitedBy?.avatar_url ?? null,
-			entityName: serverName,
-			onAccept: () => acceptServerInviteNotification(notification),
-			onDecline: () => declineServerInviteNotification(notification),
-			onOpenActor: () => openServerInviteInviterProfile(invitedBy?.username ?? null),
-		},
-	})
-}
 
 async function handleCommand(e) {
 	if (!e) return
