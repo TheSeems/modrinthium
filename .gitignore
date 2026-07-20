@@ -61,6 +61,11 @@ target
 generated
 .env
 
+# Secrets: kubeconfigs, cluster/registry credentials, seed keys, etc. — never commit
+.secret/
+**/.secret/
+*.kubeconfig
+
 # app testing dir
 app-playground-data/*
 

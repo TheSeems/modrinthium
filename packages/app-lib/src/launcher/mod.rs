@@ -461,7 +461,42 @@ pub async fn install_minecraft_with_reporter(
     if let Some(processors) = &version_info.processors {
         let libraries_dir = state.directories.libraries_dir();
 
-        if let Some(ref mut data) = version_info.data {
+        // Forge processors are deterministic per loader version and only touch
+        // the vanilla/loader jars (never mods), so once they've run for a given
+        // `version_jar` there's no need to re-run them on later installs of the
+        // same loader (e.g. a modpack/seed update that only changes mods). The
+        // metadata Modrinth serves doesn't declare per-processor `outputs`, so
+        // we record completion with a marker instead. `repairing` forces a
+        // re-run.
+        let processors_marker = state
+            .directories
+            .version_dir(&version_jar)
+            .join(".modrinthium_processors_complete");
+        let already_processed = !repairing
+            && tokio::fs::read_to_string(&processors_marker)
+                .await
+                .ok()
+                .is_some_and(|content| content.trim() == version_jar.as_str());
+
+        if already_processed {
+            tracing::info!(
+                "Forge processors: loader {version_jar} already processed, skipping all {}",
+                processors.len()
+            );
+            if let Some(reporter) = &reporter {
+                reporter
+                    .update(
+                        InstallPhaseId::RunningLoaderProcessors,
+                        Some(InstallProgress {
+                            current: processors.len() as u64,
+                            total: processors.len() as u64,
+                            secondary: None,
+                        }),
+                        phase_details.clone(),
+                    )
+                    .await?;
+            }
+        } else if let Some(ref mut data) = version_info.data {
             processor_rules! {
                 data;
                 "SIDE":
@@ -504,10 +539,113 @@ pub async fn install_minecraft_with_reporter(
             }
 
             // Forge processors (90-100)
+            let mut skipped_processors = 0usize;
+            let mut first_run_reason: Option<String> = None;
             for (index, processor) in processors.iter().enumerate() {
                 if let Some(sides) = &processor.sides
                     && !sides.contains(&String::from("client"))
                 {
+                    if let Some(reporter) = &reporter {
+                        reporter
+                            .update(
+                                InstallPhaseId::RunningLoaderProcessors,
+                                Some(InstallProgress {
+                                    current: (index + 1) as u64,
+                                    total: total_length as u64,
+                                    secondary: None,
+                                }),
+                                phase_details.clone(),
+                            )
+                            .await?;
+                    }
+                    continue;
+                }
+
+                // Forge processors are deterministic: if every declared output
+                // already exists with its expected hash, the work was done by a
+                // previous install, so skip re-running it (e.g. on a modpack
+                // update where the loader version is unchanged).
+                let mut run_reason: Option<String> = None;
+                let outputs_satisfied = if let Some(outputs) =
+                    &processor.outputs
+                    && !outputs.is_empty()
+                {
+                    let mut satisfied = true;
+                    for (key, value) in outputs {
+                        // Output keys (paths) and values (hashes) use the same
+                        // `{VAR}` / `[maven:coord]` templating as arguments.
+                        // Forge encodes literal data values in single quotes
+                        // (e.g. `'abc123'`), which we must strip before use.
+                        let resolved_path = args::get_processor_arguments(
+                            &libraries_dir,
+                            std::slice::from_ref(key),
+                            data,
+                        )?
+                        .pop()
+                        .unwrap_or_default();
+                        let resolved_path =
+                            resolved_path.trim_matches('\'').to_string();
+                        let expected_hash = args::get_processor_arguments(
+                            &libraries_dir,
+                            std::slice::from_ref(value),
+                            data,
+                        )?
+                        .pop()
+                        .unwrap_or_default();
+                        let expected_hash =
+                            expected_hash.trim_matches('\'').to_string();
+                        if resolved_path.is_empty() || expected_hash.is_empty() {
+                            satisfied = false;
+                            run_reason = Some(format!(
+                                "unresolved output {key} -> {value}"
+                            ));
+                            break;
+                        }
+                        match crate::util::fetch::sha1_file_async(
+                            std::path::Path::new(&resolved_path),
+                        )
+                        .await
+                        {
+                            Ok((_, actual))
+                                if actual
+                                    .eq_ignore_ascii_case(&expected_hash) => {}
+                            Ok((_, actual)) => {
+                                satisfied = false;
+                                run_reason = Some(format!(
+                                    "hash mismatch for {resolved_path}: have {actual}, want {expected_hash}"
+                                ));
+                                break;
+                            }
+                            Err(_) => {
+                                satisfied = false;
+                                run_reason = Some(format!(
+                                    "missing output {resolved_path}"
+                                ));
+                                break;
+                            }
+                        }
+                    }
+                    satisfied
+                } else {
+                    run_reason = Some("no outputs declared".to_string());
+                    false
+                };
+
+                if !outputs_satisfied && first_run_reason.is_none() {
+                    first_run_reason = run_reason;
+                }
+
+                if outputs_satisfied {
+                    skipped_processors += 1;
+                    if let Some(loading_bar) = &loading_bar {
+                        emit_loading(
+                            loading_bar,
+                            30.0 / total_length as f64,
+                            Some(&format!(
+                                "Skipping up-to-date forge processor {index}/{total_length}"
+                            )),
+                        )?;
+                    }
                     if let Some(reporter) = &reporter {
                         reporter
                             .update(
@@ -595,6 +733,26 @@ pub async fn install_minecraft_with_reporter(
                         )
                         .await?;
                 }
+            }
+            tracing::info!(
+                "Forge processors: ran {}, skipped {} (already up to date) of {}{}",
+                total_length - skipped_processors,
+                skipped_processors,
+                total_length,
+                first_run_reason
+                    .map(|reason| format!("; e.g. {reason}"))
+                    .unwrap_or_default()
+            );
+
+            // Record that processors finished for this loader so later installs
+            // of the same `version_jar` can skip re-running them.
+            if let Err(err) =
+                tokio::fs::write(&processors_marker, version_jar.as_bytes())
+                    .await
+            {
+                tracing::warn!(
+                    "Failed to write Forge processors completion marker: {err}"
+                );
             }
         }
     }

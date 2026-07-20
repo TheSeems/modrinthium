@@ -93,14 +93,6 @@ export default new createRouter({
 			},
 		},
 		{
-			path: '/skins',
-			name: 'Skin selector',
-			component: Pages.Skins,
-			meta: {
-				breadcrumb: [{ name: 'Skin selector' }],
-			},
-		},
-		{
 			path: '/library',
 			name: 'Library',
 			component: Library.Index,

@@ -4,13 +4,11 @@ import {
 	CopyIcon,
 	DropdownIcon,
 	LogInIcon,
-	MessagesSquareIcon,
 	WrenchIcon,
 } from '@modrinth/assets'
 import { Admonition, ButtonStyled, Collapsible, NewModal } from '@modrinth/ui'
 import { computed, ref } from 'vue'
 
-import { hide_ads_window, show_ads_window } from '@/helpers/ads.js'
 import { login as login_flow, set_default_user } from '@/helpers/auth.js'
 import { handleSevereError } from '@/store/error.js'
 
@@ -29,17 +27,11 @@ function show(errorVal: { message?: string }) {
 	matchedError.value = findMinecraftAuthError(rawError.value)
 
 	debugCollapsed.value = true
-	hide_ads_window()
 	modal.value?.show()
 }
 
 function hide() {
-	onModalHide()
 	modal.value?.hide()
-}
-
-function onModalHide() {
-	show_ads_window()
 }
 
 defineExpose({
@@ -128,8 +120,7 @@ async function copyToClipboard(text: string) {
 								href="https://www.minecraft.net/en-us/login"
 								>Minecraft Login</a
 							>
-							and signing in, as it may prompt you with the necessary steps. You can also contact
-							support and we can look into it further.
+							and signing in, as it may prompt you with the necessary steps.
 						</p>
 					</div>
 				</template>
@@ -137,11 +128,6 @@ async function copyToClipboard(text: string) {
 
 			<!-- Action buttons -->
 			<div class="flex items-center gap-2">
-				<ButtonStyled>
-					<a href="https://support.modrinth.com" class="!w-full" @click="modal?.hide()">
-						<MessagesSquareIcon /> Contact support
-					</a>
-				</ButtonStyled>
 				<ButtonStyled color="brand">
 					<button :disabled="loadingSignIn" class="!w-full" @click="signInAgain">
 						<LogInIcon /> Sign in again

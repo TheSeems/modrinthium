@@ -710,6 +710,89 @@ pub(crate) async fn install_zipped_mrpack_files_with_reporter(
                     .set_transient_context(context.clone())
                     .await?;
 
+                // Skip re-downloading a file that is already on disk with the
+                // expected hash. This makes modpack updates incremental: only
+                // added or changed files hit the network.
+                if let Some(expected_hash) =
+                    project.hashes.get(&PackFileHash::Sha1)
+                    && matches!(
+                        crate::util::fetch::sha1_file_async(&target_path).await,
+                        Ok((_, existing)) if &existing == expected_hash
+                    )
+                {
+                    {
+                        let _permit =
+                            state.install_db_semaphore.acquire().await?;
+                        content_context
+                            .reporter
+                            .preserve_failure_context(
+                                context.clone(),
+                                crate::state::cache_file_hash_metadata(
+                                    &content_context.instance_path,
+                                    project.path.as_str(),
+                                    project_size,
+                                    expected_hash.clone(),
+                                    ProjectType::get_from_parent_folder(
+                                        project.path.as_str(),
+                                    ),
+                                    None,
+                                    &state.pool,
+                                )
+                                .await,
+                            )
+                            .await?;
+                    }
+
+                    if let Some(project_type) =
+                        ProjectType::get_from_parent_folder(
+                            project.path.as_str(),
+                        )
+                    {
+                        let file_info = content_context
+                            .file_infos_by_hash
+                            .get(expected_hash);
+                        let _permit =
+                            state.install_db_semaphore.acquire().await?;
+                        content_context
+                            .reporter
+                            .preserve_failure_context(
+                                context.clone(),
+                                crate::state::instances::commands::record_project_file(
+                                    &content_context.instance_id,
+                                    project.path.as_str(),
+                                    expected_hash,
+                                    project_size,
+                                    project_type,
+                                    modpack_source_kind(
+                                        content_context
+                                            .pack_version_id
+                                            .as_deref(),
+                                    ),
+                                    file_info.map(|file| {
+                                        file.project_id.as_str()
+                                    }),
+                                    file_info.map(|file| {
+                                        file.version_id.as_str()
+                                    }),
+                                    state,
+                                )
+                                .await,
+                            )
+                            .await?;
+                    }
+
+                    content_context
+                        .mark_downloaded(
+                            project_size,
+                            InstallJobEventKind::ContentFileSkipped {
+                                path: project_path,
+                                reason: "already up to date".to_string(),
+                            },
+                        )
+                        .await?;
+                    return Ok(());
+                }
+
                 let progress_key = project_path.clone();
                 let progress_context = content_context.clone();
                 let min_download_progress_delta =
@@ -1085,11 +1168,41 @@ fn modpack_source_kind(version_id: Option<&str>) -> ContentSourceKind {
     }
 }
 
-#[tracing::instrument(skip(mrpack_file))]
+/// Reads a modpack's `modrinth.index.json` and maps each managed file's
+/// instance-relative path to its expected SHA1 hash. Used during updates to
+/// preserve files that are byte-identical in the new pack instead of deleting
+/// and re-downloading them.
+pub(crate) async fn manifest_file_hashes(
+    file: &CreatePackFile,
+) -> crate::Result<HashMap<String, String>> {
+    let mut zip_reader = MrpackZipReader::new(file).await?;
+    let Some(manifest_idx) = zip_reader.file().entries().iter().position(|f| {
+        matches!(f.filename().as_str(), Ok("modrinth.index.json"))
+    }) else {
+        return Err(crate::Error::from(crate::ErrorKind::InputError(
+            "No pack manifest found in mrpack".to_string(),
+        )));
+    };
+
+    let manifest = zip_reader.read_entry_to_string(manifest_idx).await?;
+    let pack: PackFormat = serde_json::from_str(&manifest)?;
+
+    Ok(pack
+        .files
+        .into_iter()
+        .filter_map(|file| {
+            let hash = file.hashes.get(&PackFileHash::Sha1)?.clone();
+            Some((file.path.as_str().to_string(), hash))
+        })
+        .collect())
+}
+
+#[tracing::instrument(skip(mrpack_file, keep))]
 
 pub async fn remove_all_related_files(
     instance_id: String,
     mrpack_file: CreatePackFile,
+    keep: &HashMap<String, String>,
 ) -> crate::Result<()> {
     // Updates can remove files from a locally imported or downloaded pack, so share the same reader path.
     let mut zip_reader = MrpackZipReader::new(&mrpack_file).await?;
@@ -1157,12 +1270,30 @@ pub async fn remove_all_related_files(
         .map(|p| p.project_id)
         .collect::<Vec<_>>();
 
+    // Files present in the new pack with the same hash are byte-identical, so
+    // leave them on disk for the installer to reuse instead of deleting them.
+    let old_hash_by_path = pack
+        .files
+        .iter()
+        .filter_map(|f| {
+            Some((
+                f.path.as_str().to_string(),
+                f.hashes.get(&PackFileHash::Sha1)?.clone(),
+            ))
+        })
+        .collect::<HashMap<String, String>>();
+
     for file in crate::state::instances::commands::list_project_files(
         &metadata.instance.id,
         &state,
     )
     .await?
     {
+        if let Some(new_hash) = keep.get(&file.relative_path)
+            && old_hash_by_path.get(&file.relative_path) == Some(new_hash)
+        {
+            continue;
+        }
         if let Some(project_id) = &file.project_id
             && to_remove.contains(project_id)
         {
@@ -1178,6 +1309,10 @@ pub async fn remove_all_related_files(
     // Iterate over all Modrinth project file paths in the json, and remove them
     // (There should be few, but this removes any files the .mrpack intended as Modrinth projects but were unrecognized)
     for file in pack.files {
+        if keep.get(file.path.as_str()) == file.hashes.get(&PackFileHash::Sha1)
+        {
+            continue;
+        }
         match io::remove_file(instance_full_path.join(file.path.as_str())).await
         {
             Ok(_) => (),

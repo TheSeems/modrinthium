@@ -97,7 +97,7 @@ const exportPack = async () => {
 		defaultPath: `${nameInput.value} ${versionInput.value}.mrpack`,
 		filters: [
 			{
-				name: 'Modrinth Modpack',
+				name: 'Modrinthium Modpack',
 				extensions: ['mrpack'],
 			},
 		],

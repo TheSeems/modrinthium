@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import {
+	BoxIcon,
 	CoffeeIcon,
 	GameIcon,
 	GaugeIcon,
 	LanguagesIcon,
-	ModrinthIcon,
 	PaintbrushIcon,
 	SettingsIcon,
-	ShieldIcon,
 	ToggleRightIcon,
 } from '@modrinth/assets'
 import {
@@ -28,7 +27,6 @@ import DefaultInstanceSettings from '@/components/ui/settings/DefaultInstanceSet
 import FeatureFlagSettings from '@/components/ui/settings/FeatureFlagSettings.vue'
 import JavaSettings from '@/components/ui/settings/JavaSettings.vue'
 import LanguageSettings from '@/components/ui/settings/LanguageSettings.vue'
-import PrivacySettings from '@/components/ui/settings/PrivacySettings.vue'
 import ResourceManagementSettings from '@/components/ui/settings/ResourceManagementSettings.vue'
 import { get, set } from '@/helpers/settings.ts'
 import { injectAppUpdateDownloadProgress } from '@/providers/download-progress.ts'
@@ -62,14 +60,6 @@ const tabs = [
 		icon: LanguagesIcon,
 		content: LanguageSettings,
 		badge: commonMessages.beta,
-	},
-	{
-		name: defineMessage({
-			id: 'app.settings.tabs.privacy',
-			defaultMessage: 'Privacy',
-		}),
-		icon: ShieldIcon,
-		content: PrivacySettings,
 	},
 	{
 		name: defineMessage({
@@ -175,10 +165,10 @@ const messages = defineMessages({
 						}"
 						@click="devModeCount"
 					>
-						<ModrinthIcon class="w-6 h-6" />
+						<BoxIcon class="w-6 h-6" />
 					</button>
 					<div class="max-w-[200px]">
-						<p class="m-0">Modrinth App {{ version }}</p>
+						<p class="m-0">Modrinthium {{ version }}</p>
 						<p class="m-0">
 							<span v-if="osPlatform === 'macos'">macOS</span>
 							<span v-else class="capitalize">{{ osPlatform }}</span>

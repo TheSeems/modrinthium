@@ -267,7 +267,7 @@ const localImportedModpackProject = computed<ContentModpackCardProject | null>((
 		title: link.name ?? props.instance.name,
 		icon_url: props.instance.icon_path ? convertFileSrc(props.instance.icon_path) : undefined,
 		description: '',
-		filename: link.filename ?? undefined,
+		filename: link.version_number ? `v${link.version_number}` : (link.filename ?? undefined),
 	}
 })
 

@@ -1,43 +1,39 @@
 <template>
-	<div
+	<button
 		v-if="accounts.length === 0"
-		class="flex flex-col gap-3 bg-button-bg border border-solid border-surface-5 rounded-xl p-3 mt-2"
+		class="flex items-center gap-2 py-1.5 px-3 rounded-xl border border-solid border-surface-5 bg-transparent text-sm text-contrast cursor-pointer hover:brightness-75 transition-all"
+		:disabled="loginDisabled"
+		@click="login()"
 	>
-		<span>{{ formatMessage(messages.notSignedIn) }}</span>
-		<ButtonStyled color="brand">
-			<button color="primary" :disabled="loginDisabled" @click="login()">
-				<LogInIcon v-if="!loginDisabled" />
-				<SpinnerIcon v-else class="animate-spin" />
-				{{ formatMessage(messages.signInToMinecraft) }}
-			</button>
-		</ButtonStyled>
-	</div>
-	<Accordion
-		v-else
-		class="w-full mt-2 bg-button-bg border border-solid border-surface-5 rounded-xl overflow-clip"
-		button-class="button-base w-full bg-transparent px-3 py-2 border-0 cursor-pointer"
-		:open-by-default="false"
-	>
-		<template #title>
-			<div class="flex gap-2 w-full min-w-0">
-				<Avatar
-					size="36px"
-					:src="
-						selectedAccount
-							? avatarUrl
-							: 'https://launcher-files.modrinth.com/assets/steve_head.png'
-					"
-				/>
-				<div class="flex flex-col items-start w-full min-w-0">
-					<span class="truncate w-full text-left">{{
-						selectedAccount ? selectedAccount.profile.name : formatMessage(messages.selectAccount)
-					}}</span>
-					<span class="text-secondary text-xs">{{ formatMessage(messages.minecraftAccount) }}</span>
-				</div>
-			</div>
-		</template>
-		<div class="bg-button-bg pt-1 pb-2 border border-solid border-surface-5">
-			<template v-if="accounts.length > 0">
+		<LogInIcon v-if="!loginDisabled" class="size-4" />
+		<SpinnerIcon v-else class="animate-spin size-4" />
+		{{ formatMessage(messages.signInToMinecraft) }}
+	</button>
+	<Dropdown v-else placement="bottom-end" :triggers="['click']" :hide-triggers="['click']">
+		<button
+			v-tooltip="formatMessage(messages.minecraftAccount)"
+			class="flex items-center gap-2 py-1.5 px-2 rounded-xl border border-solid border-surface-5 bg-transparent text-sm text-contrast cursor-pointer hover:brightness-75 transition-all max-w-[12rem]"
+		>
+			<Avatar
+				size="24px"
+				:src="
+					selectedAccount
+						? avatarUrl
+						: 'https://launcher-files.modrinth.com/assets/steve_head.png'
+				"
+			/>
+			<span class="truncate">{{
+				selectedAccount ? selectedAccount.profile.name : formatMessage(messages.selectAccount)
+			}}</span>
+			<DropdownIcon class="size-4 shrink-0 text-secondary" />
+		</button>
+		<template #popper>
+			<div
+				class="flex w-[16rem] flex-col bg-bg-raised border border-solid border-surface-5 rounded-xl card-shadow overflow-clip py-1"
+			>
+				<span class="px-3 py-1 text-xs text-secondary">{{
+					formatMessage(messages.minecraftAccount)
+				}}</span>
 				<div v-for="account in accounts" :key="account.profile.id" class="flex gap-1 items-center">
 					<button
 						class="flex items-center flex-shrink flex-grow overflow-clip gap-2 p-2 border-0 bg-transparent cursor-pointer button-base min-w-0"
@@ -70,21 +66,22 @@
 						</button>
 					</ButtonStyled>
 				</div>
-			</template>
-			<div class="flex flex-col gap-2 px-2 pt-2">
-				<ButtonStyled v-if="accounts.length > 0" class="w-full">
-					<button :disabled="loginDisabled" @click="login()">
-						<PlusIcon />
-						{{ formatMessage(messages.addAccount) }}
-					</button>
-				</ButtonStyled>
+				<div class="flex flex-col gap-2 px-2 pt-2">
+					<ButtonStyled class="w-full">
+						<button :disabled="loginDisabled" @click="login()">
+							<PlusIcon />
+							{{ formatMessage(messages.addAccount) }}
+						</button>
+					</ButtonStyled>
+				</div>
 			</div>
-		</div>
-	</Accordion>
+		</template>
+	</Dropdown>
 </template>
 
 <script setup lang="ts">
 import {
+	DropdownIcon,
 	LogInIcon,
 	PlusIcon,
 	RadioButtonCheckedIcon,
@@ -93,13 +90,13 @@ import {
 	TrashIcon,
 } from '@modrinth/assets'
 import {
-	Accordion,
 	Avatar,
 	ButtonStyled,
 	defineMessages,
 	injectNotificationManager,
 	useVIntl,
 } from '@modrinth/ui'
+import { Dropdown } from 'floating-vue'
 import type { Ref } from 'vue'
 import { computed, onUnmounted, ref } from 'vue'
 
@@ -259,10 +256,6 @@ onUnmounted(() => {
 })
 
 const messages = defineMessages({
-	notSignedIn: {
-		id: 'minecraft-account.not-signed-in',
-		defaultMessage: 'Not signed in',
-	},
 	addAccount: {
 		id: 'minecraft-account.add-account',
 		defaultMessage: 'Add account',

@@ -156,7 +156,7 @@ const messages = defineMessages({
 	},
 	usernameTitle: {
 		id: 'friends.add-friend.username.title',
-		defaultMessage: "What's your friend's Modrinth username?",
+		defaultMessage: "What's your friend's username?",
 	},
 	usernameDescription: {
 		id: 'friends.add-friend.username.description',
@@ -164,7 +164,7 @@ const messages = defineMessages({
 	},
 	usernamePlaceholder: {
 		id: 'friends.add-friend.username.placeholder',
-		defaultMessage: 'Enter Modrinth username...',
+		defaultMessage: 'Enter username...',
 	},
 	sendFriendRequest: {
 		id: 'friends.add-friend.submit',

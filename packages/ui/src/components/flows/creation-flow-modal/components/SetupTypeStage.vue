@@ -25,6 +25,13 @@
 					:description="formatMessage(messages.importInstanceDescription)"
 					@click="ctx.setImportMode()"
 				/>
+				<BigOptionButton
+					v-if="ctx.allowSeedInstall"
+					:icon="LinkIcon"
+					:title="formatMessage(messages.seedInstallTitle)"
+					:description="formatMessage(messages.seedInstallDescription)"
+					@click="ctx.seedInstall()"
+				/>
 			</div>
 			<span class="text-sm text-secondary">
 				{{ formatMessage(messages.instanceDescription) }}
@@ -58,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-import { BoxesIcon, BoxIcon, BoxImportIcon, PackageIcon } from '@modrinth/assets'
+import { BoxesIcon, BoxIcon, BoxImportIcon, LinkIcon, PackageIcon } from '@modrinth/assets'
 import { defineMessages, useVIntl } from '@modrinth/ui'
 import { computed } from 'vue'
 
@@ -108,6 +115,14 @@ const messages = defineMessages({
 	importInstanceDescription: {
 		id: 'creation-flow.modal.setup-type.option.import-instance.description',
 		defaultMessage: 'Import an instance from Prism, CurseForge, or similar.',
+	},
+	seedInstallTitle: {
+		id: 'creation-flow.modal.setup-type.option.seed-install.title',
+		defaultMessage: 'Install from link',
+	},
+	seedInstallDescription: {
+		id: 'creation-flow.modal.setup-type.option.seed-install.description',
+		defaultMessage: 'Paste a seed link to install a modpack that isn’t published on Modrinth.',
 	},
 	instanceDescription: {
 		id: 'creation-flow.modal.setup-type.instance.description',

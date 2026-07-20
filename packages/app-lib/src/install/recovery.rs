@@ -94,6 +94,9 @@ fn display_from_request(state: &InstallJobState) -> Option<InstallJobDisplay> {
             }),
             crate::api::pack::install_from::CreatePackLocation::FromFile {
                 ..
+            }
+            | crate::api::pack::install_from::CreatePackLocation::FromUrl {
+                ..
             } => None,
         },
         InstallRequest::ImportInstance {

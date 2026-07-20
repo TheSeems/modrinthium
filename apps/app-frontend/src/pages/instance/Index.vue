@@ -13,6 +13,8 @@
 				@unlinked="fetchInstance"
 			/>
 			<UpdateToPlayModal ref="updateToPlayModal" :instance="instance" />
+			<SeedUpdateToPlayModal ref="seedUpdateToPlayModal" @play="runInstance('SeedUpdatePrompt')" />
+			<SeedPublishModal ref="seedPublishModal" />
 			<ContentPageHeader>
 				<template #icon>
 					<Avatar
@@ -198,6 +200,12 @@
 										action: () => exportModal?.show(),
 									},
 									{
+										id: 'publish-to-seed',
+										action: () => {
+											if (instance) seedPublishModal?.show(instance.id)
+										},
+									},
+									{
 										id: 'create-shortcut',
 										action: () => createShortcut(),
 									},
@@ -208,12 +216,16 @@
 								<template #host-a-server> <ServerIcon /> Create a server </template>
 								<template #open-folder> <FolderOpenIcon /> Open folder </template>
 								<template #export-mrpack> <PackageIcon /> Export modpack </template>
+								<template #publish-to-seed> <ArrowBigUpDashIcon /> Publish to seed </template>
 								<template #create-shortcut> <ExternalIcon /> Create shortcut </template>
 							</OverflowMenu>
 						</ButtonStyled>
 					</div>
 				</template>
 			</ContentPageHeader>
+		</div>
+		<div class="px-6">
+			<SeedUpdateBanner :instance-id="instance.id" />
 		</div>
 		<div :class="['px-6', { 'shrink-0': isFixedRender }]">
 			<NavTabs :links="tabs" />
@@ -251,7 +263,7 @@
 			<template #copy_path> <ClipboardCopyIcon /> Copy path </template>
 			<template #open_folder> <FolderOpenIcon /> Open folder </template>
 			<template #copy_link> <ClipboardCopyIcon /> Copy link </template>
-			<template #open_link> <GlobeIcon /> Open in Modrinth <ExternalIcon /> </template>
+			<template #open_link> <GlobeIcon /> Open in browser <ExternalIcon /> </template>
 			<template #copy_names><EditIcon />Copy names</template>
 			<template #copy_slugs><HashIcon />Copy slugs</template>
 			<template #copy_links><GlobeIcon />Copy links</template>
@@ -269,6 +281,7 @@
 <script setup lang="ts">
 import type { Labrinth } from '@modrinth/api-client'
 import {
+	ArrowBigUpDashIcon,
 	BoxesIcon,
 	CheckCircleIcon,
 	ClipboardCopyIcon,
@@ -315,6 +328,9 @@ import { useRoute, useRouter } from 'vue-router'
 
 import ContextMenu from '@/components/ui/ContextMenu.vue'
 import ExportModal from '@/components/ui/ExportModal.vue'
+import SeedPublishModal from '@/components/ui/modal/SeedPublishModal.vue'
+import SeedUpdateBanner from '@/components/ui/SeedUpdateBanner.vue'
+import SeedUpdateToPlayModal from '@/components/ui/modal/SeedUpdateToPlayModal.vue'
 import InstanceSettingsModal from '@/components/ui/modal/InstanceSettingsModal.vue'
 import UpdateToPlayModal from '@/components/ui/modal/UpdateToPlayModal.vue'
 import {
@@ -329,6 +345,7 @@ import { install_existing_instance, install_pack_to_existing_instance } from '@/
 import { get, get_full_path, kill, run } from '@/helpers/instance'
 import { type InstanceContentData, loadInstanceContentData } from '@/helpers/instance-content'
 import { get_by_instance_id } from '@/helpers/process'
+import { seed_check_update } from '@/helpers/seed'
 import type { GameInstance } from '@/helpers/types'
 import { createInstanceShortcut, showInstanceInFolder } from '@/helpers/utils.js'
 import { refreshWorlds, type ServerStatus } from '@/helpers/worlds'
@@ -367,6 +384,8 @@ const subpagePending = ref(false)
 const stopping = ref(false)
 const exportModal = ref<InstanceType<typeof ExportModal>>()
 const updateToPlayModal = ref<InstanceType<typeof UpdateToPlayModal>>()
+const seedUpdateToPlayModal = ref<InstanceType<typeof SeedUpdateToPlayModal>>()
+const seedPublishModal = ref<InstanceType<typeof SeedPublishModal>>()
 
 useLoadingBarToken(subpagePending)
 
@@ -571,12 +590,8 @@ if (instance.value) {
 
 const options = ref<InstanceType<typeof ContextMenu> | null>(null)
 
-const startInstance = async (context: string) => {
+const runInstance = async (context: string) => {
 	if (!instance.value) return
-	if (updateToPlayModal.value?.hasUpdate) {
-		updateToPlayModal.value.show(instance.value)
-		return
-	}
 
 	loading.value = true
 	try {
@@ -592,6 +607,23 @@ const startInstance = async (context: string) => {
 		game_version: instance.value.game_version,
 		source: context,
 	})
+}
+
+const startInstance = async (context: string) => {
+	if (!instance.value) return
+	if (updateToPlayModal.value?.hasUpdate) {
+		updateToPlayModal.value.show(instance.value)
+		return
+	}
+
+	// Keep seeded instances in sync: offer to update before launching.
+	const seedInfo = await seed_check_update(route.params.id as string).catch(() => null)
+	if (seedInfo?.hasUpdate) {
+		seedUpdateToPlayModal.value?.show(route.params.id as string, seedInfo)
+		return
+	}
+
+	await runInstance(context)
 }
 
 const stopInstance = async (context: string) => {

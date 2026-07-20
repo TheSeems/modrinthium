@@ -16,7 +16,12 @@ export interface PackLocationFile {
 	path: string
 }
 
-export type CreatePackLocation = PackLocationVersionId | PackLocationFile
+export interface PackLocationUrl {
+	type: 'fromUrl'
+	url: string
+}
+
+export type CreatePackLocation = PackLocationVersionId | PackLocationFile | PackLocationUrl
 
 export interface InstallModpackPreview {
 	name: string

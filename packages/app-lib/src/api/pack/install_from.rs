@@ -101,6 +101,11 @@ pub enum CreatePackLocation {
     FromFile {
         path: PathBuf,
     },
+    // Create a pack from a raw .mrpack URL (used by seed installs). The file is
+    // downloaded into memory and then installed like a local .mrpack.
+    FromUrl {
+        url: String,
+    },
 }
 
 #[derive(Serialize, Deserialize)]
@@ -228,7 +233,47 @@ pub async fn get_instance_from_pack(
                 ..Default::default()
             })
         }
+        CreatePackLocation::FromUrl { url } => {
+            let state = State::get().await?;
+            let file = crate::util::fetch::fetch(
+                &url,
+                None,
+                None,
+                None,
+                &state.fetch_semaphore,
+                &state.pool,
+            )
+            .await?;
+
+            let name = mrpack_name_from_url(&url);
+
+            let external_files_in_modpack =
+                super::install_mrpack::get_external_files_from_mrpack(
+                    &CreatePackFile::Bytes(file),
+                )
+                .await?;
+
+            Ok(CreatePackInstance {
+                name,
+                unknown_file: true,
+                external_files_in_modpack,
+                ..Default::default()
+            })
+        }
     }
+}
+
+fn mrpack_name_from_url(url: &str) -> String {
+    url.split(['?', '#'])
+        .next()
+        .unwrap_or(url)
+        .rsplit('/')
+        .find(|segment| !segment.is_empty())
+        .map(|segment| {
+            segment.trim_end_matches(".mrpack").replace(['-', '_'], " ")
+        })
+        .filter(|name| !name.is_empty())
+        .unwrap_or_else(|| "Seed modpack".to_string())
 }
 
 #[tracing::instrument(skip(reporter))]
@@ -470,6 +515,44 @@ pub async fn generate_pack_from_file(
 
     Ok(CreatePack {
         file: CreatePackFile::Path(path),
+        description: CreatePackDescription {
+            icon: None,
+            override_title: None,
+            project_id: None,
+            version_id: None,
+            instance_id,
+            source_filename,
+        },
+    })
+}
+
+#[tracing::instrument]
+pub(crate) async fn generate_pack_from_url(
+    url: String,
+    instance_id: String,
+) -> crate::Result<CreatePack> {
+    let state = State::get().await?;
+    let file = crate::util::fetch::fetch(
+        &url,
+        None,
+        None,
+        None,
+        &state.fetch_semaphore,
+        &state.pool,
+    )
+    .await?;
+
+    let source_filename = url
+        .split(['?', '#'])
+        .next()
+        .unwrap_or(&url)
+        .rsplit('/')
+        .find(|segment| !segment.is_empty())
+        .map(ToString::to_string)
+        .or_else(|| Some("seed.mrpack".to_string()));
+
+    Ok(CreatePack {
+        file: CreatePackFile::Bytes(file),
         description: CreatePackDescription {
             icon: None,
             override_title: None,

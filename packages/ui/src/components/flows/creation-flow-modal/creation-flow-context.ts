@@ -129,6 +129,7 @@ export interface CreationFlowContextValue {
 	showSnapshotToggle: boolean
 	disableClose: boolean
 	isInitialSetup: boolean
+	allowSeedInstall: boolean
 
 	// Initial values
 	initialLoader: string | null
@@ -206,6 +207,7 @@ export interface CreationFlowContextValue {
 	setSetupType: (type: SetupType) => void
 	setImportMode: () => void
 	browseModpacks: () => void
+	seedInstall: () => void
 	finish: () => void
 	buildProperties: () => Archon.Content.v1.PropertiesFields
 	fetchLoaderMetadata: (loader?: string | null) => Promise<void>
@@ -228,6 +230,7 @@ export interface CreationFlowOptions {
 	showSnapshotToggle?: boolean
 	disableClose?: boolean
 	isInitialSetup?: boolean
+	allowSeedInstall?: boolean
 	initialLoader?: string
 	initialGameVersion?: string
 	fetchExistingInstanceNames?: () => Promise<string[]>
@@ -245,6 +248,7 @@ export function createCreationFlowContext(
 	emit: {
 		browseModpacks: () => void
 		create: (config: CreationFlowContextValue) => void
+		seedInstall?: () => void
 	},
 	options: CreationFlowOptions = {},
 ): CreationFlowContextValue {
@@ -256,6 +260,7 @@ export function createCreationFlowContext(
 	const showSnapshotToggle = options.showSnapshotToggle ?? false
 	const disableClose = options.disableClose ?? false
 	const isInitialSetup = options.isInitialSetup ?? false
+	const allowSeedInstall = options.allowSeedInstall ?? false
 	const initialLoader = options.initialLoader ?? null
 	const initialGameVersion = options.initialGameVersion ?? null
 	const onBack = options.onBack ?? null
@@ -506,6 +511,11 @@ export function createCreationFlowContext(
 		emit.browseModpacks()
 	}
 
+	function seedInstall() {
+		modal.value?.hide()
+		emit.seedInstall?.()
+	}
+
 	function finish() {
 		if (finishDisabled.value) return
 
@@ -552,6 +562,7 @@ export function createCreationFlowContext(
 		showSnapshotToggle,
 		disableClose,
 		isInitialSetup,
+		allowSeedInstall,
 		initialLoader,
 		initialGameVersion,
 		setupType,
@@ -603,6 +614,7 @@ export function createCreationFlowContext(
 		setSetupType,
 		setImportMode,
 		browseModpacks,
+		seedInstall,
 		finish,
 		buildProperties,
 		fetchLoaderMetadata,

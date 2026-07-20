@@ -245,6 +245,23 @@ fn main() {
                     ),
             )
             .plugin(
+                "seed",
+                InlinedPlugin::new()
+                    .commands(&[
+                        "seed_fetch_manifest",
+                        "seed_attach",
+                        "seed_get",
+                        "seed_remove",
+                        "seed_check_update",
+                        "seed_publish",
+                        "seed_publish_config_get",
+                        "seed_publish_config_set",
+                    ])
+                    .default_permission(
+                        DefaultPermissionRule::AllowAllCommands,
+                    ),
+            )
+            .plugin(
                 "shortcuts",
                 InlinedPlugin::new()
                     .commands(&["create_instance_shortcut"])
@@ -265,24 +282,6 @@ fn main() {
                         "show_app_db_backups_folder",
                         "progress_bars_list",
                         "get_opening_command",
-                    ])
-                    .default_permission(
-                        DefaultPermissionRule::AllowAllCommands,
-                    ),
-            )
-            .plugin(
-                "ads",
-                InlinedPlugin::new()
-                    .commands(&[
-                        "init_ads_window",
-                        "hide_ads_window",
-                        "scroll_ads_window",
-                        "show_ads_window",
-                        "show_ads_consent_overlay",
-                        "hide_ads_consent_overlay",
-                        "record_ads_click",
-                        "open_link",
-                        "get_ads_personalization",
                     ])
                     .default_permission(
                         DefaultPermissionRule::AllowAllCommands,

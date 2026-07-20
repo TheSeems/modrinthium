@@ -1,0 +1,13 @@
+[package]
+name = "seed-server"
+version = "0.1.0"
+edition = "2021"
+description = "Minimal single-seed server for hosting a Modrinthium seed manifest and accepting authenticated uploads."
+license = "MIT"
+
+[dependencies]
+axum = { version = "0.8", features = ["multipart"] }
+tokio = { workspace = true, features = ["full"] }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+sha1_smol = { workspace = true }

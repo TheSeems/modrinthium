@@ -3,7 +3,6 @@
 		ref="modal"
 		:header="formatMessage(messages.installToPlay)"
 		:closable="true"
-		:on-hide="show_ads_window"
 		max-width="640px"
 		width="640px"
 	>
@@ -181,7 +180,6 @@ import {
 import { openUrl } from '@tauri-apps/plugin-opener'
 import { computed, nextTick, ref } from 'vue'
 
-import { hide_ads_window, show_ads_window } from '@/helpers/ads'
 import { get_project, get_project_many, get_version, get_version_many } from '@/helpers/cache.js'
 import { injectServerInstall } from '@/providers/server-install'
 
@@ -364,7 +362,6 @@ async function show(
 
 	if (modpackVersionIdVal) await fetchData(modpackVersionIdVal)
 
-	hide_ads_window()
 	modal.value?.show(e)
 	await nextTick()
 	forceCheckTableScroll()
@@ -382,7 +379,7 @@ const messages = defineMessages({
 	inviteWarning: {
 		id: 'app.modal.install-to-play.invite-warning',
 		defaultMessage:
-			'This invite was created by another Modrinth user, not Modrinth. Only accept invites from people you trust.',
+			'This invite was created by another user. Only accept invites from people you trust.',
 	},
 	sharedInstance: {
 		id: 'app.modal.install-to-play.shared-instance',

@@ -8,8 +8,9 @@ use super::model::{
 use super::{diagnostics, recovery, store};
 use crate::ErrorKind;
 use crate::api::pack::install_from::{
-    CreatePackLocation, generate_pack_from_file,
-    generate_pack_from_version_id_with_reporter, get_instance_from_pack,
+    CreatePack, CreatePackLocation, generate_pack_from_file,
+    generate_pack_from_url, generate_pack_from_version_id_with_reporter,
+    get_instance_from_pack,
 };
 use crate::api::pack::install_mrpack::install_zipped_mrpack_files_with_reporter;
 use crate::event::InstancePayloadType;
@@ -19,7 +20,7 @@ use crate::state::{
     ContentSourceKind, InstanceInstallStage, InstanceLink, ModLoader, State,
 };
 use crate::util::fetch::DownloadReason;
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 use std::path::PathBuf;
 use uuid::Uuid;
 
@@ -541,11 +542,17 @@ async fn run_request(
                 modpack_details(&location),
             )
             .await?;
-            install_pack(
+            let (create_pack, reporter) = build_pack(
                 job_id,
                 job_state,
                 location,
                 instance_id.clone(),
+                DownloadReason::Modpack,
+            )
+            .await?;
+            install_prepared_pack(
+                create_pack,
+                reporter,
                 DownloadReason::Modpack,
             )
             .await?;
@@ -660,18 +667,32 @@ async fn run_request(
             post_install_edit,
         } => {
             prepare_existing_rollback(job_state, state, &instance_id).await?;
+            // Download and read the new pack before touching the instance, so a
+            // failed download leaves the existing install intact and so removal
+            // can preserve files that are unchanged in the new pack.
+            let (create_pack, reporter) = build_pack(
+                job_id,
+                job_state,
+                location,
+                instance_id.clone(),
+                DownloadReason::Modpack,
+            )
+            .await?;
+            let keep = crate::api::pack::install_mrpack::manifest_file_hashes(
+                &create_pack.file,
+            )
+            .await?;
             let disabled_project_ids = remove_existing_pack_content(
                 job_id,
                 job_state,
                 state,
                 &instance_id,
+                &keep,
             )
             .await?;
-            install_pack(
-                job_id,
-                job_state,
-                location,
-                instance_id.clone(),
+            install_prepared_pack(
+                create_pack,
+                reporter,
                 DownloadReason::Modpack,
             )
             .await?;
@@ -719,6 +740,7 @@ async fn remove_existing_pack_content(
     job_state: &InstallJobState,
     state: &State,
     instance_id: &str,
+    keep: &HashMap<String, String>,
 ) -> crate::Result<HashSet<String>> {
     let metadata = crate::state::instances::commands::get_instance_metadata(
         instance_id,
@@ -743,6 +765,7 @@ async fn remove_existing_pack_content(
                 instance_id,
                 &metadata,
                 state,
+                keep,
             )
             .await?;
             return Ok(HashSet::new());
@@ -774,6 +797,7 @@ async fn remove_existing_pack_content(
     crate::api::pack::install_mrpack::remove_all_related_files(
         instance_id.to_string(),
         old_pack.file,
+        keep,
     )
     .await?;
 
@@ -784,6 +808,7 @@ async fn remove_existing_imported_pack_content(
     instance_id: &str,
     metadata: &crate::state::InstanceMetadata,
     state: &State,
+    keep: &HashMap<String, String>,
 ) -> crate::Result<()> {
     let entries = content_rows::get_content_entries(
         &metadata.applied_content_set.id,
@@ -820,6 +845,12 @@ async fn remove_existing_imported_pack_content(
         let Some(file) = files.get(&file_id) else {
             continue;
         };
+        // Leave files that are byte-identical in the new pack in place so the
+        // installer can reuse them instead of re-downloading.
+        if keep.get(&file.relative_path).is_some_and(|hash| hash == &file.sha1)
+        {
+            continue;
+        }
         crate::util::io::remove_file(base.join(&file.relative_path)).await?;
         content_rows::remove_content_entries_for_file(
             &metadata.applied_content_set.id,
@@ -870,13 +901,13 @@ async fn restore_disabled_projects(
     Ok(())
 }
 
-async fn install_pack(
+async fn build_pack(
     job_id: Uuid,
     job_state: &mut InstallJobState,
     location: CreatePackLocation,
     instance_id: String,
     reason: DownloadReason,
-) -> crate::Result<()> {
+) -> crate::Result<(CreatePack, InstallProgressReporter)> {
     let reporter = InstallProgressReporter::new(job_id, job_state.clone());
     reporter
         .update(
@@ -922,8 +953,26 @@ async fn install_pack(
                 .await?;
             generate_pack_from_file(path, instance_id.clone()).await?
         }
+        CreatePackLocation::FromUrl { url } => {
+            reporter
+                .set_context(
+                    InstallErrorContext::new("download seed modpack file")
+                        .source_path(url.clone())
+                        .build(),
+                )
+                .await?;
+            generate_pack_from_url(url, instance_id.clone()).await?
+        }
     };
 
+    Ok((create_pack, reporter))
+}
+
+async fn install_prepared_pack(
+    create_pack: CreatePack,
+    reporter: InstallProgressReporter,
+    reason: DownloadReason,
+) -> crate::Result<()> {
     install_zipped_mrpack_files_with_reporter(
         create_pack,
         false,
@@ -1132,7 +1181,8 @@ fn modpack_details(location: &CreatePackLocation) -> InstallPhaseDetails {
             version_id: Some(version_id.clone()),
             title: Some(title.clone()),
         },
-        CreatePackLocation::FromFile { .. } => InstallPhaseDetails::Modpack {
+        CreatePackLocation::FromFile { .. }
+        | CreatePackLocation::FromUrl { .. } => InstallPhaseDetails::Modpack {
             project_id: None,
             version_id: None,
             title: None,

@@ -30,6 +30,7 @@ const props = withDefaults(
 		showSnapshotToggle?: boolean
 		disableClose?: boolean
 		isInitialSetup?: boolean
+		allowSeedInstall?: boolean
 		initialLoader?: string
 		initialGameVersion?: string
 		fetchExistingInstanceNames?: () => Promise<string[]>
@@ -55,7 +56,7 @@ const props = withDefaults(
 )
 
 const emit = defineEmits<{
-	(e: 'hide' | 'browse-modpacks'): void
+	(e: 'hide' | 'browse-modpacks' | 'seed-install'): void
 	(e: 'create', config: CreationFlowContextValue): void
 }>()
 
@@ -67,12 +68,14 @@ const ctx = createCreationFlowContext(
 	{
 		browseModpacks: () => emit('browse-modpacks'),
 		create: (config) => emit('create', config),
+		seedInstall: () => emit('seed-install'),
 	},
 	{
 		availableLoaders: props.availableLoaders,
 		showSnapshotToggle: props.showSnapshotToggle,
 		disableClose: props.disableClose,
 		isInitialSetup: props.isInitialSetup,
+		allowSeedInstall: props.allowSeedInstall,
 		initialLoader: props.initialLoader,
 		initialGameVersion: props.initialGameVersion,
 		fetchExistingInstanceNames: props.fetchExistingInstanceNames,

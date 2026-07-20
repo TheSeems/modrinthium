@@ -1,71 +1,51 @@
-# Modrinth Monorepo
+# Modrinthium Monorepo
 
-This is the Modrinth monorepo — it contains all Modrinth projects, both frontend and backend. When entering a project, either to edit or analyse, you should read it's CLAUDE.md.
+This is the Modrinthium monorepo — a de-branded fork of the Modrinth desktop app, trimmed down to just the app and its dependencies (the Modrinth website, backend, docs, and payment/backend-only libs have been removed).
 
 ## Architecture
 
 - **Monorepo tooling:** [Turborepo](https://turbo.build/) (`turbo.jsonc`) + [pnpm workspaces](https://pnpm.io/workspaces) (`pnpm-workspace.yaml`)
-- **Frontend:** Vue 3 / Nuxt 3, Tailwind CSS v3
-- **Backend:** Rust (Labrinth API), Postgres, Clickhouse
+- **Frontend:** Vue 3, Tailwind CSS v3
+- **App core:** Rust (theseus, Tauri)
 - **Indentation:** Use TAB everywhere, never spaces
 
 ### Apps (`apps/`)
 
-| App               | Description                    |
-| ----------------- | ------------------------------ |
-| `frontend`        | Main Modrinth website (Nuxt 3) |
-| `app-frontend`    | Desktop/app frontend (Vue 3)   |
-| `app`             | Desktop/app shell (Tauri)      |
-| `app-playground`  | Testing playground for app     |
-| `labrinth`        | Backend API service            |
-| `daedalus_client` | Daedalus client implementation |
-| `docs`            | Documentation site (Astro)     |
+| App            | Description                                  |
+| -------------- | -------------------------------------------- |
+| `app-frontend` | Desktop app frontend (Vue 3)                 |
+| `app`          | Desktop app shell (Tauri)                    |
+| `seed-server`  | Minimal self-hosted seed manifest server (axum) |
 
 ### Packages (`packages/`)
 
-| Package            | Description                                           |
-| ------------------ | ----------------------------------------------------- |
-| `ui`               | Shared Vue component library (`@modrinth/ui`)         |
-| `assets`           | Styling and auto-generated icons (`@modrinth/assets`) |
-| `api-client`       | API client for Nuxt, Tauri, and Node/browser          |
-| `app-lib`          | Shared app library                                    |
-| `blog`             | Blog system and changelog data                        |
-| `utils`            | Shared utility functions (mostly deprecated)          |
-| `moderation`       | Moderation utilities                                  |
-| `daedalus`         | Daedalus protocol                                     |
-| `tooling-config`   | ESLint, Prettier, TypeScript configs                  |
-| `ariadne`          | Analytics library                                     |
-| `modrinth-log`     | Logging utilities                                     |
-| `modrinth-maxmind` | MaxMind GeoIP                                         |
-| `modrinth-util`    | General utilities                                     |
-| `muralpay`         | Payment processing                                    |
-| `path-util`        | Path utilities                                        |
-| `sqlx-tracing`     | SQLx query tracing                                    |
+| Package                       | Description                                            |
+| ----------------------------- | ------------------------------------------------------ |
+| `ui`                          | Shared Vue component library (`@modrinth/ui`)          |
+| `assets`                      | Styling and auto-generated icons (`@modrinth/assets`)  |
+| `api-client`                  | API client for Tauri and Node/browser                  |
+| `app-lib`                     | Shared app library (theseus, Rust core)                |
+| `blog`                        | Changelog data (used by the UI changelog view)         |
+| `utils`                       | Shared utility functions (mostly deprecated)           |
+| `daedalus`                    | Daedalus protocol (Minecraft metadata)                 |
+| `tooling-config`              | ESLint, Prettier, TypeScript configs                   |
+| `ariadne`                     | Analytics library (telemetry disabled in this fork)    |
+| `async-minecraft-ping`        | Minecraft server ping (server world status)            |
+| `modrinth-content-management` | Content management helpers used by theseus             |
+| `path-util`                   | Path utilities                                         |
 
 ## Pre-PR Commands
 
 Run these from the **root** folder before opening a pull request - do not run these after each prompt the user gives you, only run when asked, ask the user a question if they want to run it if the user indicates that they are about to create a pull request.
 
-- **Website:** `pnpm prepr:frontend:web`
 - **App frontend:** `pnpm prepr:frontend:app`
 - **Frontend libs:** `pnpm prepr:frontend:lib`
-- **All frontend (app+web):** `pnpm prepr`
-- **Labrinth (backend):** See `apps/labrinth/AGENTS.md`
-
-The website and app `prepr` commands
+- **All frontend:** `pnpm prepr`
 
 ## Dev Commands
 
-- **Website:** `pnpm web:dev` (copy `.env` template in `apps/frontend/` first)
 - **App:** `pnpm app:dev` (copy `.env` template in `packages/app-lib/` first)
 - **Storybook (packages/ui):** `pnpm storybook`
-
-## Project-Specific Instructions
-
-Each project may have its own file with detailed instructions:
-
-- [`apps/labrinth/AGENTS.md`](apps/labrinth/AGENTS.md) — Backend API
-- [`apps/frontend/CLAUDE.md`](apps/frontend/CLAUDE.md) - Frontend Website
 
 ## Code Guidelines
 

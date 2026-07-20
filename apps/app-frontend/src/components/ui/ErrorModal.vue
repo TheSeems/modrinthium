@@ -12,9 +12,7 @@ import {
 import { ButtonStyled, Collapsible, injectNotificationManager } from '@modrinth/ui'
 import { computed, ref } from 'vue'
 
-import { ChatIcon } from '@/assets/icons'
 import ModalWrapper from '@/components/ui/modal/ModalWrapper.vue'
-import { trackEvent } from '@/helpers/analytics'
 import { login as login_flow, set_default_user } from '@/helpers/auth.js'
 import { install_existing_instance } from '@/helpers/install'
 import { cancel_directory_change } from '@/helpers/settings.ts'
@@ -29,7 +27,6 @@ const errorCollapsed = ref(false)
 
 const title = ref('An error occurred')
 const errorType = ref('unknown')
-const supportLink = ref('https://support.modrinth.com')
 const metadata = ref({})
 
 defineExpose({
@@ -40,8 +37,6 @@ defineExpose({
 		if (errorVal.message && errorVal.message.includes('Minecraft authentication error:')) {
 			title.value = 'Unable to sign in to Minecraft'
 			errorType.value = 'minecraft_auth'
-			supportLink.value =
-				'https://support.modrinth.com/en/articles/9038231-minecraft-sign-in-issues'
 
 			if (
 				errorVal.message.includes('existing connection was forcibly closed') ||
@@ -55,12 +50,9 @@ defineExpose({
 		} else if (errorVal.message && errorVal.message.includes('User is not logged in')) {
 			title.value = 'Sign in to Minecraft'
 			errorType.value = 'minecraft_sign_in'
-			supportLink.value = 'https://support.modrinth.com'
 		} else if (errorVal.message && errorVal.message.includes('Move directory error:')) {
 			title.value = 'Could not change app directory'
 			errorType.value = 'directory_move'
-			supportLink.value = 'https://support.modrinth.com'
-
 			if (errorVal.message.includes('directory is not writable')) {
 				metadata.value.readOnly = true
 			}
@@ -71,16 +63,13 @@ defineExpose({
 		} else if (errorVal.message && errorVal.message.includes('No loader version selected for')) {
 			title.value = 'No loader selected'
 			errorType.value = 'no_loader_version'
-			supportLink.value = 'https://support.modrinth.com'
 			metadata.value.instanceId = context.instanceId
 		} else if (source === 'state_init') {
-			title.value = 'Error initializing Modrinth App'
+			title.value = 'Error initializing Modrinthium'
 			errorType.value = 'state_init'
-			supportLink.value = 'https://support.modrinth.com'
 		} else {
 			title.value = 'An error occurred'
 			errorType.value = 'unknown'
-			supportLink.value = 'https://support.modrinth.com'
 			metadata.value = {}
 		}
 
@@ -99,7 +88,6 @@ async function loginMinecraft() {
 			await set_default_user(loggedIn.profile.id).catch(handleError)
 		}
 
-		await trackEvent('AccountLogIn', { source: 'ErrorModal' })
 		loadingMinecraft.value = false
 		errorModal.value.hide()
 	} catch (err) {
@@ -162,29 +150,18 @@ async function copyToClipboard(text) {
 					<template v-if="metadata.network">
 						<h3>Network issues</h3>
 						<p>
-							It looks like there were issues with the Modrinth App connecting to Microsoft's
-							servers. This is often the result of a poor connection, so we recommend trying again
-							to see if it works. If issues continue to persist, follow the steps in
-							<a
-								href="https://support.modrinth.com/en/articles/9038231-minecraft-sign-in-issues#h_e71a5f805f"
-							>
-								our support article
-							</a>
-							to troubleshoot.
+							It looks like there were issues with Modrinthium connecting to Microsoft's
+							servers. This is often the result of a poor connection, so we recommend checking your
+							network connection and trying again.
 						</p>
 					</template>
 					<template v-else-if="metadata.hostsFile">
 						<h3>Network issues</h3>
 						<p>
-							The Modrinth App tried to connect to Microsoft / Xbox / Minecraft services, but the
+							Modrinthium tried to connect to Microsoft / Xbox / Minecraft services, but the
 							remote server rejected the connection. This may indicate that these services are
-							blocked by the hosts file. Please visit
-							<a
-								href="https://support.modrinth.com/en/articles/9038231-minecraft-sign-in-issues#h_d694a29256"
-							>
-								our support article
-							</a>
-							for steps on how to fix the issue.
+							blocked by your hosts file, firewall, or antivirus. Please check those settings and
+							try again.
 						</p>
 					</template>
 					<template v-else>
@@ -215,7 +192,7 @@ async function copyToClipboard(text) {
 					<template v-if="metadata.readOnly">
 						<h3>Change directory permissions</h3>
 						<p>
-							It looks like the Modrinth App is unable to write to the directory you selected.
+							It looks like Modrinthium is unable to write to the directory you selected.
 							Please adjust the permissions of the directory and try again or cancel the directory
 							change.
 						</p>
@@ -229,8 +206,8 @@ async function copyToClipboard(text) {
 					</template>
 					<template v-else>
 						<p>
-							The Modrinth App is unable to migrate to the new directory you selected. Please
-							contact support for help or cancel the directory change.
+							Modrinthium is unable to migrate to the new directory you selected. Please cancel
+							the directory change and try a different location.
 						</p>
 					</template>
 
@@ -259,7 +236,7 @@ async function copyToClipboard(text) {
 				</div>
 				<template v-else-if="errorType === 'state_init'">
 					<p>
-						Modrinth App failed to load correctly. This may be because of a corrupted file, or
+						Modrinthium failed to load correctly. This may be because of a corrupted file, or
 						because the app is missing crucial files.
 					</p>
 					<p>You may be able to fix it through one of the following ways:</p>
@@ -269,7 +246,7 @@ async function copyToClipboard(text) {
 					</ul>
 				</template>
 				<template v-else-if="errorType === 'no_loader_version'">
-					<p>The Modrinth App failed to find the loader version for this instance.</p>
+					<p>The Modrinthium failed to find the loader version for this instance.</p>
 					<p>To resolve this, you need to repair the instance. Click the button below to do so.</p>
 					<div class="cta-button">
 						<button class="btn btn-primary" :disabled="loadingRepair" @click="repairInstance">
@@ -283,17 +260,12 @@ async function copyToClipboard(text) {
 				<template v-if="hasDebugInfo">
 					<div class="w-full h-[1px] bg-surface-5 mb-3"></div>
 					<p>
-						If nothing is working and you need help, visit
-						<a :href="supportLink">our support page</a>
-						and start a chat using the widget in the bottom right and we will be more than happy to
-						assist! Make sure to provide the following debug information to the agent:
+						If nothing is working and you need help, the debug information below can help
+						diagnose the problem.
 					</p>
 				</template>
 			</div>
 			<div class="flex items-center gap-2">
-				<ButtonStyled>
-					<a :href="supportLink" @click="errorModal.hide()"><ChatIcon /> Get support</a>
-				</ButtonStyled>
 				<ButtonStyled v-if="closable">
 					<button @click="errorModal.hide()"><XIcon /> Close</button>
 				</ButtonStyled>

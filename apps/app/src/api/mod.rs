@@ -12,16 +12,12 @@ pub mod metadata;
 pub mod minecraft_skins;
 pub mod mr_auth;
 pub mod process;
+pub mod seed;
 pub mod settings;
 pub mod shortcuts;
 pub mod tags;
 pub mod utils;
 
-pub mod ads;
-#[cfg(target_os = "macos")]
-mod ads_occlusion_macos;
-#[cfg(windows)]
-mod ads_occlusion_windows;
 pub mod cache;
 pub mod files;
 pub mod friends;

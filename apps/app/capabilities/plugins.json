@@ -102,13 +102,13 @@
 		"instance:default",
 		"install:default",
 		"process:default",
+		"seed:default",
 		"cache:default",
 		"files:default",
 		"settings:default",
 		"shortcuts:default",
 		"tags:default",
 		"utils:default",
-		"ads:default",
 		"friends:default",
 		"worlds:default"
 	]

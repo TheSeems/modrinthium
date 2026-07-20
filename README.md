@@ -1,39 +1,46 @@
-# ![Modrinth Monorepo Cover](/.github/assets/monorepo_cover.png)
+# Modrinthium
 
-![Issues](https://img.shields.io/github/issues-raw/Modrinth/code?color=c78aff&label=issues&style=for-the-badge)
-![Pull Requests](https://img.shields.io/github/issues-pr-raw/Modrinth/code?color=c78aff&label=PRs&style=for-the-badge)
-![Contributors](https://img.shields.io/github/contributors/Modrinth/code?color=c78aff&label=contributors&style=for-the-badge)
-![Lines of Code](https://img.shields.io/endpoint?url=https://loctopus.creeperkatze.dev/github/modrinth/code/badge?style=flat&logoColor=white&color=c78aff&style=for-the-badge)
-![Commit Activity](https://img.shields.io/github/commit-activity/m/Modrinth/code?color=c78aff&label=commits&style=for-the-badge)
-![Last Commit](https://img.shields.io/github/last-commit/Modrinth/code?color=c78aff&label=last%20commit&style=for-the-badge)
+Modrinthium is a de-branded, telemetry-free fork of the
+[Modrinth App](https://modrinth.com/app) — an open-source Minecraft launcher for
+mods and modpacks.
 
-## Modrinth Monorepo
+> **Modrinthium is an independent fork. It is not affiliated with, endorsed by,
+> or sponsored by Rinth, Inc. or the Modrinth project.** "Modrinth" and the
+> Modrinth logo are trademarks of Rinth, Inc.
 
-Welcome to the Modrinth Monorepo, the primary codebase for the Modrinth web interface and app. It contains ![Lines of Code](https://img.shields.io/endpoint?url=https://loctopus.creeperkatze.dev/github/modrinth/code/badge%3Fformat%3Dhuman&logoColor=white&color=black&label=) lines of code and has ![Contributors](https://img.shields.io/github/contributors/Modrinth/code?color=black&label=) contributors!
+## What's different from the Modrinth App
 
-If you're not a developer and you've stumbled upon this repository, you can access the web interface on the [Modrinth website](https://modrinth.com) and download the latest release of the app [here](https://modrinth.com/app).
+- **De-branded** — Modrinth branding, logo, and wordmark removed; the app is
+  named "Modrinthium".
+- **No telemetry** — analytics (PostHog), the in-app ad webview, and the in-app
+  survey system have been removed.
+- **No Modrinth account required** — the Modrinth account sign-in / social layer
+  has been removed from the app; you still sign in to Minecraft with your
+  Microsoft account to play.
+- **Seed modpacks** — install and auto-update a modpack straight from a hosted
+  manifest URL, without it being published on Modrinth, plus a tiny companion
+  server ([`apps/seed-server`](./apps/seed-server)) for hosting one.
 
-## Development
-
-This repository contains two primary packages. For detailed development information, please refer to their respective guides:
-
-- [Website frontend](https://docs.modrinth.com/contributing/knossos/)
-- [Desktop app](https://docs.modrinth.com/contributing/theseus/)
-
-## Contributing
-
-We welcome contributions! Before submitting any contributions, please read our [contributing guidelines](https://docs.modrinth.com/contributing/getting-started/).
-
-If you plan to fork this repository for your own purposes, please review our [copying guidelines](COPYING.md).
-
-## Security
-
-If you discover a security vulnerability within our codebase, please follow our [responsible disclosure guidelines](https://modrinth.com/legal/security).
-
-## Support
-
-If you need help with the Modrinth web interface or app, please visit our [support page](https://support.modrinth.com). For general inquiries, you can also join our [Discord server](https://discord.modrinth.com).
+See [`NOTICE.md`](./NOTICE.md) for the full list of changes and attribution.
 
 ## License
 
-All packages in this repository are licensed under their respective licenses. Refer to the LICENSE file in each package for more information.
+- The app and its libraries (`apps/app`, `apps/app-frontend`, `packages/*`) are
+  licensed under **GPL-3.0-only**.
+- The backend (`apps/labrinth`) is licensed under **AGPL-3.0**.
+
+This project preserves the upstream copyright notices and remains under the same
+licenses. Modrinth branding assets are not covered by these licenses and have
+been removed; see [`COPYING.md`](./COPYING.md).
+
+## Development
+
+This is a pnpm + Turborepo monorepo. See [`CLAUDE.md`](./CLAUDE.md) for the
+architecture overview and per-app guides. Common commands:
+
+- App (desktop): `pnpm app:dev`
+- Storybook (UI package): `pnpm storybook`
+
+By default the app talks to Modrinth's hosted API (`api.modrinth.com`). To run
+fully independently, self-host the backend (`apps/labrinth`, AGPL-3.0) and point
+the app at it via `MODRINTH_API_URL` in `packages/app-lib/.env`.
