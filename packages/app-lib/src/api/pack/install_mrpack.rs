@@ -43,6 +43,16 @@ type ExtractProgressFn<'a> = dyn FnMut(u64) -> Pin<Box<dyn Future<Output = crate
     + 'a;
 const MODPACK_CONTENT_DOWNLOAD_CONCURRENCY: usize = 4;
 
+/// Client-side settings files holding the player's personal preferences
+/// (keybinds, video/audio/graphics options, etc.). When updating a pack we keep
+/// the player's existing copy instead of overwriting it with the pack's default.
+fn is_preserved_user_config(relative_path: &str) -> bool {
+    matches!(
+        relative_path,
+        "options.txt" | "optionsof.txt" | "optionsshaders.txt"
+    )
+}
+
 #[derive(Clone)]
 struct ModpackContentInstallContext {
     instance_id: String,
@@ -1051,6 +1061,15 @@ pub(crate) async fn install_zipped_mrpack_files_with_reporter(
 
         let path =
             instance_full_path.join(relative_override_file_path.as_str());
+
+        // Don't clobber the player's own settings (keybinds, graphics, etc.) on
+        // an update — keep their existing file instead of the pack's default.
+        if is_preserved_user_config(relative_override_file_path.as_str())
+            && path.exists()
+        {
+            continue;
+        }
+
         let override_context =
             InstallErrorContext::new("extract modpack override")
                 .maybe_project_id(project_id.clone())
@@ -1343,6 +1362,11 @@ pub async fn remove_all_related_files(
                     format!("Failed to strip override prefix from override file path: {relative_override_file_path}")
                 ))
             })?;
+
+        // Keep the player's personal settings across updates.
+        if is_preserved_user_config(relative_override_file_path.as_str()) {
+            continue;
+        }
 
         // Remove this file if a corresponding one exists in the filesystem
         match io::remove_file(
