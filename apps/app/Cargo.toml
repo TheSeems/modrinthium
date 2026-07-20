@@ -50,9 +50,8 @@ tauri-build = { workspace = true, features = ["codegen"] }
 [target.'cfg(target_os = "linux")'.dependencies]
 tauri-plugin-updater = { workspace = true, optional = true }
 
-[target.'cfg(windows)'.dependencies]
-
-[target.'cfg(windows)'.dependencies.windows]
+[target."cfg(windows)".dependencies]
+[target."cfg(windows)".dependencies.windows]
 workspace = true
 features = [
   "Win32_Foundation",
