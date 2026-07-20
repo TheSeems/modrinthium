@@ -65,12 +65,12 @@
 	"productName": "Modrinthium",
 	"version": "../app-frontend/package.json",
 	"mainBinaryName": "Modrinthium",
-	"identifier": "ModrinthApp",
+	"identifier": "io.theseems.modrinthium",
 	"plugins": {
 		"deep-link": {
 			"desktop": {
 				"schemes": [
-					"modrinth"
+					"modrinthium"
 				]
 			},
 			"mobile": []
