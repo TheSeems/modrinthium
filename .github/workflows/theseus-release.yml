@@ -25,32 +25,67 @@ jobs:
 
     steps:
       - name: Download build artifacts
-        uses: dawidd6/action-download-artifact@v6
+        uses: actions/download-artifact@v4
         with:
-          run_id: ${{ github.event.workflow_run.id }}
           path: artifacts
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Generate updater manifest (updates.json)
+        run: |
+          VERSION="${VERSION_TAG#v}"
+          BASE="https://github.com/${{ github.repository }}/releases/download/${VERSION_TAG}"
+
+          win_zip=$(find artifacts -name 'Modrinthium_*-setup.nsis.zip' | head -1)
+          mac_tar=$(find artifacts -name 'Modrinthium.app.tar.gz' | head -1)
+          lin_tar=$(find artifacts -name 'Modrinthium_*.AppImage.tar.gz' | head -1)
+
+          for f in "$win_zip" "$mac_tar" "$lin_tar"; do
+            if [ -z "$f" ] || [ ! -f "${f}.sig" ]; then
+              echo "::error::Missing updater artifact or signature (is the TAURI_SIGNING_PRIVATE_KEY secret set?): ${f:-<none>}"
+              exit 1
+            fi
+          done
+
+          jq -nc \
+            --arg version "$VERSION" \
+            --arg pubDate "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            --arg winSig "$(cat "${win_zip}.sig")" --arg winUrl "${BASE}/$(basename "$win_zip")" \
+            --arg macSig "$(cat "${mac_tar}.sig")" --arg macUrl "${BASE}/$(basename "$mac_tar")" \
+            --arg linSig "$(cat "${lin_tar}.sig")" --arg linUrl "${BASE}/$(basename "$lin_tar")" \
+            '{
+              version: $version,
+              pub_date: $pubDate,
+              platforms: {
+                "darwin-aarch64": { signature: $macSig, url: $macUrl },
+                "darwin-x86_64":  { signature: $macSig, url: $macUrl },
+                "linux-x86_64":   { signature: $linSig, url: $linUrl },
+                "windows-x86_64": { signature: $winSig, url: $winUrl }
+              }
+            }' > updates.json
+
+          echo "Generated updates.json:"; cat updates.json
 
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           VERSION="${VERSION_TAG#v}"
+          # Installers (for humans) + updater bundles (for auto-update) + manifest.
           mapfile -t assets < <(find artifacts -type f \( \
             -name 'Modrinthium_*-setup.exe' -o \
             -name 'Modrinthium_*.dmg' -o \
             -name 'Modrinthium_*.AppImage' -o \
             -name 'Modrinthium_*.deb' -o \
-            -name 'Modrinthium-*.rpm' \))
+            -name 'Modrinthium-*.rpm' -o \
+            -name 'Modrinthium_*-setup.nsis.zip' -o \
+            -name 'Modrinthium.app.tar.gz' -o \
+            -name 'Modrinthium_*.AppImage.tar.gz' \))
 
-          if [ ${#assets[@]} -eq 0 ]; then
-            echo "::error::No installer artifacts found for ${VERSION_TAG}"
-            exit 1
-          fi
-
-          printf 'Attaching:\n'; printf '  %s\n' "${assets[@]}"
+          printf 'Attaching:\n'; printf '  %s\n' "${assets[@]}" updates.json
 
           gh release create "$VERSION_TAG" \
             --repo "${{ github.repository }}" \
             --title "Modrinthium ${VERSION}" \
             --generate-notes \
-            "${assets[@]}"
+            updates.json "${assets[@]}"

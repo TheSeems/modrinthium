@@ -1,5 +1,22 @@
 {
 	"bundle": {
-		"createUpdaterArtifacts": false
+		"createUpdaterArtifacts": true
+	},
+	"build": {
+		"features": ["updater"]
+	},
+	"app": {
+		"security": {
+			"capabilities": ["core", "plugins", "updater"]
+		}
+	},
+	"plugins": {
+		"updater": {
+			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQ2ODI0MzAyMDQxNThGMwpSV1R6V0VFZ01DUm9CQ1AyMVhzVDVTcUNmT1ptcXlMbGszampxTStKa3dPQnJ2RCt6WVJOeERqRAo=",
+			"endpoints": ["https://github.com/TheSeems/modrinthium/releases/latest/download/updates.json"],
+			"windows": {
+				"installMode": "quiet"
+			}
+		}
 	}
 }
