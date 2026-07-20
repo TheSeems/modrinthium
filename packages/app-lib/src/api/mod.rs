@@ -1,6 +1,5 @@
 //! API for interacting with Theseus
 pub mod cache;
-pub mod friends;
 pub mod handler;
 pub mod instance;
 pub mod jre;
@@ -27,9 +26,8 @@ pub mod data {
         JavaVersion, LinkedModpackInfo, MemorySettings, ModLoader,
         ModrinthCredentials, Organization, OwnerType, ProcessMetadata, Project,
         ProjectType, ProjectV3, SearchResult, SearchResults, SearchResultsV3,
-        Settings, TeamMember, Theme, User, UserFriend, Version, WindowSize,
+        Settings, TeamMember, Theme, User, Version, WindowSize,
     };
-    pub use ariadne::users::UserStatus;
     pub use modrinth_content_management::{
         ContentType, ResolutionPreferences, ResolveContentPlan,
         ResolveContentRequest,

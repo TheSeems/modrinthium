@@ -5,7 +5,6 @@ version = "1.0.0-local"
 edition.workspace = true
 
 [dependencies]
-ariadne = { workspace = true }
 async-minecraft-ping = { workspace = true, features = ["srv"] }
 async-recursion = { workspace = true }
 async-trait = { workspace = true }

@@ -1,4 +1,4 @@
-use super::{FriendPayload, LoadingBarId};
+use super::LoadingBarId;
 use crate::event::{
     CommandPayload, EventError, InstanceBulkUpdateProgressPayload,
     InstancePayloadType, LoadingBar, LoadingBarType, ProcessPayloadType,
@@ -8,7 +8,6 @@ use crate::event::{
     InstancePayload, LoadingPayload, ProcessPayload, WarningPayload,
 };
 use futures::prelude::*;
-use serde_json::Value;
 #[cfg(feature = "tauri")]
 use tauri::{Emitter, Manager};
 use uuid::Uuid;
@@ -261,34 +260,6 @@ pub async fn emit_instance(
             )
             .map_err(EventError::from)?;
     }
-    Ok(())
-}
-
-#[allow(unused_variables)]
-pub async fn emit_friend(payload: FriendPayload) -> crate::Result<()> {
-    #[cfg(feature = "tauri")]
-    {
-        let event_state = crate::EventState::get()?;
-        event_state
-            .app
-            .emit("friend", payload)
-            .map_err(EventError::from)?;
-    }
-
-    Ok(())
-}
-
-#[allow(unused_variables)]
-pub async fn emit_notification(payload: Value) -> crate::Result<()> {
-    #[cfg(feature = "tauri")]
-    {
-        let event_state = crate::EventState::get()?;
-        event_state
-            .app
-            .emit("notification", payload)
-            .map_err(EventError::from)?;
-    }
-
     Ok(())
 }
 

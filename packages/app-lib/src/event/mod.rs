@@ -1,6 +1,4 @@
 //! Theseus state management system
-use ariadne::ids::UserId;
-use ariadne::users::UserStatus;
 use chrono::{DateTime, Utc};
 use dashmap::DashMap;
 use serde::{Deserialize, Serialize};
@@ -287,16 +285,6 @@ pub enum InstancePayloadType {
         message: String,
     },
     Removed,
-}
-
-#[derive(Serialize, Clone)]
-#[serde(rename_all = "snake_case")]
-#[serde(tag = "event")]
-pub enum FriendPayload {
-    FriendRequest { from: UserId },
-    UserOffline { id: UserId },
-    StatusUpdate { user_status: UserStatus },
-    StatusSync,
 }
 
 #[cfg(feature = "tauri")]
