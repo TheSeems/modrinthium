@@ -300,19 +300,6 @@ fn main() {
                     ),
             )
             .plugin(
-                "friends",
-                InlinedPlugin::new()
-                    .commands(&[
-                        "friends",
-                        "friend_statuses",
-                        "add_friend",
-                        "remove_friend",
-                    ])
-                    .default_permission(
-                        DefaultPermissionRule::AllowAllCommands,
-                    ),
-            )
-            .plugin(
                 "worlds",
                 InlinedPlugin::new()
                     .commands(&[
