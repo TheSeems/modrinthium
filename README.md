@@ -8,6 +8,9 @@ mods and modpacks.
 > or sponsored by Rinth, Inc. or the Modrinth project.** "Modrinth" and the
 > Modrinth logo are trademarks of Rinth, Inc.
 
+> [!WARNING]
+> Work in progress
+
 ## What's different from the Modrinth App
 
 - **De-branded** — Modrinth branding, logo, and wordmark removed; the app is
