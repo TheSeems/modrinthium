@@ -488,9 +488,6 @@
   "app.settings.tabs.language": {
     "message": "Nyelv"
   },
-  "app.settings.tabs.privacy": {
-    "message": "Adatvédelem"
-  },
   "app.settings.tabs.resource-management": {
     "message": "Erőforráskezelés"
   },
@@ -500,23 +497,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "Húzd ide a fájlt"
   },
-  "app.skins.apply-button": {
-    "message": "Alkalmazás"
-  },
   "app.skins.delete-button": {
     "message": "Kinézet törlése"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "Ezzel a kiválasztott kinézet véglegesen törlődik. Ez a művelet visszafordíthatatlan."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "Biztos, hogy le akarod törölni ezt a kinézetet?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "Nem sikerült beolvasni a feltöltött fájlt."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "Hiba a fájl feldolgozása közben"
   },
   "app.skins.edit-button": {
     "message": "Kinézet szerkesztése"
@@ -569,80 +551,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "Először tölts fel egy kinézetet!"
   },
-  "app.skins.preview.edit-button": {
-    "message": "Kinézet szerkesztése"
-  },
-  "app.skins.previewing-badge": {
-    "message": "Előnézet"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "Túl gyakran cseréled a kinézetedet. A Mojang szerverei ideiglenesen letiltották a további cseréket. Kérlek várj egy pillanatot, majd próbáld meg újra."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "Lassíts!"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "A kinézeted sorrendjét nem sikerült menteni."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "A skinek átrendezése sikertelen"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chaos-cubed": {
-    "message": "Chaos Cubed"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chase the Skies"
-  },
-  "app.skins.section.default-skins": {
-    "message": "Alap kinézetek"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Pride"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "Ezeket a kinézeteket azért kaptad, mert a Pride-hónap során adományoztál a Modrinth Pride jótékonysági gyűjtéséhez."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Mounts of Mayhem"
-  },
   "app.skins.section.saved-skins": {
     "message": "Mentett kinézetek"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "The Copper Age"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "The Garden Awakens"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Tiny Takeover"
-  },
-  "app.skins.sign-in.button": {
-    "message": "Bejelentkezés"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Kérlek jelentkezz be a Minecraft-fiókodba, hogy használni tudd a Modrinth App kinézetkezelési funkcióit."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Izgatott Modrinth bot"
-  },
-  "app.skins.sign-in.title": {
-    "message": "Kérlek jelentkezz be"
-  },
-  "app.skins.title": {
-    "message": "Kinézetváltó"
   },
   "app.update-popup.body.download-complete": {
     "message": "A Modrinth App v{version} letöltése befejeződött. Frissítéshez válaszd ki a Frissítés opciót, vagy az alkalmazás a bezárásakor automatikusan frissül."
@@ -691,69 +601,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} online"
-  },
-  "friends.action.add-friend": {
-    "message": "Barát hozzáadása"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} barát {count, plural, other {kérelem}}"
-  },
-  "friends.add-friend.submit": {
-    "message": "Barátkérelem elküldése"
-  },
-  "friends.add-friend.title": {
-    "message": "Barát hozzáadása"
-  },
-  "friends.add-friend.username.description": {
-    "message": "Más is lehet, mint a Minecraft felhasználóneve!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Barát Modrinth felhasználóneve..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "Mi a barátod Modrinth felhasználóneve?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>Vegyél fel barátokat</link>, hogy lásd mivel játszanak!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "Barátkérelem visszavonása"
-  },
-  "friends.friend.remove-friend": {
-    "message": "Barát eltávolítása"
-  },
-  "friends.friend.request-sent": {
-    "message": "Barátkérelem elküldve"
-  },
-  "friends.friend.view-profile": {
-    "message": "Profil megtekintése"
-  },
-  "friends.heading": {
-    "message": "Barátok"
-  },
-  "friends.heading.active": {
-    "message": "Aktív"
-  },
-  "friends.heading.offline": {
-    "message": "Offline"
-  },
-  "friends.heading.online": {
-    "message": "Online"
-  },
-  "friends.heading.pending": {
-    "message": "Jóváhagyásra vár"
-  },
-  "friends.no-friends-match": {
-    "message": "Nincsen \"{query}\" nevű barátod"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "Keresés a barátaid között..."
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Lépj be Modrinth fiókodba</link>, hogy felvehess barátokat és lásd mivel játszanak!"
   },
   "instance.add-server.add-and-play": {
     "message": "Hozzáadás és csatlakozás"
@@ -1051,9 +898,6 @@
   },
   "minecraft-account.label": {
     "message": "Minecraft-fiók"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "Nem vagy bejelentkezve"
   },
   "minecraft-account.remove-account": {
     "message": "Fiók törlése"

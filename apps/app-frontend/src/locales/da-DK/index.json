@@ -320,9 +320,6 @@
   "app.settings.tabs.language": {
     "message": "Sprog"
   },
-  "app.settings.tabs.privacy": {
-    "message": "Privatliv"
-  },
   "app.settings.tabs.resource-management": {
     "message": "Ressourcestyring"
   },
@@ -332,23 +329,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "Træk og slip"
   },
-  "app.skins.apply-button": {
-    "message": "Brug"
-  },
   "app.skins.delete-button": {
     "message": "Slet skin"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "Dette vil permanent slette det valgte skin. Dette vil ikke kunne blive fortydes."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "Er du sikker på, at du vil slette dette skin?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "Fejl ved læsning af den afleverede fil."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "Fejl under behandling af fil"
   },
   "app.skins.edit-button": {
     "message": "Rediger skin"
@@ -392,74 +374,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "Upload et skin først!"
   },
-  "app.skins.preview.edit-button": {
-    "message": "Rediger skin"
-  },
-  "app.skins.previewing-badge": {
-    "message": "Forhåndsvisning"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "Du skifter dit skin for ofte. Mojang's servere har midlertidigt blokeret fremtidige anmodninger. Vent venligst et øjeblik for du prøver igen."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "Ro på!"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chaos-cubed": {
-    "message": "Chaos Cubed"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chase the Skies"
-  },
-  "app.skins.section.default-skins": {
-    "message": "Standard skins"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Pride"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "Du modtog disse skins for at donere til en Modrinth Pride indsamling imens der er Pride Month."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Mounts of Mayhem"
-  },
   "app.skins.section.saved-skins": {
     "message": "Gemte skins"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "The Copper Age"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "The Garden Awakens"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Tiny Takeover"
-  },
-  "app.skins.sign-in.button": {
-    "message": "Log Ind"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Venligst log ind til din Minecraft konto for at kunne funktionerne til at administrere dit skin i Modrinth appen."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Overrasket Modrinth Bot"
-  },
-  "app.skins.sign-in.title": {
-    "message": "Venligst log ind"
-  },
-  "app.skins.title": {
-    "message": "Skin vælger"
   },
   "app.update-popup.body.download-complete": {
     "message": "Modrinth App v{version} er færdig med at download. Genindlæs for at opdatere nu, eller automatisk når du lukker Modrinth App."
@@ -508,69 +424,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} online"
-  },
-  "friends.action.add-friend": {
-    "message": "Tilføj en ven"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} venne{count, plural, one {anmodning} other {anmodninger}}"
-  },
-  "friends.add-friend.submit": {
-    "message": "Send en venneanmodning"
-  },
-  "friends.add-friend.title": {
-    "message": "Tilføjer en ven"
-  },
-  "friends.add-friend.username.description": {
-    "message": "Det er muligvis anderledes end deres Minecraft brugernavn!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Indskriv Modrinth brugernavn..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "Hvad er din vens Modrinth brugernavn?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>Tilføj venner</link> for at se hvad de spiller!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "Annuller anmodning"
-  },
-  "friends.friend.remove-friend": {
-    "message": "Fjern ven"
-  },
-  "friends.friend.request-sent": {
-    "message": "Venneanmodning sendt"
-  },
-  "friends.friend.view-profile": {
-    "message": "Vis profil"
-  },
-  "friends.heading": {
-    "message": "Venner"
-  },
-  "friends.heading.active": {
-    "message": "Aktiv"
-  },
-  "friends.heading.offline": {
-    "message": "Offline"
-  },
-  "friends.heading.online": {
-    "message": "Online"
-  },
-  "friends.heading.pending": {
-    "message": "Afventer"
-  },
-  "friends.no-friends-match": {
-    "message": "Ingen venner som matcher \"{query}\""
-  },
-  "friends.search-friends-placeholder": {
-    "message": "Søg venner..."
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Log ind på en Modrinth konto</link> for at tilføje venner og se hvad de spiller!"
   },
   "instance.add-server.add-and-play": {
     "message": "Tilføj og spil"
@@ -832,9 +685,6 @@
   },
   "minecraft-account.label": {
     "message": "Minecraft konto"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "Ikke logged ind"
   },
   "minecraft-account.remove-account": {
     "message": "Fjern konto"

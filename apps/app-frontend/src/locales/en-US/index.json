@@ -132,7 +132,7 @@
     "message": "Advanced rendering"
   },
   "app.appearance-settings.color-theme.description": {
-    "message": "Select your preferred color theme for Modrinth App."
+    "message": "Select your preferred color theme for Modrinthium."
   },
   "app.appearance-settings.color-theme.title": {
     "message": "Color theme"
@@ -438,7 +438,7 @@
     "message": "Install"
   },
   "app.modal.install-to-play.invite-warning": {
-    "message": "This invite was created by another Modrinth user, not Modrinth. Only accept invites from people you trust."
+    "message": "This invite was created by another user. Only accept invites from people you trust."
   },
   "app.modal.install-to-play.mod-count": {
     "message": "{count, plural, one {# mod} other {# mods}}"
@@ -512,9 +512,6 @@
   "app.settings.tabs.language": {
     "message": "Language"
   },
-  "app.settings.tabs.privacy": {
-    "message": "Privacy"
-  },
   "app.settings.tabs.resource-management": {
     "message": "Resource management"
   },
@@ -524,23 +521,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "Drag and drop"
   },
-  "app.skins.apply-button": {
-    "message": "Apply"
-  },
   "app.skins.delete-button": {
     "message": "Delete skin"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "This will permanently delete the selected skin. This action cannot be undone."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "Are you sure you want to delete this skin?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "Failed to read the dropped file."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "Error processing file"
   },
   "app.skins.edit-button": {
     "message": "Edit skin"
@@ -593,89 +575,17 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "Upload a skin first!"
   },
-  "app.skins.preview.edit-button": {
-    "message": "Edit skin"
-  },
-  "app.skins.previewing-badge": {
-    "message": "Previewing"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "You're changing your skin too frequently. Mojang's servers have temporarily blocked further requests. Please wait a moment before trying again."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "Slow down!"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "Your skin order could not be saved."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "Failed to reorder skins"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chaos-cubed": {
-    "message": "Chaos Cubed"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chase the Skies"
-  },
-  "app.skins.section.default-skins": {
-    "message": "Default skins"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Pride"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "You received these skins for donating to a Modrinth Pride fundraiser during Pride Month."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Mounts of Mayhem"
-  },
   "app.skins.section.saved-skins": {
     "message": "Saved skins"
   },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "The Copper Age"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "The Garden Awakens"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Tiny Takeover"
-  },
-  "app.skins.sign-in.button": {
-    "message": "Sign In"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Please sign into your Minecraft account to use the skin management features of the Modrinth app."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Excited Modrinth Bot"
-  },
-  "app.skins.sign-in.title": {
-    "message": "Please sign in"
-  },
-  "app.skins.title": {
-    "message": "Skin selector"
-  },
   "app.update-popup.body.download-complete": {
-    "message": "Modrinth App v{version} has finished downloading. Reload to update now, or automatically when you close Modrinth App."
+    "message": "Modrinthium v{version} has finished downloading. Reload to update now, or automatically when you close Modrinthium."
   },
   "app.update-popup.body.linux": {
-    "message": "Modrinth App v{version} is available. Use your package manager to update for the latest features and fixes!"
+    "message": "Modrinthium v{version} is available. Use your package manager to update for the latest features and fixes!"
   },
   "app.update-popup.body.metered": {
-    "message": "Modrinth App v{version} is available now! Since you're on a metered network, we didn't automatically download it."
+    "message": "Modrinthium v{version} is available now! Since you're on a metered network, we didn't automatically download it."
   },
   "app.update-popup.changelog": {
     "message": "Changelog"
@@ -715,69 +625,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} online"
-  },
-  "friends.action.add-friend": {
-    "message": "Add a friend"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} friend {count, plural, one {request} other {requests}}"
-  },
-  "friends.add-friend.submit": {
-    "message": "Send friend request"
-  },
-  "friends.add-friend.title": {
-    "message": "Adding a friend"
-  },
-  "friends.add-friend.username.description": {
-    "message": "It may be different from their Minecraft username!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Enter Modrinth username..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "What's your friend's Modrinth username?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>Add friends</link> to see what they're playing!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "Cancel request"
-  },
-  "friends.friend.remove-friend": {
-    "message": "Remove friend"
-  },
-  "friends.friend.request-sent": {
-    "message": "Friend request sent"
-  },
-  "friends.friend.view-profile": {
-    "message": "View profile"
-  },
-  "friends.heading": {
-    "message": "Friends"
-  },
-  "friends.heading.active": {
-    "message": "Active"
-  },
-  "friends.heading.offline": {
-    "message": "Offline"
-  },
-  "friends.heading.online": {
-    "message": "Online"
-  },
-  "friends.heading.pending": {
-    "message": "Pending"
-  },
-  "friends.no-friends-match": {
-    "message": "No friends matching ''{query}''"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "Search friends..."
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Sign in to a Modrinth account</link> to add friends and see what they're playing!"
   },
   "instance.add-server.add-and-play": {
     "message": "Add and play"
@@ -1075,9 +922,6 @@
   },
   "minecraft-account.label": {
     "message": "Minecraft account"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "Not signed in"
   },
   "minecraft-account.remove-account": {
     "message": "Remove account"

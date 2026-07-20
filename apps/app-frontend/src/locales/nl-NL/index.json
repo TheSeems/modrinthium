@@ -293,9 +293,6 @@
   "app.settings.tabs.language": {
     "message": "Taal"
   },
-  "app.settings.tabs.privacy": {
-    "message": "Privacy"
-  },
   "app.settings.tabs.resource-management": {
     "message": "Bronnenbeheer"
   },
@@ -305,23 +302,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "Slepen en neerzetten"
   },
-  "app.skins.apply-button": {
-    "message": "Toepassen"
-  },
   "app.skins.delete-button": {
     "message": "Skin verwijderen"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "De geselecteerde skin wordt permanent verwijderd. Deze actie kan niet ongedaan worden gemaakt."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "Weet u zeker dat u deze skin wilt verwijderen?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "Kan het neergezette bestand niet lezen."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "Fout bij het verwerken van het bestand"
   },
   "app.skins.edit-button": {
     "message": "Skin aanpassen"
@@ -374,77 +356,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "Upload eerst een skin!"
   },
-  "app.skins.preview.edit-button": {
-    "message": "Skin aanpassen"
-  },
-  "app.skins.previewing-badge": {
-    "message": "Voorvertonen"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "U verandert te snel van skin. Mojang's servers hebben nieuwe aanvragen tijdelijk geblokkeerd. Wacht een moment voordat u het opnieuw probeert."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "Rustig aan!"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "Je skinvolgorde kon niet worden opgeslagen."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "Het herschikken van skins is mislukt."
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chase the Skies"
-  },
-  "app.skins.section.default-skins": {
-    "message": "Standaardskins"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Pride"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "U heeft deze skins ontvangen omdat u tijdens Pride Month heeft gedoneerd aan een Modrinth Pride-inzamelingsactie."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Mounts of Mayhem"
-  },
   "app.skins.section.saved-skins": {
     "message": "Opgeslagen skins"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "The Copper Age"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "The Garden Awakens"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Tiny Takeover"
-  },
-  "app.skins.sign-in.button": {
-    "message": "Inloggen"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Log in op je Minecraft-account om de skinbeheerfuncties van de Modrinth-app te gebruiken."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Excited Modrinth Bot"
-  },
-  "app.skins.sign-in.title": {
-    "message": "Log in"
-  },
-  "app.skins.title": {
-    "message": "Skinkiezer"
   },
   "app.update-popup.body.download-complete": {
     "message": "Modrinth App v{version} is klaar met downloaden. Herlaad om nu te updaten, of automatisch wanneer je de Modrinth App afsluit."
@@ -493,69 +406,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} online"
-  },
-  "friends.action.add-friend": {
-    "message": "Voeg een vriend toe"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} vriend {count, plural,one {verzoek} other {verzoeken}}"
-  },
-  "friends.add-friend.submit": {
-    "message": "Stuur een vriendschapsverzoek"
-  },
-  "friends.add-friend.title": {
-    "message": "Een vriend toevoegen"
-  },
-  "friends.add-friend.username.description": {
-    "message": "Het kan verschillen van hun Minecraft gebruikersnaam!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Voer Modrinth gebruikersnaam in..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "Wat is de Modrinth gebruikersnaam van jouw vriend?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>Voeg vrienden toe</link> om te zien wat zij spelen!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "Annuleer verzoek"
-  },
-  "friends.friend.remove-friend": {
-    "message": "Verwijder vriend"
-  },
-  "friends.friend.request-sent": {
-    "message": "Vriendschapsverzoek gestuurd"
-  },
-  "friends.friend.view-profile": {
-    "message": "Bekijk profiel"
-  },
-  "friends.heading": {
-    "message": "Vrienden"
-  },
-  "friends.heading.active": {
-    "message": "Actief"
-  },
-  "friends.heading.offline": {
-    "message": "Offline"
-  },
-  "friends.heading.online": {
-    "message": "Online"
-  },
-  "friends.heading.pending": {
-    "message": "In behandeling"
-  },
-  "friends.no-friends-match": {
-    "message": "Geen vrienden die overeenkomen met \"{query}\""
-  },
-  "friends.search-friends-placeholder": {
-    "message": "Zoek vrienden..."
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Log in op een Modrinth account</link> om vrienden toe te voegen en zien wat zij spelen!"
   },
   "instance.add-server.add-and-play": {
     "message": "Toevoegen en spelen"
@@ -850,9 +700,6 @@
   },
   "minecraft-account.label": {
     "message": "Minecraft account"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "Niet ingelogd"
   },
   "minecraft-account.remove-account": {
     "message": "Verwijder account"

@@ -488,9 +488,6 @@
   "app.settings.tabs.language": {
     "message": "اللغة"
   },
-  "app.settings.tabs.privacy": {
-    "message": "الخصوصية"
-  },
   "app.settings.tabs.resource-management": {
     "message": "إدارة الموارد"
   },
@@ -500,23 +497,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "أسحب ثم أفلت"
   },
-  "app.skins.apply-button": {
-    "message": "تطبيق"
-  },
   "app.skins.delete-button": {
     "message": "حذف المظهر"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "سيتم حذف المظهر بشكل نهائي، ولايمكن إرجاعه."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "هل أنت متأكد من حذف المظهر هذا؟"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "فشل قراءة الملف الذي تم إسقاطه."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "حدث خطأ أثناء معالجة الملف"
   },
   "app.skins.edit-button": {
     "message": "تعديل المظهر"
@@ -569,80 +551,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "أرفع المظهر أولا !"
   },
-  "app.skins.preview.edit-button": {
-    "message": "تعديل المظهر"
-  },
-  "app.skins.previewing-badge": {
-    "message": "أستعراض"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "أنت تقوم بتغيير مظهرك بشكل متكرر جدًّا. وقد قامت خوادم Mojang بحظر الطلبات الإضافية مؤقتًا. يرجى الانتظار قليلاً قبل إعادة المحاولة."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "تمهل !"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "تعذر حفظ طلبك المتعلق بشكل الشخصية."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "فشل إعادة ترتيب أشكال الشخصيات"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "البناة والبيئات الحيوية"
-  },
-  "app.skins.section.chaos-cubed": {
-    "message": "الفوضى المربعة"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "انطلق نحو السماء"
-  },
-  "app.skins.section.default-skins": {
-    "message": "شكل الشخصية الافتراضية"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "فخر Modrinth"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "لقد حصلت على هذه أشكال الشخصيات مقابل تبرعك لحملة جمع التبرعات التي نظمتها Modrinth Pride خلال شهر الفخر."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "جبال الفوضى"
-  },
   "app.skins.section.saved-skins": {
     "message": "المظاهر المحفوظة"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "البطل السائر بخطوات واسعة"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "العصر النحاسي"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "الحديقة تستيقظ"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "الاستحواذ الصغير"
-  },
-  "app.skins.sign-in.button": {
-    "message": "تسجيل الدخول"
-  },
-  "app.skins.sign-in.description": {
-    "message": "يرجى تسجيل الدخول إلى حسابك في Minecraft لاستخدام ميزات إدارة أشكال الشخصيات في تطبيق Modrinth."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "روبوت Modrinth المتحمس"
-  },
-  "app.skins.sign-in.title": {
-    "message": "الرجاء تسجيل الدخول"
-  },
-  "app.skins.title": {
-    "message": "اختيار المظهر"
   },
   "app.update-popup.body.download-complete": {
     "message": "انتهى تنزيل تطبيق Modrinth v{version}. أعد التحميل للتحديث الآن، أو تلقائيًا عند إغلاق تطبيق Modrinth."
@@ -691,69 +601,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} متصل حاليا"
-  },
-  "friends.action.add-friend": {
-    "message": "إضافة صديق"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} {count, plural, one {طلب صداقة} other {طلبات صداقة}}"
-  },
-  "friends.add-friend.submit": {
-    "message": "إرسال طلب صداقة"
-  },
-  "friends.add-friend.title": {
-    "message": "جار إضافة صديق"
-  },
-  "friends.add-friend.username.description": {
-    "message": "قد يختلف عن اسم المستخدم الخاص بهم في ماينكرافت!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "أدخل اسم مستخدم Modrinth..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "ما اسم مستخدم صديقك في Modrinth؟"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>أضف أصدقاء</link> لمعرفة ما الذي يلعبونه!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "إلغاء الطلب"
-  },
-  "friends.friend.remove-friend": {
-    "message": "إزالة صديق"
-  },
-  "friends.friend.request-sent": {
-    "message": "إرسال طلب الصداقة"
-  },
-  "friends.friend.view-profile": {
-    "message": "عرض الملف الشخصي"
-  },
-  "friends.heading": {
-    "message": "أصدقاء"
-  },
-  "friends.heading.active": {
-    "message": "نشط"
-  },
-  "friends.heading.offline": {
-    "message": "غير متصل"
-  },
-  "friends.heading.online": {
-    "message": "متصل"
-  },
-  "friends.heading.pending": {
-    "message": "قيد الانتظار"
-  },
-  "friends.no-friends-match": {
-    "message": "لا يوجد أصدقاء يطابقون ‎''{query}''‎"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "ابحث عن الأصدقاء..."
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>سجّل الدخول إلى حساب Modrinth</link> لإضافة الأصدقاء ومعرفة ما الذي يلعبونه!"
   },
   "instance.add-server.add-and-play": {
     "message": "إضافة واللعب"
@@ -1051,9 +898,6 @@
   },
   "minecraft-account.label": {
     "message": "حساب ماينكرافت"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "لم يتم تسجيل الدخول"
   },
   "minecraft-account.remove-account": {
     "message": "حذف الحساب"

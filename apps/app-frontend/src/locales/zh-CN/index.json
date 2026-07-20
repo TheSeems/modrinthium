@@ -488,9 +488,6 @@
   "app.settings.tabs.language": {
     "message": "语言"
   },
-  "app.settings.tabs.privacy": {
-    "message": "隐私"
-  },
   "app.settings.tabs.resource-management": {
     "message": "资源管理"
   },
@@ -500,23 +497,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "拖放"
   },
-  "app.skins.apply-button": {
-    "message": "应用"
-  },
   "app.skins.delete-button": {
     "message": "删除皮肤"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "这会永久删除所选皮肤。这操作无法撤销。"
-  },
-  "app.skins.delete-modal.title": {
-    "message": "你确定要删除这个皮肤吗？"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "无法读取拖放的文件。"
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "处理文件时出错"
   },
   "app.skins.edit-button": {
     "message": "编辑皮肤"
@@ -569,80 +551,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "请先上传皮肤！"
   },
-  "app.skins.preview.edit-button": {
-    "message": "编辑皮肤"
-  },
-  "app.skins.previewing-badge": {
-    "message": "预览"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "你更改皮肤过于频繁。Mojang服务器已暂时阻止了后续请求。请稍等片刻后再试。"
-  },
-  "app.skins.rate-limit.title": {
-    "message": "慢点！"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "未能保存皮肤顺序。"
-  },
-  "app.skins.reorder-error.title": {
-    "message": "皮肤排序失败"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "建造者与生物群系"
-  },
-  "app.skins.section.chaos-cubed": {
-    "message": "混沌立方"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "追逐天空"
-  },
-  "app.skins.section.default-skins": {
-    "message": "默认皮肤"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth 精选"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "你在骄傲月期间为 Modrinth 的骄傲月筹款活动捐款，因此获得了这些皮肤。"
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "群骑纷争"
-  },
   "app.skins.section.saved-skins": {
     "message": "已保存皮肤"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "铜器时代"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "苍园觉醒"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "小鬼当家"
-  },
-  "app.skins.sign-in.button": {
-    "message": "登录"
-  },
-  "app.skins.sign-in.description": {
-    "message": "请登录您的 Minecraft 账号，以便使用 Modrinth 应用的皮肤管理功能。"
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "兴奋的 Modrinth Bot"
-  },
-  "app.skins.sign-in.title": {
-    "message": "请登录"
-  },
-  "app.skins.title": {
-    "message": "皮肤选择器"
   },
   "app.update-popup.body.download-complete": {
     "message": "Modrinth App v{version} 更新已下载完成！立即重启更新，或退出时自动安装。"
@@ -691,69 +601,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} 人在线"
-  },
-  "friends.action.add-friend": {
-    "message": "添加好友"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} 个好友请求"
-  },
-  "friends.add-friend.submit": {
-    "message": "发送好友请求"
-  },
-  "friends.add-friend.title": {
-    "message": "添加好友"
-  },
-  "friends.add-friend.username.description": {
-    "message": "这可能与对方的 Minecraft 用户名不同！"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "输入 Modrinth 用户名……"
-  },
-  "friends.add-friend.username.title": {
-    "message": "你好友的 Modrinth 用户名是什么？"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>添加好友</link> 来看看他们都在玩什么！"
-  },
-  "friends.friend.cancel-request": {
-    "message": "取消请求"
-  },
-  "friends.friend.remove-friend": {
-    "message": "删除好友"
-  },
-  "friends.friend.request-sent": {
-    "message": "已发送好友申请"
-  },
-  "friends.friend.view-profile": {
-    "message": "查看个人资料"
-  },
-  "friends.heading": {
-    "message": "好友"
-  },
-  "friends.heading.active": {
-    "message": "活跃"
-  },
-  "friends.heading.offline": {
-    "message": "离线"
-  },
-  "friends.heading.online": {
-    "message": "在线"
-  },
-  "friends.heading.pending": {
-    "message": "待确认"
-  },
-  "friends.no-friends-match": {
-    "message": "没有对应名字“{query}”的好友"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "搜索好友…"
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "登录你的 <link>Modrinth 账号</link>，添加好友，看看他们在玩什么！"
   },
   "instance.add-server.add-and-play": {
     "message": "添加并游玩"
@@ -1051,9 +898,6 @@
   },
   "minecraft-account.label": {
     "message": "Minecraft 账户"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "未登录"
   },
   "minecraft-account.remove-account": {
     "message": "移除账户"

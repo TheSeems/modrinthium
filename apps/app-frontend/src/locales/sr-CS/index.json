@@ -434,9 +434,6 @@
   "app.settings.tabs.language": {
     "message": "Jezik"
   },
-  "app.settings.tabs.privacy": {
-    "message": "Privatnost"
-  },
   "app.settings.tabs.resource-management": {
     "message": "Upravljanje resursima"
   },
@@ -446,23 +443,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "Prevuci i ispusti"
   },
-  "app.skins.apply-button": {
-    "message": "Primeni"
-  },
   "app.skins.delete-button": {
     "message": "Obriši skin"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "Ovim ćeš trajno obrisati izabrani skin. Ova radnja se ne može poništiti."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "Da li si siguran da želiš da obrišeš ovaj skin?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "Čitanje otpuštene datoteke nije uspelo."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "Greška pri obradi datoteke"
   },
   "app.skins.edit-button": {
     "message": "Uredite skin"
@@ -515,80 +497,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "Prvo otpremite skin!"
   },
-  "app.skins.preview.edit-button": {
-    "message": "Uredi skin"
-  },
-  "app.skins.previewing-badge": {
-    "message": "Pregled"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "Prečesto menjaš skin. Mojangovi serveri su privremeno blokirali dalje zahteve. Molimo sačekaj trenutak pre nego što pokušaš ponovo."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "Uspori!"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "Tvoj redosled skinova nije mogao biti sačuvan."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "Neuspešno preuređivanje skinova"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chaos-cubed": {
-    "message": "Chaos Cubed"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chase the Skies"
-  },
-  "app.skins.section.default-skins": {
-    "message": "Podrazumevani skinovi"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Ponos"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "Dobio si ove skinove za donaciju za prikupljanje sredstava Modrinth Ponos tokom Meseca ponosa."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Mounts of Mayhem"
-  },
   "app.skins.section.saved-skins": {
     "message": "Sačuvani skinovi"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "The Copper Age"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "The Garden Awakens"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Tiny Takeover"
-  },
-  "app.skins.sign-in.button": {
-    "message": "Prijavi se"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Prijavi se na svoj Minecraft račun da bi koristio funkcije upravljanja skinovima u Modrinth aplikaciji."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Uzbuđeni Modrinth Bot"
-  },
-  "app.skins.sign-in.title": {
-    "message": "Molimo prijavi se"
-  },
-  "app.skins.title": {
-    "message": "Selektor skina"
   },
   "app.update-popup.body.download-complete": {
     "message": "Preuzimanje Modrinth aplikacije v{version} je završeno. Ponovo učitaj da bi ažurirao sada ili automatski kada zatvoriš Modrinth aplikaciju."
@@ -637,69 +547,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} onlajn"
-  },
-  "friends.action.add-friend": {
-    "message": "Dodaj prijatelja/prijateljicu"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} {count, plural, one {zahtev} other {zahteva}} za prijateljstva"
-  },
-  "friends.add-friend.submit": {
-    "message": "Pošaljite zahtev za prijateljstvo"
-  },
-  "friends.add-friend.title": {
-    "message": "Dodavanje prijatelja"
-  },
-  "friends.add-friend.username.description": {
-    "message": "Možda se razlikuje od njihovog korisničkog imena za Minecraft!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Unesite korisničko ime za Modrinthu..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "Koje je korisničko ime tvog prijatelja u Modrinthu?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>Dodaj prijatelje</link> da vidiš šta igraju!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "Otkaži zahtev"
-  },
-  "friends.friend.remove-friend": {
-    "message": "Ukloni prijatelja"
-  },
-  "friends.friend.request-sent": {
-    "message": "Zahtev za prijateljstvo poslat"
-  },
-  "friends.friend.view-profile": {
-    "message": "Pogledaj profil"
-  },
-  "friends.heading": {
-    "message": "Prijatelji"
-  },
-  "friends.heading.active": {
-    "message": "Aktivan"
-  },
-  "friends.heading.offline": {
-    "message": "Oflajn"
-  },
-  "friends.heading.online": {
-    "message": "Onlajn"
-  },
-  "friends.heading.pending": {
-    "message": "Na čekanju"
-  },
-  "friends.no-friends-match": {
-    "message": "Nema prijatelja koji odgovaraju potragi ''{query}''"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "Traži prijatelje..."
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Prijavi se na Modrinth račun</link> da bi dodao prijatelje i vidio šta igraju!"
   },
   "instance.add-server.add-and-play": {
     "message": "Dodaj i igraj"
@@ -997,9 +844,6 @@
   },
   "minecraft-account.label": {
     "message": "Minecraft račun"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "Nisi prijavljen"
   },
   "minecraft-account.remove-account": {
     "message": "Uklonite račun"

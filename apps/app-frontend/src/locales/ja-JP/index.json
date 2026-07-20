@@ -320,9 +320,6 @@
   "app.settings.tabs.language": {
     "message": "言語"
   },
-  "app.settings.tabs.privacy": {
-    "message": "プライバシー設定"
-  },
   "app.settings.tabs.resource-management": {
     "message": "リソース管理"
   },
@@ -356,44 +353,8 @@
   "app.skins.modal.texture-section": {
     "message": "テクスチャ"
   },
-  "app.skins.preview.edit-button": {
-    "message": "編集"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "ビルダーズ＆バイオーム"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "チェイス・ザ・スカイ"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth プライド"
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "マウント・オブ・メイヘム"
-  },
   "app.skins.section.saved-skins": {
     "message": "保存済みのスキン"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "銅の時代"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "ガーデン・アウェイケンズ"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "タイニー・テイクオーバー"
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "ワクワクしている Modrinth ボット"
   },
   "app.update-popup.body.download-complete": {
     "message": "Modrinth App v{version} のダウンロードが完了しました。今すぐ更新するには再読み込みするか、Modrinth Appを閉じる際に自動更新されます。"
@@ -439,69 +400,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} 人がオンライン"
-  },
-  "friends.action.add-friend": {
-    "message": "フレンドを追加"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count}件の友達リクエスト"
-  },
-  "friends.add-friend.submit": {
-    "message": "フレンド申請を送信"
-  },
-  "friends.add-friend.title": {
-    "message": "フレンドを追加中"
-  },
-  "friends.add-friend.username.description": {
-    "message": "これはMinecraftユーザー名とは異なる可能性があります！"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Modrinthユーザー名を入力…"
-  },
-  "friends.add-friend.username.title": {
-    "message": "あなたのフレンドのModrinthユーザー名は何ですか？"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>友達を追加</link>して、彼らが何をしているか見てみよう！"
-  },
-  "friends.friend.cancel-request": {
-    "message": "申請をキャンセル"
-  },
-  "friends.friend.remove-friend": {
-    "message": "フレンドを削除"
-  },
-  "friends.friend.request-sent": {
-    "message": "フレンド申請が送信されました"
-  },
-  "friends.friend.view-profile": {
-    "message": "プロフィールを表示"
-  },
-  "friends.heading": {
-    "message": "フレンド"
-  },
-  "friends.heading.active": {
-    "message": "活動中"
-  },
-  "friends.heading.offline": {
-    "message": "オフライン"
-  },
-  "friends.heading.online": {
-    "message": "オンライン"
-  },
-  "friends.heading.pending": {
-    "message": "保留中"
-  },
-  "friends.no-friends-match": {
-    "message": "フレンド「{query}」は見つかりませんでした"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "フレンドを検索…"
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Modrinthアカウントにサインイン</link>して友達を追加し、彼らがプレイしているゲームをチェックしよう！"
   },
   "instance.add-server.add-and-play": {
     "message": "追加してプレイ"
@@ -760,9 +658,6 @@
   },
   "minecraft-account.label": {
     "message": "Minecraftアカウント"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "サインインしていません"
   },
   "minecraft-account.remove-account": {
     "message": "アカウントを一覧から削除"

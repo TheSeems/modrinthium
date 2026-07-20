@@ -404,9 +404,6 @@
   "app.settings.tabs.language": {
     "message": "언어"
   },
-  "app.settings.tabs.privacy": {
-    "message": "개인정보"
-  },
   "app.settings.tabs.resource-management": {
     "message": "리소스 관리"
   },
@@ -416,23 +413,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "드레그 엔 드롭"
   },
-  "app.skins.apply-button": {
-    "message": "적용"
-  },
   "app.skins.delete-button": {
     "message": "스킨 지우기"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "선택한 스킨이 영구적으로 삭제됩니다. 이 작업은 되돌릴 수 없습니다."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "이 스킨을 정말 삭제하시겠습니까?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "삭제된 파일을 읽는 데 실패했습니다."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "파일 처리 중 오류가 발생했습니다."
   },
   "app.skins.edit-button": {
     "message": "스킨 편집"
@@ -485,80 +467,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "먼저 스킨을 업로드하세요"
   },
-  "app.skins.preview.edit-button": {
-    "message": "스킨 수정"
-  },
-  "app.skins.previewing-badge": {
-    "message": "미리보기"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "스킨을 너무 자주 변경하고 있습니다. Mojang 서버에서 일시적으로 추가 요청을 차단했습니다. 잠시 후 다시 시도해 주세요."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "잠시 기다려주세요."
-  },
-  "app.skins.reorder-error.text": {
-    "message": "이 스킨 정렬은 저장되지 않습니다."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "스킨 재정렬 실패"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chaos-cubed": {
-    "message": "카오스 큐브"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chase the Skies"
-  },
-  "app.skins.section.default-skins": {
-    "message": "기본 스킨"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth 프라이드"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "프라이드 월간 동안 Modrinth 프라이드 모금 행사에 기부하여 이 스킨들을 받았습니다."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Mounts of Mayhem"
-  },
   "app.skins.section.saved-skins": {
     "message": "저장된 스킨"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "The Copper Age"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "The Garden Awakens"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Tiny Takeover"
-  },
-  "app.skins.sign-in.button": {
-    "message": "로그인"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Modrinth 앱의 스킨 관리 기능을 사용하려면 Minecraft 계정에 로그인하세요."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Excited Modrinth Bot"
-  },
-  "app.skins.sign-in.title": {
-    "message": "로그인하세요"
-  },
-  "app.skins.title": {
-    "message": "스킨 선택"
   },
   "app.update-popup.body.download-complete": {
     "message": "Modrinth App v{version} 다운로드가 완료되었습니다. 새로고침하거나 Modrinth App을 종료하면 자동으로 업데이트됩니다."
@@ -607,69 +517,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count}명 온라인"
-  },
-  "friends.action.add-friend": {
-    "message": "친구 추가"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count}건의 친구 요청"
-  },
-  "friends.add-friend.submit": {
-    "message": "친구 요청 보내기"
-  },
-  "friends.add-friend.title": {
-    "message": "친구 추가 중"
-  },
-  "friends.add-friend.username.description": {
-    "message": "Minecraft 사용자명과 다를 수 있습니다!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Modrinth 사용자명 입력..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "친구의 Modrinth 사용자명이 무엇인가요?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>친구 추가</link>를 통해 친구들이 무엇을 하는지 확인해 보세요!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "요청 취소"
-  },
-  "friends.friend.remove-friend": {
-    "message": "친구 삭제"
-  },
-  "friends.friend.request-sent": {
-    "message": "친구 요청 전송됨"
-  },
-  "friends.friend.view-profile": {
-    "message": "프로필 보기"
-  },
-  "friends.heading": {
-    "message": "친구"
-  },
-  "friends.heading.active": {
-    "message": "활동 중"
-  },
-  "friends.heading.offline": {
-    "message": "오프라인"
-  },
-  "friends.heading.online": {
-    "message": "온라인"
-  },
-  "friends.heading.pending": {
-    "message": "대기 중"
-  },
-  "friends.no-friends-match": {
-    "message": "\"{query}\"과(와) 일치하는 친구 없음"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "친구 검색 중..."
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Modrinth 계정으로 로그인</link>하여 친구를 추가하고 무엇을 플레이 중인지 확인하세요!"
   },
   "instance.add-server.add-and-play": {
     "message": "추가 후 플레이"
@@ -967,9 +814,6 @@
   },
   "minecraft-account.label": {
     "message": "마인크래프트 계정"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "로그인하지 않음"
   },
   "minecraft-account.remove-account": {
     "message": "계정 제거"

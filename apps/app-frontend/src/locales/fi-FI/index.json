@@ -398,9 +398,6 @@
   "app.settings.tabs.language": {
     "message": "Kieli"
   },
-  "app.settings.tabs.privacy": {
-    "message": "Yksityisyys"
-  },
   "app.settings.tabs.resource-management": {
     "message": "Resurssien hallinta"
   },
@@ -410,23 +407,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "Raahaa ja pudota"
   },
-  "app.skins.apply-button": {
-    "message": "Käytä"
-  },
   "app.skins.delete-button": {
     "message": "Poista ulkoasu"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "Tämä poistaa valitun skinin pysyvästi. Tätä toimintoa ei voi kumota."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "Haluatko varmasti poistaa ulkoasun?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "Tiedoston lukeminen epäonnistui."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "Virhe prosessoidessa tiedostoa"
   },
   "app.skins.edit-button": {
     "message": "Muokkaa ulkoasua"
@@ -479,77 +461,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "Lataa ulkoasu ensin!"
   },
-  "app.skins.preview.edit-button": {
-    "message": "Muokkaa ulkoasua"
-  },
-  "app.skins.previewing-badge": {
-    "message": "Esikatsellaan"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "Vaihdat ulkoasua liian usein. Mojangin palvelimet ovat estäneet uudet pyynnöt väliaikaisesti. Yritä hetken kuluttua uudelleen."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "Hidasta vähän!"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "Ulkoasujen järjestystä ei voitu tallentaa."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "Skinien järjestyksen muuttaminen epäonnistui"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chase the Skies"
-  },
-  "app.skins.section.default-skins": {
-    "message": "Oletus ulkoasut"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Pride"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "Sait nämä skinit lahjoittamalla Modrinthin Pride-keräykseen Pride-kuukauden aikana."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Sekasorron ratsut"
-  },
   "app.skins.section.saved-skins": {
     "message": "Tallennetut ulkoasut"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "The Copper Age"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "The Garden Awakens"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Pienten vallankumous"
-  },
-  "app.skins.sign-in.button": {
-    "message": "Kirjaudu sisään"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Kirjaudu Minecraft-tilillesi käyttääksesi Modrinth-sovelluksen ulkoasujen hallintaominaisuuksia."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Innostunut Modrinth Botti"
-  },
-  "app.skins.sign-in.title": {
-    "message": "Kirjaudu sisään"
-  },
-  "app.skins.title": {
-    "message": "Skinivalinta"
   },
   "app.update-popup.body.download-complete": {
     "message": "Modrinth App versio {version} on ladattu. Voit käynnistää sovelluksen uudelleen päivittääksesi heti tai antaa päivityksen asentua automaattisesti, kun suljet Modrinth Appin."
@@ -598,69 +511,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} paikalla"
-  },
-  "friends.action.add-friend": {
-    "message": "Lisää ystävä"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} ystävä{count, plural, one {pyyntö} other {pyyntöä}}"
-  },
-  "friends.add-friend.submit": {
-    "message": "Lähetä kaveripyyntö"
-  },
-  "friends.add-friend.title": {
-    "message": "Lisätään kaveria"
-  },
-  "friends.add-friend.username.description": {
-    "message": "Se ei voi olla eri kuin heidän Minecraft-käyttäjänimi!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Syötä Modrinth-käyttäjätunnus..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "Mikä on ystäväsi Modrinth-käyttäjänimi?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>Lisää kavereita</link> nähdäksesi mitä he pelaavat!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "Peruuta pyyntö"
-  },
-  "friends.friend.remove-friend": {
-    "message": "Poista ystävä"
-  },
-  "friends.friend.request-sent": {
-    "message": "Ystäväpyyntö lähetetty"
-  },
-  "friends.friend.view-profile": {
-    "message": "Näytä profiili"
-  },
-  "friends.heading": {
-    "message": "Ystävät"
-  },
-  "friends.heading.active": {
-    "message": "Aktiiviset"
-  },
-  "friends.heading.offline": {
-    "message": "Offline-tilassa"
-  },
-  "friends.heading.online": {
-    "message": "Online-tilassa"
-  },
-  "friends.heading.pending": {
-    "message": "Odotetaan"
-  },
-  "friends.no-friends-match": {
-    "message": "Ei ystäviä, jotka vastaavat ''{query}''"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "Hae ystäviä..."
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Kirjaudu Modrinth-tilille</link> lisätäksesi ystäviä ja nähdäksesi mitä he pelaavat!"
   },
   "instance.add-server.add-and-play": {
     "message": "Lisää ja pelaa"
@@ -958,9 +808,6 @@
   },
   "minecraft-account.label": {
     "message": "Minecraft tili"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "Ei kirjautuneena sisään"
   },
   "minecraft-account.remove-account": {
     "message": "Poista tili"

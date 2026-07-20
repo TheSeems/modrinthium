@@ -293,9 +293,6 @@
   "app.settings.tabs.language": {
     "message": "ภาษา"
   },
-  "app.settings.tabs.privacy": {
-    "message": "ความเป็นส่วนตัว"
-  },
   "app.settings.tabs.resource-management": {
     "message": "การจัดการทรัพยากร"
   },
@@ -305,23 +302,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "ลากและวาง"
   },
-  "app.skins.apply-button": {
-    "message": "นำไปใช้"
-  },
   "app.skins.delete-button": {
     "message": "ลบสกิน"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "การดำเนินการนี้จะลบสกินที่เลือกอย่างถาวร การกระทำนี้ไม่สามารถย้อนกลับได้"
-  },
-  "app.skins.delete-modal.title": {
-    "message": "คุณแน่ใจหรือว่าต้องการที่จะลบสกินนี้?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "ไม่สามารถอ่านไฟล์ที่ถูกลากและวางได้"
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "ข้อผิดพลาดในการประมวลผลไฟล์"
   },
   "app.skins.edit-button": {
     "message": "แก้ไขสกิน"
@@ -374,74 +356,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "อัพโหลดสกินก่อน!"
   },
-  "app.skins.preview.edit-button": {
-    "message": "แก้ไขสกิน"
-  },
-  "app.skins.previewing-badge": {
-    "message": "การแสดงตัวอย่าง"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "คุณได้เปลี่ยนสกินบ่อยเกินไป เซิร์ฟเวอร์ของ Mojang ได้บล็อกคำขอเพิ่มเติมชั่วคราว โปรดรอสักครู่ก่อนลองอีกครั้ง"
-  },
-  "app.skins.rate-limit.title": {
-    "message": "ลดความถี่ลง!"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "ไม่สามารถบันทึกลำดับสกินของคุณได้"
-  },
-  "app.skins.reorder-error.title": {
-    "message": "ไม่สามารถจัดเรียงสกินได้"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chase the Skies"
-  },
-  "app.skins.section.default-skins": {
-    "message": "สกินเริ่มต้น"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Pride"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "คุณได้รับสกินเหล่านี้จากการร่วมบริจาคให้กับกิจกรรมระดมทุน Modrinth Pride ในช่วงเดือน Pride Month"
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Mounts of Mayhem"
-  },
   "app.skins.section.saved-skins": {
     "message": "สกินที่บันทึกไว้"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "The Copper Age"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "The Garden Awakens"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Tiny Takeover"
-  },
-  "app.skins.sign-in.button": {
-    "message": "ลงชื่อเข้าใช้"
-  },
-  "app.skins.sign-in.description": {
-    "message": "โปรดลงชื่อเข้าใช้บัญชี Minecraft ของคุณเพื่อใช้งานฟีเจอร์จัดการสกินของแอป Modrinth"
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "บอท Modrinth ที่กำลังตื่นเต้น"
-  },
-  "app.skins.sign-in.title": {
-    "message": "โปรดลงชื่อเข้าใช้"
   },
   "app.update-popup.body.download-complete": {
     "message": "ดาวน์โหลด Modrinth v{version} สำเร็จแล้ว เปิดโปรแกรมใหม่อีกครั้งเพื่ออัปเดตตอนนี้ หรือจะรออัปเดตอัตโนมัติ ซึ่งจะเกิดขึ้นเมื่อคุณกดปิดโปรแกรม Modrinth"
@@ -487,69 +403,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} ออนไลน์"
-  },
-  "friends.action.add-friend": {
-    "message": "เพิ่มเพื่อน"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "คำขอเป็นเพื่อน {count} {count, plural, other {คน}}"
-  },
-  "friends.add-friend.submit": {
-    "message": "ส่งคำขอเป็นเพื่อน"
-  },
-  "friends.add-friend.title": {
-    "message": "กำลังเพิ่มเพื่อน"
-  },
-  "friends.add-friend.username.description": {
-    "message": "มันอาจแตกต่างจากชื่อในเกม Minecraft ของพวกเขา!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "กรอกชื่อผู้ใช้ Modrinth..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "เพื่อนของคุณมีชื่อผู้ใช้ Modrinth ว่าอะไร?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>เพิ่มเพื่อน</link> เพื่อเห็นว่าพวกเขากำลังเล่นอะไรอยู่!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "ยกเลิกคำขอ"
-  },
-  "friends.friend.remove-friend": {
-    "message": "ลบเพื่อน"
-  },
-  "friends.friend.request-sent": {
-    "message": "ส่งคำขอเป็นเพื่อนแล้ว"
-  },
-  "friends.friend.view-profile": {
-    "message": "ดูโปรไฟล์"
-  },
-  "friends.heading": {
-    "message": "เพื่อน"
-  },
-  "friends.heading.active": {
-    "message": "ออนไลน์"
-  },
-  "friends.heading.offline": {
-    "message": "ออฟไลน์"
-  },
-  "friends.heading.online": {
-    "message": "ออนไลน์"
-  },
-  "friends.heading.pending": {
-    "message": "กําลังดำเนินการ"
-  },
-  "friends.no-friends-match": {
-    "message": "ไม่มีรายชื่อเพื่อนที่ตรงกับ \"{query}\""
-  },
-  "friends.search-friends-placeholder": {
-    "message": "ค้นหาเพื่อน"
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>ล็อกอินเข้าบัญชี Modrinth</link> เพื่อเพิ่มเพื่อนและเห็นว่าพวกเขากำลังเล่นอะไรอยู่!"
   },
   "instance.add-server.add-and-play": {
     "message": "เพิ่มและเล่นทันที"
@@ -799,9 +652,6 @@
   },
   "minecraft-account.label": {
     "message": "บัญชี Minecraft"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "ยังไม่ได้ลงชื่อเข้าใช้"
   },
   "minecraft-account.remove-account": {
     "message": "ลบบัญชี"

@@ -488,9 +488,6 @@
   "app.settings.tabs.language": {
     "message": "Dil"
   },
-  "app.settings.tabs.privacy": {
-    "message": "Gizlilik"
-  },
   "app.settings.tabs.resource-management": {
     "message": "Kaynak yönetimi"
   },
@@ -500,23 +497,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "Sürükle ve bırak"
   },
-  "app.skins.apply-button": {
-    "message": "Uygula"
-  },
   "app.skins.delete-button": {
     "message": "Skin'i sil"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "Bu seçilmiş skin'i kalıcı olarak silecektir. Bu işlem geri alınamaz."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "Bu skin'i silmek istediğinize gerçekten emin misiniz?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "Bıraktığınız dosya okunamadı."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "Dosya işlenirken hata oluştu"
   },
   "app.skins.edit-button": {
     "message": "Skin'i düzenle"
@@ -569,80 +551,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "İlk başta skin yükleyin!"
   },
-  "app.skins.preview.edit-button": {
-    "message": "Skin'i düzenle"
-  },
-  "app.skins.previewing-badge": {
-    "message": "Önizleme"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "Skin'inizi çok hızlı değiştiriyorsunuz. Mojang'ın sunucuları geçici olarak diğer istekleri engelledi. Lütfen tekrar denemeden önce biraz bekleyin."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "Yavaşla!"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "Skinini kaydedemedik."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "Skinler sıralanamadı"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "İnşaatçılar & Biyomlar"
-  },
-  "app.skins.section.chaos-cubed": {
-    "message": "Kaos Küpü"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Gökyüzünü kovala"
-  },
-  "app.skins.section.default-skins": {
-    "message": "Varsayılan skinler"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Onuru"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "Bu skinleri, Onur Ayı boyunca Modrinth'in düzenlediği bir bağış kampanyasına yaptığınız bağış karşılığında aldınız."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Kaos Dağları"
-  },
   "app.skins.section.saved-skins": {
     "message": "Kaydedilen Skinler"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Yürüyen Kahraman"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "Bakır Çağı"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "Bahçe Uyanıyor"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Küçük Devralma"
-  },
-  "app.skins.sign-in.button": {
-    "message": "Giriş Yap"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Modrinth appdeki skin yönetim özelliklerini kullanmak için lütfen Minecraft hesabınıza giriş yapın."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Heyecanlı Modrinth Bot'u"
-  },
-  "app.skins.sign-in.title": {
-    "message": "Lütfen giriş yapın"
-  },
-  "app.skins.title": {
-    "message": "Skin seçici"
   },
   "app.update-popup.body.download-complete": {
     "message": "Modrinth App v{version} indirildi. Güncellemek için yeniden başlatın veya Modrinth App’i kapattığınızda otomatik olarak güncellenecektir."
@@ -691,69 +601,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} çevrimiçi"
-  },
-  "friends.action.add-friend": {
-    "message": "Bir arkadaş ekle"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} arkadaşlık isteği"
-  },
-  "friends.add-friend.submit": {
-    "message": "Arkadaşlık isteği gönder"
-  },
-  "friends.add-friend.title": {
-    "message": "Arkadaş ekleme"
-  },
-  "friends.add-friend.username.description": {
-    "message": "Minecraft kullanıcı adıyla aynı olmayabilir!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Modrinth kullanıcı adını girin..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "Arkadaşının Modrinth kullanıcı adı nedir?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>Arkadaş ekleyerek</link> ne oynadıklarını gör!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "İsteği iptal et"
-  },
-  "friends.friend.remove-friend": {
-    "message": "Arkadaşı çıkar"
-  },
-  "friends.friend.request-sent": {
-    "message": "Arkadaşlık isteği gönderildi"
-  },
-  "friends.friend.view-profile": {
-    "message": "Profili görüntüle"
-  },
-  "friends.heading": {
-    "message": "Arkadaşlar"
-  },
-  "friends.heading.active": {
-    "message": "Çevrimiçi"
-  },
-  "friends.heading.offline": {
-    "message": "Çevrimdışı"
-  },
-  "friends.heading.online": {
-    "message": "Çevrim içi"
-  },
-  "friends.heading.pending": {
-    "message": "Bekleniyor"
-  },
-  "friends.no-friends-match": {
-    "message": "''{query}'' ile eşleşen arkadaş yok"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "Arkadaşları ara..."
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "Arkadaş eklemek ve ne oynadıklarını görmek için bir <link>Modrinth hesabına giriş yap</link>!"
   },
   "instance.add-server.add-and-play": {
     "message": "Ekle ve oyna"
@@ -1051,9 +898,6 @@
   },
   "minecraft-account.label": {
     "message": "Minecraft hesabı"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "Giriş yapılmadı"
   },
   "minecraft-account.remove-account": {
     "message": "Hesabı kaldır"

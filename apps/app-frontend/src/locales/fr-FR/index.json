@@ -464,9 +464,6 @@
   "app.settings.tabs.language": {
     "message": "Langue"
   },
-  "app.settings.tabs.privacy": {
-    "message": "Confidentialité"
-  },
   "app.settings.tabs.resource-management": {
     "message": "Gestion des ressources"
   },
@@ -476,23 +473,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "Glisser et déposer"
   },
-  "app.skins.apply-button": {
-    "message": "Appliquer"
-  },
   "app.skins.delete-button": {
     "message": "Supprimer le skin"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "Cela va supprimer de manière permanente ce skin. Cette action est irréversible."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "Êtes-vous sûr de vouloir supprimer cette skin ?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "Impossible de lire le fichier déposé."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "Erreur lors du traitement du fichier"
   },
   "app.skins.edit-button": {
     "message": "Modifier le skin"
@@ -545,80 +527,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "Importez d'abord une skin !"
   },
-  "app.skins.preview.edit-button": {
-    "message": "Modifier le skin"
-  },
-  "app.skins.previewing-badge": {
-    "message": "Aperçu"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "Vous changez de skin trop vite. Les serveurs de Mojang ont temporairement bloqué certaines requêtes. Veuillez patienter un moment puis réessayez."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "Du calme !"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "L'ordre des skins n'a pas pu être sauvegardé."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "Impossible de réorganiser les skins"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chaos-cubed": {
-    "message": "Cubes du chaos"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chassez les cieux"
-  },
-  "app.skins.section.default-skins": {
-    "message": "Skins par défaut"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Pride"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "Vous avez reçu ces skins pour avoir fait un don à une collecte de fonds Modrinth Pride pendant le mois de la fierté."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Montures en pagaille"
-  },
   "app.skins.section.saved-skins": {
     "message": "Skins sauvegardées"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "L'âge du cuivre"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "L'éveil du jardin"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Horde miniature"
-  },
-  "app.skins.sign-in.button": {
-    "message": "Se connecter"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Veuillez vous connecter à votre compte Minecraft pour utiliser les fonctionnalités de gestion de skins de Modrinth App."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Bot Modrinth enthousiaste"
-  },
-  "app.skins.sign-in.title": {
-    "message": "Veuillez vous connecter"
-  },
-  "app.skins.title": {
-    "message": "Sélecteur de skin"
   },
   "app.update-popup.body.download-complete": {
     "message": "Modrinth App v{version} a finie d'être téléchargée. Rechargez pour mettre à jour maintenant, ou automatiquement quand vous fermez Modrinth App."
@@ -664,69 +574,6 @@
   },
   "app.world.world-item.offline": {
     "message": "Hors ligne"
-  },
-  "friends.action.add-friend": {
-    "message": "Ajouter un ami"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} {count, plural, one {demande} other {demandes}} d'ami"
-  },
-  "friends.add-friend.submit": {
-    "message": "Envoyer une demande d'ami"
-  },
-  "friends.add-friend.title": {
-    "message": "Ajouter un ami"
-  },
-  "friends.add-friend.username.description": {
-    "message": "Peut être différent de leur pseudo Minecraft !"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Entrez un pseudo Modrinth..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "Quel est le pseudo Modrinth de votre ami ?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>Ajoutez des amis</link> pour voir à quoi ils jouent !"
-  },
-  "friends.friend.cancel-request": {
-    "message": "Annuler la demande"
-  },
-  "friends.friend.remove-friend": {
-    "message": "Supprimer l'ami"
-  },
-  "friends.friend.request-sent": {
-    "message": "La demande d'ami a été envoyé"
-  },
-  "friends.friend.view-profile": {
-    "message": "Voir le profile"
-  },
-  "friends.heading": {
-    "message": "Amis"
-  },
-  "friends.heading.active": {
-    "message": "Actif"
-  },
-  "friends.heading.offline": {
-    "message": "Hors ligne"
-  },
-  "friends.heading.online": {
-    "message": "En ligne"
-  },
-  "friends.heading.pending": {
-    "message": "En attente"
-  },
-  "friends.no-friends-match": {
-    "message": "Aucuns amis ne correspondent à « {query} »"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "Chercher des amis..."
-  },
-  "friends.section.heading": {
-    "message": "{title} - {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Créer un compte Modrinth</link> pour ajouter des amis et voir à quoi ils jouent !"
   },
   "instance.add-server.add-and-play": {
     "message": "Ajouter et jouer"
@@ -1024,9 +871,6 @@
   },
   "minecraft-account.label": {
     "message": "Compte Minecraft"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "Pas connecté"
   },
   "minecraft-account.remove-account": {
     "message": "Retirer le compte"

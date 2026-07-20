@@ -470,9 +470,6 @@
   "app.settings.tabs.language": {
     "message": "Språk"
   },
-  "app.settings.tabs.privacy": {
-    "message": "Integritet"
-  },
   "app.settings.tabs.resource-management": {
     "message": "Resurshantering"
   },
@@ -482,23 +479,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "Dra och släpp"
   },
-  "app.skins.apply-button": {
-    "message": "Tillämpa"
-  },
   "app.skins.delete-button": {
     "message": "Ta bort utseende"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "Du kommer permanent radera det valda utseendet. Detta kan inte ångras."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "Är du säker på att du vill radera utseendet?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "Misslyckades att läsa den släppta filen."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "Fel med behandlingen av filen"
   },
   "app.skins.edit-button": {
     "message": "Redigera utseende"
@@ -551,80 +533,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "Ladda upp utseende först!"
   },
-  "app.skins.preview.edit-button": {
-    "message": "Redigera utseende"
-  },
-  "app.skins.previewing-badge": {
-    "message": "Förhandsvisa"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "Du ändrar ditt utseende för ofta. Mojangs servrar har temporärt blockerat ytterligare förfrågningar. Vänligen vänta en stund innan du försöker igen."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "Sakta ner!"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "Din ordning av utseenden kunde inte sparas."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "Misslyckades med att ordna om utseenden"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chaos-cubed": {
-    "message": "Chaos Cubed"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chase the Skies"
-  },
-  "app.skins.section.default-skins": {
-    "message": "Standard utseenden"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Pride"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "Du har fått dessa utseende eftersom du donerat till en Modrinth Pride insamling under pride månaden."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Mounts of Mayhem"
-  },
   "app.skins.section.saved-skins": {
     "message": "Sparade utseenden"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "The Copper Age"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "The Garden Awakens"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Tiny Takeover"
-  },
-  "app.skins.sign-in.button": {
-    "message": "Logga in"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Snälla logga in din Minecraft konto att använda hud hantering förmågor i Modrinth appen."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Exalterad Modrinth bot"
-  },
-  "app.skins.sign-in.title": {
-    "message": "Vänligen logga in"
-  },
-  "app.skins.title": {
-    "message": "Utseende väljare"
   },
   "app.update-popup.body.download-complete": {
     "message": "Modrinth App v{version} har laddats ner. Ladda om för att uppdatera nu, eller automatiskt när du stänger Modrinth App."
@@ -673,69 +583,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} online"
-  },
-  "friends.action.add-friend": {
-    "message": "Lägg till en vän"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} vän{count, plural, one {förfrågan} other {förfrågningar}}"
-  },
-  "friends.add-friend.submit": {
-    "message": "Skicka vänförfrågan"
-  },
-  "friends.add-friend.title": {
-    "message": "Lägga till en vän"
-  },
-  "friends.add-friend.username.description": {
-    "message": "Det kan vara annorlunda från deras Minecraft-användarnamn!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Ange Modrinth-användarnamn..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "Vad är din väns Modrinth-användarnamn?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>Lägg till vänner</link> för att se vad de spelar!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "Avbryt förfrågan"
-  },
-  "friends.friend.remove-friend": {
-    "message": "Ta bort vän"
-  },
-  "friends.friend.request-sent": {
-    "message": "Vänförfrågan skickad"
-  },
-  "friends.friend.view-profile": {
-    "message": "Visa profil"
-  },
-  "friends.heading": {
-    "message": "Vänner"
-  },
-  "friends.heading.active": {
-    "message": "Aktiva"
-  },
-  "friends.heading.offline": {
-    "message": "Offline"
-  },
-  "friends.heading.online": {
-    "message": "Online"
-  },
-  "friends.heading.pending": {
-    "message": "Väntar"
-  },
-  "friends.no-friends-match": {
-    "message": "Inga vänner matchar ''{query}''"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "Sök efter vänner..."
-  },
-  "friends.section.heading": {
-    "message": "{title}: {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Logga in på ett Modrinth-konto</link> för att lägga till vänner och se vad de spelar!"
   },
   "instance.add-server.add-and-play": {
     "message": "Lägg till och spela"
@@ -1033,9 +880,6 @@
   },
   "minecraft-account.label": {
     "message": "Minecraft konto"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "Inte inloggad"
   },
   "minecraft-account.remove-account": {
     "message": "Ta bort konto"

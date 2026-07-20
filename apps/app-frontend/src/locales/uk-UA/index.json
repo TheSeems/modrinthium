@@ -437,9 +437,6 @@
   "app.settings.tabs.language": {
     "message": "Мова"
   },
-  "app.settings.tabs.privacy": {
-    "message": "Конфіденційність"
-  },
   "app.settings.tabs.resource-management": {
     "message": "Керування ресурсами"
   },
@@ -449,23 +446,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "Перетягніть сюди"
   },
-  "app.skins.apply-button": {
-    "message": "Застосувати"
-  },
   "app.skins.delete-button": {
     "message": "Видалити скін"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "Це видалить вибраний скін назавжди. Ця дія не може бути скасована."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "Ви дійсно бажаєте видалити цей скін?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "Неможливо відкрити вибраний файл."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "Помилка обробки файлу"
   },
   "app.skins.edit-button": {
     "message": "Редагувати скін"
@@ -518,77 +500,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "Спершу завантажте скін!"
   },
-  "app.skins.preview.edit-button": {
-    "message": "Редагувати скін"
-  },
-  "app.skins.previewing-badge": {
-    "message": "Попередній перегляд"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "Ви змінюєте скін занадто часто. Сервери Mojang тимчасово заблокували подальші запити. Зачекайте трохи, перш ніж спробувати знову."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "Повільніше!"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "Ваше замовлення скінів не вдалося зберегти."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "Не вдалося змінити порядок скінів"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chase the Skies"
-  },
-  "app.skins.section.default-skins": {
-    "message": "Усталені скіни"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Pride"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "Ви отримали ці скіни за участь у благодійній акції Modrinth Pride під час місяця прайду."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Mounts of Mayhem"
-  },
   "app.skins.section.saved-skins": {
     "message": "Збережені скіни"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "The Copper Age"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "The Garden Awakens"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Tiny Takeover"
-  },
-  "app.skins.sign-in.button": {
-    "message": "Увійдіть"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Будь ласка, увійдіть у свій обліковий запис Minecraft, щоб використовувати особливості керування скінами в Modrinth App."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Схвильований бот Modrinth"
-  },
-  "app.skins.sign-in.title": {
-    "message": "Увійдіть"
-  },
-  "app.skins.title": {
-    "message": "Вибір скіну"
   },
   "app.update-popup.body.download-complete": {
     "message": "Modrinth App v{version} завантажено. Перезапустіть, щоб оновити зараз, або це відбудеться автоматично після закриття застосунку."
@@ -637,69 +550,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} у мережі"
-  },
-  "friends.action.add-friend": {
-    "message": "Додати друга"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} запит{count, plural, one { у} few {и в} many {ів у} other {у в}} друзі"
-  },
-  "friends.add-friend.submit": {
-    "message": "Надіслати запит у друзі"
-  },
-  "friends.add-friend.title": {
-    "message": "Додавання друга"
-  },
-  "friends.add-friend.username.description": {
-    "message": "Може відрізнятися від його або її імені користувача Minecraft!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Уведіть ім’я користувача…"
-  },
-  "friends.add-friend.username.title": {
-    "message": "Яке ім’я користувача Modrinth у вашого друга?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>Додайте друзів</link>, щоб бачити, у що вони грають!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "Скасувати запит"
-  },
-  "friends.friend.remove-friend": {
-    "message": "Видалити друга"
-  },
-  "friends.friend.request-sent": {
-    "message": "Запит у друзі надіслано"
-  },
-  "friends.friend.view-profile": {
-    "message": "Переглянути профіль"
-  },
-  "friends.heading": {
-    "message": "Друзі"
-  },
-  "friends.heading.active": {
-    "message": "Активний"
-  },
-  "friends.heading.offline": {
-    "message": "Поза мережею"
-  },
-  "friends.heading.online": {
-    "message": "У мережі"
-  },
-  "friends.heading.pending": {
-    "message": "Очікується"
-  },
-  "friends.no-friends-match": {
-    "message": "Немає друзів, які збігаються з «{query}»"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "Пошук друзів…"
-  },
-  "friends.section.heading": {
-    "message": "{title} — {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Увійдіть в обліковий запис Modrinth</link>, щоб додати друзів і бачити, у що вони грають!"
   },
   "instance.add-server.add-and-play": {
     "message": "Додати та грати"
@@ -994,9 +844,6 @@
   },
   "minecraft-account.label": {
     "message": "Обліковий запис Minecraft"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "Не авторизовано"
   },
   "minecraft-account.remove-account": {
     "message": "Видалити обліковий запис"

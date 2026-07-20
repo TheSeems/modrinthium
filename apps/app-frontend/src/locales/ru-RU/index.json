@@ -482,9 +482,6 @@
   "app.settings.tabs.language": {
     "message": "Язык"
   },
-  "app.settings.tabs.privacy": {
-    "message": "Конфиденциальность"
-  },
   "app.settings.tabs.resource-management": {
     "message": "Управление ресурсами"
   },
@@ -494,23 +491,8 @@
   "app.skins.add-button.drag-and-drop": {
     "message": "Перетащите сюда"
   },
-  "app.skins.apply-button": {
-    "message": "Применить"
-  },
   "app.skins.delete-button": {
     "message": "Удалить скин"
-  },
-  "app.skins.delete-modal.description": {
-    "message": "Выбранный скин будет удалён навсегда. Это действие необратимо."
-  },
-  "app.skins.delete-modal.title": {
-    "message": "Вы действительно хотите удалить этот скин?"
-  },
-  "app.skins.dropped-file-error.text": {
-    "message": "Не удалось прочитать перетащенный файл."
-  },
-  "app.skins.dropped-file-error.title": {
-    "message": "Ошибка обработки файла"
   },
   "app.skins.edit-button": {
     "message": "Изменить скин"
@@ -563,80 +545,8 @@
   "app.skins.modal.upload-skin-first-tooltip": {
     "message": "Сначала загрузите скин!"
   },
-  "app.skins.preview.edit-button": {
-    "message": "Изменить"
-  },
-  "app.skins.previewing-badge": {
-    "message": "Предпросмотр"
-  },
-  "app.skins.rate-limit.text": {
-    "message": "Вы слишком часто меняете скин. Серверы Mojang временно заблокировали дальнейшие запросы. Подождите немного, прежде чем попробовать снова."
-  },
-  "app.skins.rate-limit.title": {
-    "message": "Не так быстро!"
-  },
-  "app.skins.reorder-error.text": {
-    "message": "Порядок скинов не сохранился."
-  },
-  "app.skins.reorder-error.title": {
-    "message": "Не удалось изменить порядок скинов"
-  },
-  "app.skins.section.builders-and-biomes": {
-    "message": "Builders & Biomes"
-  },
-  "app.skins.section.chaos-cubed": {
-    "message": "Chaos Cubed"
-  },
-  "app.skins.section.chase-the-skies": {
-    "message": "Chase the Skies"
-  },
-  "app.skins.section.default-skins": {
-    "message": "Стандартные скины"
-  },
-  "app.skins.section.minecon-earth-2017": {
-    "message": "MINECON Earth 2017"
-  },
-  "app.skins.section.modrinth": {
-    "message": "Modrinth"
-  },
-  "app.skins.section.modrinth-pride": {
-    "message": "Modrinth Pride"
-  },
-  "app.skins.section.modrinth-pride.tooltip": {
-    "message": "Эти скины получены за участие в сборе средств Modrinth Pride в месяц гордости."
-  },
-  "app.skins.section.mounts-of-mayhem": {
-    "message": "Mounts of Mayhem"
-  },
   "app.skins.section.saved-skins": {
     "message": "Сохранённые скины"
-  },
-  "app.skins.section.striding-hero": {
-    "message": "Striding Hero"
-  },
-  "app.skins.section.the-copper-age": {
-    "message": "The Copper Age"
-  },
-  "app.skins.section.the-garden-awakens": {
-    "message": "The Garden Awakens"
-  },
-  "app.skins.section.tiny-takeover": {
-    "message": "Tiny Takeover"
-  },
-  "app.skins.sign-in.button": {
-    "message": "Войти"
-  },
-  "app.skins.sign-in.description": {
-    "message": "Пожалуйста, войдите в свой аккаунт Minecraft, чтобы воспользоваться функциями управления скинами в приложении Modrinth."
-  },
-  "app.skins.sign-in.rinthbot-alt": {
-    "message": "Восторженный Modrinth Bot"
-  },
-  "app.skins.sign-in.title": {
-    "message": "Войдите"
-  },
-  "app.skins.title": {
-    "message": "Выбор скина"
   },
   "app.update-popup.body.download-complete": {
     "message": "Скачивание версии Modrinth App {version} завершено. Перезапустите приложение, чтобы обновить его, или оно обновится автоматически после закрытия."
@@ -685,69 +595,6 @@
   },
   "app.world.world-item.players-online": {
     "message": "{count} в игре"
-  },
-  "friends.action.add-friend": {
-    "message": "Добавить в друзья"
-  },
-  "friends.action.view-friend-requests": {
-    "message": "{count} {count, plural, one {запрос} few {запроса} other {запросов}} дружбы"
-  },
-  "friends.add-friend.submit": {
-    "message": "Отправить запрос дружбы"
-  },
-  "friends.add-friend.title": {
-    "message": "Добавление в друзья"
-  },
-  "friends.add-friend.username.description": {
-    "message": "Оно может быть не таким, как в Minecraft!"
-  },
-  "friends.add-friend.username.placeholder": {
-    "message": "Введите имя с Modrinth..."
-  },
-  "friends.add-friend.username.title": {
-    "message": "Какое имя у друга на Modrinth?"
-  },
-  "friends.add-friends-to-share": {
-    "message": "<link>Добавьте друзей</link> и следите за ними!"
-  },
-  "friends.friend.cancel-request": {
-    "message": "Отменить запрос"
-  },
-  "friends.friend.remove-friend": {
-    "message": "Удалить из друзей"
-  },
-  "friends.friend.request-sent": {
-    "message": "Отправлен запрос дружбы"
-  },
-  "friends.friend.view-profile": {
-    "message": "Открыть профиль"
-  },
-  "friends.heading": {
-    "message": "Друзья"
-  },
-  "friends.heading.active": {
-    "message": "В игре"
-  },
-  "friends.heading.offline": {
-    "message": "Не в сети"
-  },
-  "friends.heading.online": {
-    "message": "В сети"
-  },
-  "friends.heading.pending": {
-    "message": "В ожидании"
-  },
-  "friends.no-friends-match": {
-    "message": "Нет друзей по запросу «{query}»"
-  },
-  "friends.search-friends-placeholder": {
-    "message": "Поиск по друзьям..."
-  },
-  "friends.section.heading": {
-    "message": "{title} — {count}"
-  },
-  "friends.sign-in-to-add-friends": {
-    "message": "<link>Войдите в аккаунт Modrinth</link>, чтобы добавлять друзей и следить за ними!"
   },
   "instance.add-server.add-and-play": {
     "message": "Добавить и играть"
@@ -1042,9 +889,6 @@
   },
   "minecraft-account.label": {
     "message": "Учётная запись Minecraft"
-  },
-  "minecraft-account.not-signed-in": {
-    "message": "Вход не выполнен"
   },
   "minecraft-account.remove-account": {
     "message": "Удалить"
