@@ -6767,8 +6767,6 @@ version = "1.0.0-local"
 dependencies = [
  "async_zip",
  "chrono",
- "core-foundation 0.10.1",
- "core-graphics",
  "daedalus",
  "dashmap",
  "either",
@@ -6776,7 +6774,6 @@ dependencies = [
  "hyper",
  "hyper-util",
  "native-dialog",
- "objc2-app-kit",
  "paste",
  "path-util",
  "serde",
@@ -6801,9 +6798,7 @@ dependencies = [
  "url",
  "urlencoding",
  "uuid 1.23.3",
- "webview2-com",
  "windows",
- "windows-core 0.61.2",
 ]
 
 [[package]]
