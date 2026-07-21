@@ -373,18 +373,28 @@ pub async fn publish(
 
     // The published pack now contains everything in the instance, so fold any
     // freshly added content into the modpack instead of leaving it flagged as
-    // "additional content" locally.
-    if let Err(err) =
-        crate::state::instances::commands::rebaseline_content_as_modpack(
-            instance_id,
-            None,
-            &state,
-        )
-        .await
+    // "additional content" locally. When anything changes, emit a sync event so
+    // an open content tab refreshes instead of showing the stale grouping.
+    match crate::state::instances::commands::rebaseline_content_as_modpack(
+        instance_id,
+        None,
+        &state,
+    )
+    .await
     {
-        tracing::warn!(
-            "Failed to re-baseline content after publishing {instance_id}: {err}"
-        );
+        Ok(updated) if updated > 0 => {
+            let _ = crate::event::emit::emit_instance(
+                instance_id,
+                crate::event::InstancePayloadType::Synced,
+            )
+            .await;
+        }
+        Ok(_) => {}
+        Err(err) => {
+            tracing::warn!(
+                "Failed to re-baseline content after publishing {instance_id}: {err}"
+            );
+        }
     }
 
     if remember {
