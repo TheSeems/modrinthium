@@ -47,16 +47,6 @@ export const FigmaExamples: Story = {
 					@dismiss="noop"
 				/>
 				<NotificationToast
-					type="server-invite"
-					actor-name="Fetch"
-					:actor-avatar-url="avatarUrl"
-					entity-name="Modrinth SMP"
-					@accept="noop"
-					@decline="noop"
-					@dismiss="noop"
-					@open-actor="noop"
-				/>
-				<NotificationToast
 					type="instance-invite"
 					actor-name="Fetch"
 					:actor-avatar-url="avatarUrl"
@@ -90,31 +80,6 @@ export const FigmaExamples: Story = {
 	}),
 }
 
-export const ServerInvite: Story = {
-	render: () => ({
-		components: { NotificationToast },
-		setup() {
-			return {
-				avatarUrl,
-				instanceIconUrl: MinecraftServerIcon,
-				noop,
-			}
-		},
-		template: /* html */ `
-			<NotificationToast
-				type="server-invite"
-				actor-name="Fetch"
-				:actor-avatar-url="avatarUrl"
-				entity-name="Modrinth SMP"
-				@accept="noop"
-				@decline="noop"
-				@dismiss="noop"
-				@open-actor="noop"
-			/>
-		`,
-	}),
-}
-
 export const MissingAvatarFallback: Story = {
 	render: () => ({
 		components: { NotificationToast },
@@ -126,9 +91,10 @@ export const MissingAvatarFallback: Story = {
 		},
 		template: /* html */ `
 			<NotificationToast
-				type="server-invite"
+				type="instance-invite"
 				actor-name="Fetch"
-				entity-name="Modrinth SMP"
+				entity-name="New Creation"
+				:entity-icon-url="instanceIconUrl"
 				@accept="noop"
 				@decline="noop"
 				@dismiss="noop"

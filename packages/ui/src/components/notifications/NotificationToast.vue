@@ -30,26 +30,20 @@
 							</button>
 							<span v-else class="font-semibold text-contrast">Someone</span>
 							<span class="mx-1">{{ inviteActionText }}</span>
-							<template v-if="type === 'server-invite'">
-								<span class="font-semibold text-contrast">{{ entityLabel }}</span
-								>.
-							</template>
-							<template v-else>
-								<span class="inline-flex max-w-full items-center gap-[5px] align-[-4px]">
-									<Avatar
-										:src="entityIconUrl"
-										:alt="entityLabel"
-										size="24px"
-										no-shadow
-										raised
-										:tint-by="entityLabel"
-										class="!rounded-[7px]"
-									/>
-									<span class="min-w-0 truncate font-semibold text-contrast">{{
-										entityLabel
-									}}</span> </span
-								>.
-							</template>
+							<span class="inline-flex max-w-full items-center gap-[5px] align-[-4px]">
+								<Avatar
+									:src="entityIconUrl"
+									:alt="entityLabel"
+									size="24px"
+									no-shadow
+									raised
+									:tint-by="entityLabel"
+									class="!rounded-[7px]"
+								/>
+								<span class="min-w-0 truncate font-semibold text-contrast">{{
+									entityLabel
+								}}</span> </span
+							>.
 						</template>
 					</p>
 					<ButtonStyled size="small" type="transparent" circular>
@@ -186,7 +180,6 @@ import ButtonStyled from '../base/ButtonStyled.vue'
 
 type NotificationToastType =
 	| 'friend-request'
-	| 'server-invite'
 	| 'instance-invite'
 	| 'instance-download'
 	| 'instance-ready'
@@ -231,10 +224,7 @@ defineEmits<{
 }>()
 
 const isInviteNotification = computed(
-	() =>
-		props.type === 'friend-request' ||
-		props.type === 'server-invite' ||
-		props.type === 'instance-invite',
+	() => props.type === 'friend-request' || props.type === 'instance-invite',
 )
 
 const actorLabel = computed(() => props.actorName || 'Someone')
@@ -245,13 +235,7 @@ const isWaitingProgress = computed(() => props.type === 'instance-download' && p
 const formatBytes = useFormatBytes()
 const formatNumber = useFormatNumber()
 
-const inviteActionText = computed(() => {
-	if (props.type === 'server-invite') {
-		return 'invited you to manage the server'
-	}
-
-	return 'invited you to play the instance'
-})
+const inviteActionText = 'invited you to play the instance'
 
 const resolvedStatusText = computed(() => {
 	if (props.type === 'instance-ready') {

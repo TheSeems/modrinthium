@@ -33,7 +33,6 @@ import { LabrinthGlobalsInternalModule } from './labrinth/globals/internal'
 import { LabrinthImagesV3Module } from './labrinth/images/v3'
 import { LabrinthLimitsV3Module } from './labrinth/limits/v3'
 import { LabrinthModerationInternalModule } from './labrinth/moderation/internal'
-import { LabrinthNotificationsV2Module } from './labrinth/notifications/v2'
 import { LabrinthOAuthInternalModule } from './labrinth/oauth/internal'
 import { LabrinthOrganizationsV3Module } from './labrinth/organizations/v3'
 import { LabrinthPatsV2Module } from './labrinth/pats/v2'
@@ -104,7 +103,6 @@ export const MODULE_REGISTRY = {
 	labrinth_globals_internal: LabrinthGlobalsInternalModule,
 	labrinth_images_v3: LabrinthImagesV3Module,
 	labrinth_moderation_internal: LabrinthModerationInternalModule,
-	labrinth_notifications_v2: LabrinthNotificationsV2Module,
 	labrinth_oauth_internal: LabrinthOAuthInternalModule,
 	labrinth_organizations_v3: LabrinthOrganizationsV3Module,
 	labrinth_pats_v2: LabrinthPatsV2Module,
