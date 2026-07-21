@@ -1,18 +1,10 @@
 name: Build App
 on:
+  # Push builds are limited to release tags; day-to-day builds are manual
+  # (workflow_dispatch) to avoid a costly run on every push to main.
   push:
-    branches:
-      - main
     tags:
       - 'v*'
-    paths:
-      - .github/workflows/theseus-build.yml
-      - 'apps/app/**'
-      - 'apps/app-frontend/**'
-      - 'packages/app-lib/**'
-      - 'packages/assets/**'
-      - 'packages/ui/**'
-      - 'packages/utils/**'
   workflow_dispatch:
 
 concurrency:
