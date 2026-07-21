@@ -58,8 +58,13 @@ const modpack = ref()
 
 if (props.instance.link) {
 	nextTick().then(async () => {
-		modpack.value = await get_project(props.instance.link?.project_id, 'must_revalidate')
-		loadingModpack.value = false
+		try {
+			modpack.value = await get_project(props.instance.link?.project_id, 'must_revalidate')
+		} catch (err) {
+			console.error('Failed to load linked modpack', err)
+		} finally {
+			loadingModpack.value = false
+		}
 	})
 }
 
