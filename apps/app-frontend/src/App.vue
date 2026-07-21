@@ -663,6 +663,8 @@ async function handleCommand(e) {
 				})
 				.catch(handleError)
 		}
+	} else if (e.event === 'InstallSeed') {
+		seedInstallModal.value?.show(e.url)
 	} else {
 		await contentInstall
 			.install(e.id, null, null, 'URLConfirmModal', undefined, undefined, { showProjectInfo: true })

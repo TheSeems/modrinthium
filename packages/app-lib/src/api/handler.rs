@@ -30,6 +30,20 @@ pub async fn handle_url(sublink: &str) -> crate::Result<CommandPayload> {
         Some(("server", id)) => {
             CommandPayload::InstallServer { id: id.to_string() }
         }
+        // /seed/{url}   -    Installs a seed modpack from its manifest URL
+        Some(("seed", raw)) => match decode(raw) {
+            Ok(decoded) => CommandPayload::InstallSeed {
+                url: decoded.to_string(),
+            },
+            Err(e) => {
+                emit_warning(&format!("Invalid UTF-8 in seed URL: {e}"))
+                    .await?;
+                return Err(crate::ErrorKind::InputError(format!(
+                    "Invalid UTF-8 in seed URL: {e}"
+                ))
+                .into());
+            }
+        },
         // /launch/instance/{id}   -    Launches an instance
         Some(("launch", rest)) if rest.starts_with("instance/") => {
             let raw = rest.trim_start_matches("instance/");

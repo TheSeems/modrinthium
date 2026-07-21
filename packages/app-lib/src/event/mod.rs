@@ -236,6 +236,10 @@ pub enum CommandPayload {
         // run or install .mrpack
         path: PathBuf,
     },
+    InstallSeed {
+        // install a seed modpack from its manifest URL
+        url: String,
+    },
 }
 
 #[derive(Serialize, Clone)]

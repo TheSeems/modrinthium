@@ -80,9 +80,13 @@ const manifest = ref<SeedManifest | null>(null)
 const loading = ref(false)
 const installing = ref(false)
 
-function show() {
+async function show(prefillUrl?: string) {
 	reset()
 	modal.value?.show()
+	if (prefillUrl) {
+		url.value = prefillUrl
+		await loadManifest()
+	}
 }
 
 function hide() {
