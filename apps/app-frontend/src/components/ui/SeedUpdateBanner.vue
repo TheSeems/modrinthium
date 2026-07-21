@@ -71,8 +71,9 @@ import {
 	TriangleAlertIcon,
 } from '@modrinth/assets'
 import { ButtonStyled, injectNotificationManager } from '@modrinth/ui'
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 
+import { instance_listener } from '@/helpers/events.js'
 import {
 	seed_attach,
 	seed_check_update,
@@ -104,7 +105,27 @@ async function load() {
 	}
 }
 
-onMounted(load)
+let unlistenInstance: (() => void) | undefined
+
+onMounted(async () => {
+	await load()
+	// Publishing bumps the recorded seed version via an instance edit; re-read it
+	// so "installed vX" reflects the new version without a tab switch.
+	unlistenInstance = await instance_listener(
+		async (event: { event: string; instance_id: string }) => {
+			if (
+				event.instance_id === props.instanceId &&
+				(event.event === 'synced' || event.event === 'edited')
+			) {
+				seed.value = await seed_get(props.instanceId).catch(() => seed.value)
+			}
+		},
+	)
+})
+
+onUnmounted(() => {
+	unlistenInstance?.()
+})
 
 watch(
 	() => props.instanceId,

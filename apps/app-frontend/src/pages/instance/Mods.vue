@@ -1517,7 +1517,7 @@ onMounted(() => {
 			props.instance.install_stage === 'installed' &&
 			!isBulkOperating.value
 		) {
-			await initProjects()
+			await refreshContentState()
 		}
 	})
 		.then((unlisten) => {
