@@ -78,12 +78,14 @@ jobs:
       - name: Set application version
         shell: bash
         run: |
-          VERSION="$(git describe --tags --always | sed -E 's/-([0-9]+)-(g[0-9a-fA-F]+)$/-canary+\1.\2/')"
+          VERSION="$(git describe --tags --always)"
           VERSION="${VERSION#v}"
-          # With no version tags, git describe returns a bare commit hash, which is
-          # not valid semver; fall back to a dev version so the config is valid.
-          if ! printf '%s' "$VERSION" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+'; then
-            VERSION="0.0.0-canary+${VERSION}"
+          # Only an exact version tag yields a release build. Anything else
+          # (untagged, or commits past a tag) becomes a numeric canary version:
+          # the MSI target rejects non-numeric build metadata like a git hash,
+          # and the run number keeps versions monotonic for the auto-updater.
+          if ! printf '%s' "$VERSION" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            VERSION="0.0.${GITHUB_RUN_NUMBER}"
           fi
           echo "Setting application version to ${VERSION}"
           dasel put -f apps/app/Cargo.toml -t string -v "${VERSION}" 'package.version'
