@@ -4,6 +4,8 @@ use tauri::plugin::TauriPlugin;
 use tauri::{Manager, Runtime, UserAttentionType};
 use theseus::prelude::*;
 
+const SIGNIN_WINDOW_TITLE: &str = "Sign into Modrinthium";
+
 pub fn init<R: Runtime>() -> TauriPlugin<R> {
     tauri::plugin::Builder::<R>::new("auth")
         .invoke_handler(tauri::generate_handler![
@@ -50,7 +52,7 @@ pub async fn login<R: Runtime>(
             },
         )?),
     )
-    .title("Sign into Modrinth")
+    .title(SIGNIN_WINDOW_TITLE)
     .always_on_top(true)
     .center()
     .build()?;
@@ -58,9 +60,15 @@ pub async fn login<R: Runtime>(
     window.request_user_attention(Some(UserAttentionType::Critical))?;
 
     while (Utc::now() - start) < Duration::minutes(10) {
-        if window.title().is_err() {
+        match window.title() {
+            // The loaded OAuth pages overwrite the window title as they
+            // navigate; keep it on our branding instead.
+            Ok(title) if title != SIGNIN_WINDOW_TITLE => {
+                let _ = window.set_title(SIGNIN_WINDOW_TITLE);
+            }
+            Ok(_) => {}
             // user closed window, cancelling flow
-            return Ok(None);
+            Err(_) => return Ok(None),
         }
 
         if window
