@@ -67,6 +67,52 @@ const form = useInstallationForm(
 	incompatibleContentModal,
 )
 
+// Imported/seed modpacks keep their pack link (so the content tab stays grouped),
+// which normally hides the loader-version editor. Surface a focused control so the
+// loader can be bumped in place without unlinking.
+const isLocalFileValue = computed(() =>
+	typeof ctx.isLocalFile === 'boolean' ? ctx.isLocalFile : (ctx.isLocalFile?.value ?? false),
+)
+const canEditLinkedLoaderVersion = computed(
+	() => isLocalFileValue.value && ctx.currentPlatform.value !== 'vanilla',
+)
+const linkedLoaderName = computed(() => formatLoaderLabel(ctx.currentPlatform.value))
+const linkedLoaderVersion = ref(ctx.currentLoaderVersion.value)
+watch(
+	() => ctx.currentLoaderVersion.value,
+	(value) => {
+		linkedLoaderVersion.value = value
+	},
+)
+const linkedLoaderVersionOptions = computed(() =>
+	ctx
+		.resolveLoaderVersions(ctx.currentPlatform.value, ctx.currentGameVersion.value)
+		.map((entry) => ({ value: entry.id, label: entry.label ?? entry.id })),
+)
+const linkedLoaderVersionDisplay = computed(
+	() =>
+		linkedLoaderVersionOptions.value.find((option) => option.value === linkedLoaderVersion.value)
+			?.label ?? linkedLoaderVersion.value,
+)
+const linkedLoaderVersionChanged = computed(
+	() => !!linkedLoaderVersion.value && linkedLoaderVersion.value !== ctx.currentLoaderVersion.value,
+)
+const applyingLinkedLoaderVersion = ref(false)
+async function applyLinkedLoaderVersion() {
+	if (applyingLinkedLoaderVersion.value || !linkedLoaderVersionChanged.value) return
+	applyingLinkedLoaderVersion.value = true
+	try {
+		await ctx.save(
+			ctx.currentPlatform.value,
+			ctx.currentGameVersion.value,
+			linkedLoaderVersion.value,
+		)
+		await ctx.afterSave?.()
+	} finally {
+		applyingLinkedLoaderVersion.value = false
+	}
+}
+
 function stateSnapshot() {
 	return {
 		loading: ctx.loading.value,
@@ -666,6 +712,48 @@ const messages = defineMessages({
 								{{ formatMessage(commonMessages.changeVersionButton) }}
 							</button>
 						</ButtonStyled>
+					</div>
+				</div>
+
+				<!-- Loader version (imported/seed packs: bump without unlinking) -->
+				<div v-if="canEditLinkedLoaderVersion" class="flex flex-col gap-2.5">
+					<span class="text-lg font-semibold text-contrast">
+						{{ formatMessage(messages.loaderVersionLabel, { loader: linkedLoaderName }) }}
+					</span>
+					<div class="flex flex-col gap-3 rounded-[20px] bg-surface-2 p-4">
+						<Combobox
+							v-model="linkedLoaderVersion"
+							v-tooltip="ctx.isBusy.value ? ctx.busyMessage?.value : undefined"
+							searchable
+							sync-with-selection
+							:options="linkedLoaderVersionOptions"
+							:placeholder="formatMessage(commonMessages.selectVersionPlaceholder)"
+							:search-placeholder="formatMessage(commonMessages.searchVersionPlaceholder)"
+							:display-value="
+								linkedLoaderVersionDisplay ||
+								formatMessage(commonMessages.selectVersionPlaceholder)
+							"
+							:aria-label="
+								formatMessage(messages.selectLoaderVersionAriaLabel, { loader: linkedLoaderName })
+							"
+							:disabled="ctx.isBusy.value || applyingLinkedLoaderVersion"
+						/>
+						<div class="flex flex-wrap gap-2">
+							<ButtonStyled color="brand">
+								<button
+									v-tooltip="ctx.isBusy.value ? ctx.busyMessage?.value : undefined"
+									class="!shadow-none"
+									:disabled="
+										!linkedLoaderVersionChanged || applyingLinkedLoaderVersion || ctx.isBusy.value
+									"
+									@click="applyLinkedLoaderVersion"
+								>
+									<SpinnerIcon v-if="applyingLinkedLoaderVersion" class="animate-spin" />
+									<SaveIcon v-else />
+									{{ formatMessage(commonMessages.saveButton) }}
+								</button>
+							</ButtonStyled>
+						</div>
 					</div>
 				</div>
 
