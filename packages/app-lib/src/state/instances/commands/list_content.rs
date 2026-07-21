@@ -254,6 +254,28 @@ pub(crate) async fn list_content(
     .await
 }
 
+/// Promote user-added content in the instance's applied content set to
+/// `imported_modpack`, used after publishing the instance as a seed so freshly
+/// added mods stop showing up as "additional content".
+pub(crate) async fn rebaseline_content_as_modpack(
+    instance_id: &str,
+    content_set_id: Option<&str>,
+    state: &State,
+) -> crate::Result<u64> {
+    let resolved = resolve_content_scope_with_instance(
+        instance_id,
+        content_set_id,
+        &state.pool,
+    )
+    .await?;
+
+    sqlite::content_rows::rebaseline_local_content_as_imported_modpack(
+        &resolved.content_set.id,
+        &state.pool,
+    )
+    .await
+}
+
 pub(crate) async fn list_linked_modpack_content(
     instance_id: &str,
     content_set_id: Option<&str>,

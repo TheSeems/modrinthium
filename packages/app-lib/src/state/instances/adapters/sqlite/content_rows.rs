@@ -931,6 +931,32 @@ pub(crate) async fn upsert_content_entry_from_parts(
         })
 }
 
+/// After an instance is published as a modpack, everything it currently holds
+/// becomes part of that pack, so promote user-added (`local`) content in the
+/// content set to `imported_modpack`. This folds it out of the content tab's
+/// "additional content" section. Returns the number of entries updated.
+pub(crate) async fn rebaseline_local_content_as_imported_modpack(
+    content_set_id: &str,
+    pool: &SqlitePool,
+) -> crate::Result<u64> {
+    let modified_at = Utc::now().timestamp();
+    let result = sqlx::query(
+        "
+		UPDATE instance_content_entries
+		SET source_kind = ?, modified_at = ?
+		WHERE content_set_id = ? AND source_kind = ?
+		",
+    )
+    .bind(ContentSourceKind::ImportedModpack.as_str())
+    .bind(modified_at)
+    .bind(content_set_id)
+    .bind(ContentSourceKind::Local.as_str())
+    .execute(pool)
+    .await?;
+
+    Ok(result.rows_affected())
+}
+
 pub(crate) async fn set_content_entry_enabled_for_file(
     content_set_id: &str,
     file_id: &str,

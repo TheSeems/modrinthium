@@ -371,6 +371,22 @@ pub async fn publish(
     let _ = tokio::fs::remove_file(&export_path).await;
     upload_result?;
 
+    // The published pack now contains everything in the instance, so fold any
+    // freshly added content into the modpack instead of leaving it flagged as
+    // "additional content" locally.
+    if let Err(err) =
+        crate::state::instances::commands::rebaseline_content_as_modpack(
+            instance_id,
+            None,
+            &state,
+        )
+        .await
+    {
+        tracing::warn!(
+            "Failed to re-baseline content after publishing {instance_id}: {err}"
+        );
+    }
+
     if remember {
         set_publish_config(
             instance_id,
@@ -452,7 +468,6 @@ pub async fn check_update(
         return Ok(None);
     };
     let manifest = fetch_manifest(&entry.seed_url).await?;
-    println!("{}", format!("new manifest {:?}", manifest));
     Ok(Some(SeedUpdateInfo {
         has_update: manifest.version != entry.version,
         seed_url: entry.seed_url,
