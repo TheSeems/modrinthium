@@ -33,14 +33,6 @@ const messages = defineMessages({
 		defaultMessage:
 			'Enables advanced rendering such as blur effects that may cause performance issues without hardware-accelerated rendering.',
 	},
-	hideNametagTitle: {
-		id: 'app.appearance-settings.hide-nametag.title',
-		defaultMessage: 'Hide nametag',
-	},
-	hideNametagDescription: {
-		id: 'app.appearance-settings.hide-nametag.description',
-		defaultMessage: 'Disables the nametag above your player on the skins page.',
-	},
 	nativeDecorationsTitle: {
 		id: 'app.appearance-settings.native-decorations.title',
 		defaultMessage: 'Native decorations',
@@ -206,25 +198,6 @@ watch(
 					const newValue = !themeStore.getFeatureFlag(showPlayTimeFlag)
 					themeStore.featureFlags[showPlayTimeFlag] = newValue
 					settings.feature_flags[showPlayTimeFlag] = newValue
-				}
-			"
-		/>
-	</div>
-
-	<div class="mt-6 flex items-center justify-between">
-		<div>
-			<h2 class="m-0 text-lg font-semibold text-contrast">
-				{{ formatMessage(messages.hideNametagTitle) }}
-			</h2>
-			<p class="m-0 mt-1">{{ formatMessage(messages.hideNametagDescription) }}</p>
-		</div>
-		<Toggle
-			id="hide-nametag-skins-page"
-			:model-value="themeStore.hideNametagSkinsPage"
-			@update:model-value="
-				(e) => {
-					themeStore.hideNametagSkinsPage = !!e
-					settings.hide_nametag_skins_page = themeStore.hideNametagSkinsPage
 				}
 			"
 		/>
