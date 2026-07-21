@@ -15,36 +15,30 @@
 			<div class="flex min-w-0 flex-1 flex-col gap-2.5">
 				<div class="flex w-full items-start gap-1">
 					<p class="m-0 min-w-0 flex-1 break-words text-lg font-normal leading-6 text-contrast/85">
-						<template v-if="type === 'friend-request'">
-							<span class="font-semibold text-contrast">{{ actorLabel }}</span>
-							<span> sent you a friend request.</span>
-						</template>
-						<template v-else>
-							<button
-								v-if="actorName"
-								type="button"
-								class="m-0 inline border-0 bg-transparent p-0 text-lg font-semibold leading-6 text-contrast hover:underline"
-								@click="$emit('open-actor')"
-							>
-								{{ actorName }}
-							</button>
-							<span v-else class="font-semibold text-contrast">Someone</span>
-							<span class="mx-1">{{ inviteActionText }}</span>
-							<span class="inline-flex max-w-full items-center gap-[5px] align-[-4px]">
-								<Avatar
-									:src="entityIconUrl"
-									:alt="entityLabel"
-									size="24px"
-									no-shadow
-									raised
-									:tint-by="entityLabel"
-									class="!rounded-[7px]"
-								/>
-								<span class="min-w-0 truncate font-semibold text-contrast">{{
-									entityLabel
-								}}</span> </span
-							>.
-						</template>
+						<button
+							v-if="actorName"
+							type="button"
+							class="m-0 inline border-0 bg-transparent p-0 text-lg font-semibold leading-6 text-contrast hover:underline"
+							@click="$emit('open-actor')"
+						>
+							{{ actorName }}
+						</button>
+						<span v-else class="font-semibold text-contrast">Someone</span>
+						<span class="mx-1">{{ inviteActionText }}</span>
+						<span class="inline-flex max-w-full items-center gap-[5px] align-[-4px]">
+							<Avatar
+								:src="entityIconUrl"
+								:alt="entityLabel"
+								size="24px"
+								no-shadow
+								raised
+								:tint-by="entityLabel"
+								class="!rounded-[7px]"
+							/>
+							<span class="min-w-0 truncate font-semibold text-contrast">{{
+								entityLabel
+							}}</span> </span
+						>.
 					</p>
 					<ButtonStyled size="small" type="transparent" circular>
 						<button
@@ -179,7 +173,6 @@ import Avatar from '../base/Avatar.vue'
 import ButtonStyled from '../base/ButtonStyled.vue'
 
 type NotificationToastType =
-	| 'friend-request'
 	| 'instance-invite'
 	| 'instance-download'
 	| 'instance-ready'
@@ -223,9 +216,7 @@ defineEmits<{
 	'open-instance': []
 }>()
 
-const isInviteNotification = computed(
-	() => props.type === 'friend-request' || props.type === 'instance-invite',
-)
+const isInviteNotification = computed(() => props.type === 'instance-invite')
 
 const actorLabel = computed(() => props.actorName || 'Someone')
 const entityLabel = computed(() => props.entityName || '')

@@ -39,14 +39,6 @@ export const FigmaExamples: Story = {
 		template: /* html */ `
 			<div class="flex flex-col gap-4">
 				<NotificationToast
-					type="friend-request"
-					actor-name="Fetch"
-					:actor-avatar-url="avatarUrl"
-					@accept="noop"
-					@decline="noop"
-					@dismiss="noop"
-				/>
-				<NotificationToast
 					type="instance-invite"
 					actor-name="Fetch"
 					:actor-avatar-url="avatarUrl"
