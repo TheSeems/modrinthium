@@ -83,12 +83,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "기본 시작 화면"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "스킨 화면에서 플레이어 위에 있는 이름표를 비활성화합니다."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "이름표 숨기기"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "홈 화면의 \"바로 입장\" 부분에 최근 플레이한 월드를 표시합니다."
   },

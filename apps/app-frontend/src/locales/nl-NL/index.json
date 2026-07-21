@@ -68,12 +68,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Standaard openingspagina"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Schakelt het nametag boven jouw speler op de skins pagina uit."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Verberg nametag"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Inclusief recente werelden in het gedeelte \"Ga terug\" op de startpagina."
   },

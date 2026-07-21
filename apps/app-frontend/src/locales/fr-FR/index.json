@@ -128,12 +128,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Page d'ouverture"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Désactive le nom au-dessus du joueur sur la page skins."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Cacher le pseudo"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Inclut les mondes récents dans la section « Partie rapide » sur la page d'accueil."
   },

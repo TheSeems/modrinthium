@@ -68,12 +68,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Laman pendaratan lalai"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Menyahdayakan tanda nama di atas pemain anda pada halaman kekulit."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Sembunyikan tanda nama"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Sertakan dunia terkini dalam bahagian \"Lompat kembali\" pada Laman Utama."
   },

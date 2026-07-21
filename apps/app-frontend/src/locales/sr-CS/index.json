@@ -98,12 +98,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Podrazumevana odredišna stranica"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Onemogućava oznaku sa imenom iznad tvog igrača na stranici sa skinovima."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Sakrij ime"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Uključuje nedavne svetove u odeljku „Povratak“ na početnoj stranici."
   },

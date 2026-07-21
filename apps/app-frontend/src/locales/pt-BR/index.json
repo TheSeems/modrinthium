@@ -149,12 +149,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Página inicial padrão"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Desativa o nametag acima do seu jogador na página de Skins."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Ocultar nametag"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Inclui mundos recentes na seção \"Retomar\" na página inicial."
   },

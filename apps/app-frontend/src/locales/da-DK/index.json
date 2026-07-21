@@ -80,12 +80,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Standard startside"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Slår nametagget over din spiller på skins siden fra."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Gem nametag"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Inkluderer de sidste verdener i afsnittet \"Hop tilbage\" på startsiden."
   },

@@ -143,12 +143,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Усталена цільова сторінка"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Вимикає ім'я над вашим гравцем на сторінці скінів."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Приховати ім'я"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Уключає нещодавні світи в розділі «Повернутися» на головній сторінці."
   },

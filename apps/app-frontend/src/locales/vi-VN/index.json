@@ -68,12 +68,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Trang mặc định"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Tắt hiển thị thẻ tên phía trên người chơi ở trang skin."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Ẩn thẻ tên"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Hiển thị các thế giới gần đây trong mục \"Tiếp tục chơi\" ở Trang chủ."
   },

@@ -149,12 +149,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "الصفحة الرئيسة الافتراضية"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "ألغ تفعيل عرض الاسم فوق لاعبك في صفحة المظاهر."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "إخفاء عرض الاسم"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "يتضمن العوالم الحديثة في قسم \"العودة إلى اللعب\" على الصفحة الرئيسية."
   },

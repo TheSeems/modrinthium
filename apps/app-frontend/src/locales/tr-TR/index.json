@@ -149,12 +149,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Varsayılan karşılama sayfası"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Kostümler sayfasındaki karakterinizin üzerindeki isim etiketini devre dışı bırakır."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "İsim etiketini gizle"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Ana sayfadaki 'Hızlıca Geri Dön' bölümünde son oynanan dünyaları gösterir."
   },

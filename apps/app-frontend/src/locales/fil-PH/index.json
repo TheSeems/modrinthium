@@ -71,12 +71,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Panimulang pahina ng paglapag"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Pagtatago ng nametag na nasa itaas ng iyong manlalaro sa loob ng pahina ng mga skin."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Itago ang nametag"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Pagsasali ng mga kamakailang mundo sa seksiyong \"Jump back in\" sa pahina ng Tahanan."
   },

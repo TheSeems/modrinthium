@@ -110,12 +110,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "デフォルトの起動ページ"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "スキンページでプレイヤー上部のネームタグを非表示にします。"
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "ネームタグを非表示にする"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "ホームページの「ジャンプバック」セクションには、最近追加されたワールドが含まれています。"
   },

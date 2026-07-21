@@ -83,12 +83,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Página de inicio predeterminada"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Desactiva la etiqueta arriba de tu personaje en la página de skins."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Ocultar etiqueta de nombre"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Incluye los mundos recientes en la sección \"Volver a jugar\" de la página de inicio."
   },

@@ -149,12 +149,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Standard-Startseite"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Deaktiviert das Namensschild über deinem Spieler auf der Skin-Seite."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Namensschild ausblenden"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Enthält zuletzt gespielte Welten im Abschnitt „Direkt weiterspielen“ auf der Startseite."
   },

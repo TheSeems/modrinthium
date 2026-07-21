@@ -149,12 +149,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Default landing page"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Disables the nametag above your player on the skins page."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Hide nametag"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Includes recent worlds in the \"Jump back in\" section on the Home page."
   },

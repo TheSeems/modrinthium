@@ -149,12 +149,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "預設起始頁面"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "在外觀頁面中隱藏玩家上方的名牌。"
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "隱藏名牌"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "在首頁的「繼續遊玩」區塊中顯示最近進入的世界。"
   },

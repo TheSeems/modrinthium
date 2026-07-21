@@ -149,12 +149,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Domyślna strona główna"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Wyłącza nazwę użytkownika nad modelem gracza na stronie skórek."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Ukryj nazwę"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Pokazuje ostatnie światy w sekcji \"Wskocz z powrotem do światów\" na stronie głównej."
   },

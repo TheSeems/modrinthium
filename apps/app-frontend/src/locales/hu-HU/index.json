@@ -149,12 +149,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Alapértelmezett nyitóoldal"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Letiltja a játékosod felett megjelenő névcímkét a Kinézetek oldalon."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Névcímke eltüntetése"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "A kezdőlap „Folytasd itt” részében a legújabb világok is megtalálhatók."
   },

@@ -89,12 +89,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Výchozí stránka po spuštění"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Zakáže zobrazení jmenovky nad vaší postavou na stránce skinů."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Skrýt jmenovku"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Zahrne nedávné světy do sekce „Vrátit se do hry“ na domovské stránce."
   },

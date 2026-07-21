@@ -131,12 +131,6 @@
   "app.appearance-settings.default-landing-page.title": {
     "message": "Standardlandingssida"
   },
-  "app.appearance-settings.hide-nametag.description": {
-    "message": "Inaktiverar namnskylten ovanför din spelare på utseende-sidan."
-  },
-  "app.appearance-settings.hide-nametag.title": {
-    "message": "Dölj namnskylt"
-  },
   "app.appearance-settings.jump-back-into-worlds.description": {
     "message": "Inkluderar de senaste världarna i \"Hoppa tillbaka i världar\" på hemsidan."
   },
