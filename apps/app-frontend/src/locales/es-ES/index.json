@@ -116,12 +116,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Omitir advertencias no esenciales"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Activa la posibilidad de alternar la barra lateral."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Alternar barra lateral"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Si intentas instalar un archivo de paquete de Modrinth (.mrpack) que no esté alojado en Modrinth, debes comprender los riesgos que esto conlleva antes de instalarlo."
   },

@@ -95,12 +95,6 @@
   "app.appearance-settings.show-play-time.title": {
     "message": "Speeltijd laten zien"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Schakelt de mogelijkheid om de zijbalk in- of uit te schakelen in."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Schakel zijbalk"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Als je probeert een Modrinth Pack-bestand (.mrpack) te installeren dat niet op Modrinth zelf wordt gehost, zorgen we ervoor dat je de risico's begrijpt voordat je het installeert."
   },

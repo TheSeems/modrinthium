@@ -116,12 +116,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Ohita ei olennaiset varoitukset"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Laittaa päälle mahdollisuuden kytkeä sivupalkkia."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Kytke sivupalkki"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Jos yrität asentaa Modrinth-pakettitiedoston (.mrpack), jota ei ole isännöity Modrinthissä, varmistamme, että ymmärrät riskit ennen asennusta."
   },

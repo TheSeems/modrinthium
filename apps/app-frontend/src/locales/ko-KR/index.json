@@ -116,12 +116,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "중요하지 않은 경고 넘기기"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "사이드바를 접거나 펼칠 수 있는 기능을 활성화합니다."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "사이드바 토글"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Modrinth 외부에서 가져온 모드팩 파일(.mrpack)을 설치할 때, 사용자가 위험성을 인지할 수 있도록 경고를 표시합니다."
   },

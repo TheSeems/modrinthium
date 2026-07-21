@@ -98,12 +98,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Hopp over mindre viktige advarsler"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Aktiverer evnen til å skru sidefeltet av/på."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Sidefeltsveksling"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Hvis du prøver å laste ned en Modrinth Pakke fil (.mrpack) som er ukjent for Modrinth så kommer vi til å forsikre oss om at du forstår risikoene før du installerer den."
   },

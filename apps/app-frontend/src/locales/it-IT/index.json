@@ -182,12 +182,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Salta le conferme poco importanti"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Mostra o nascondi la barra laterale."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Abilita la barra laterale"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Mostrerà un avviso prima di installare un file Modrinth Pack (.mrpack) non proveniente da Modrinth, a causa dei possibili rischi."
   },

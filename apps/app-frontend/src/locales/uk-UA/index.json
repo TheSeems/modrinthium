@@ -176,12 +176,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Пропустити несуттєві попередження"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Умикає можливість перемикання бокової панелі."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Перемикання бокової панелі"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Якщо ви спробуєте встановити файл пакета Modrinth (.mrpack), який не розміщено на Modrinth, ми переконаємося, що ви розумієте ризики, перш ніж установлювати його."
   },

@@ -182,12 +182,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Hagyd ki a lényegtelen figyelmeztetéseket"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Lehetővé teszi az oldalsáv be- és kikapcsolását."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Oldalsáv megjelenítése/elrejtése"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Ha olyan Modrinth Csomagfájlt (.mrpack) próbálsz telepíteni, amely nem a Modrinth szerverén található, a telepítés előtt gondoskodunk arról, hogy tisztában legyél a kockázatokkal."
   },

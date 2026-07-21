@@ -95,12 +95,6 @@
   "app.appearance-settings.show-play-time.title": {
     "message": "แสดงระยะเวลาที่เล่น"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "เปิดใช้งานตัวเลือกในการเลือกย่อหรือขยายแถบด้านข้าง"
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "ย่อแถบด้านข้าง"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "หากคุณกำลังติดตั้งไฟล์แพ็กของ Modrinth (.mrpack) ที่ไม่ได้โฮสต์โดยตรงบน Modrinth เราจะแจ้งให้คุณตรวจสอบให้มั่นใจก่อนที่จะติดตั้งไฟล์แพ็กดังกล่าว"
   },

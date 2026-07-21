@@ -182,12 +182,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "跳過非必要的警告"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "啟用切換側邊欄的功能。"
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "切換側邊欄"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "如果你嘗試安裝非 Modrinth 代管的 Modrinth 封裝檔案 (.mrpack)，我們會在安裝前確保你已了解相關風險。"
   },

@@ -182,12 +182,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Только опасные предупреждения"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Показывать кнопку скрытия боковой панели."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Переключатель боковой панели"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Предупреждать о рисках перед установкой файлов .mrpack, не размещённых на Modrinth."
   },

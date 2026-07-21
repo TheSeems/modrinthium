@@ -161,12 +161,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Cacher les alertes non essentielles"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Permet d'ouvrir ou de fermer la barre latérale."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Tiroir latéral"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Si vous essayez d'installer un fichier Modrinth Pack (.mrpack) qui n'est pas hébergé sur Modrinth, nous nous assurerons que vous comprenez les risques avant de l'installer."
   },

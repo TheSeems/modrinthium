@@ -95,12 +95,6 @@
   "app.appearance-settings.show-play-time.title": {
     "message": "Tampilkan waktu bermain"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Menghidupkan kemampuan untuk menghidupkan dan mematikan bilah sisi."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Hidup/matikan bilah sisi"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Bila Anda mencoba memasangkan berkas Modrinth Pack (.mrpack) yang tidak dihoskan pada Modrinth, kami akan memastikan Anda untuk memahami risikonya sebelum memasangkannya."
   },

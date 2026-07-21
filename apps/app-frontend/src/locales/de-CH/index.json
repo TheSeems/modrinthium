@@ -182,12 +182,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Unwichtige Warnungen überspringen"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Ermöglicht das Umschalten der Seitenleiste."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Seitenleiste umschalten"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Falls du versuchst, eine Modrinth-Pack-Datei (.mrpack) zu installieren, die nicht auf Modrinth gehostet wird, werden wir sicherstellen, dass du die Risiken vor der Installation verstehst."
   },

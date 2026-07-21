@@ -92,12 +92,6 @@
   "app.appearance-settings.skip-non-essential-warnings.description": {
     "message": "Melangkau pengesahan berisiko rendah secara automatik seperti pemasangan pek mod pendua, pemadaman kandungan biasa, kemas kini pukal, menyahpautkan pek mod dan gesaan pembaikan. Amaran berbahaya masih akan ditunjukkan."
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Membolehkan keupayaan untuk menogol bar sisi."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Togol bar sisi"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Jika anda cuba memasang fail Modrinth Pack (.mrpack) yang tidak dihoskan pada Modrinth, kami akan memastikan anda memahami risikonya sebelum memasangnya."
   },

@@ -182,12 +182,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Gerekli olmayan uyarıları atla"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Kenar çubuğunu ayarlama özelliğini aktifleştirir."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Kenar çubuğunu ayarla"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Modrinth üzerinde barındırılmayan bir Modrinth Paket dosyasını (.mrpack) yüklemeye çalışırsanız, yükleme öncesinde riskleri anladığınızdan emin oluruz."
   },

@@ -182,12 +182,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "تخطي التحذيرات غير الضرورية"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "يتيح إمكانية إظهار الشريط الجانبي أو إخفائه."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "تبديل الشريط الجانبي"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "إذا حاولت تثبيت ملف Modrinth Pack (.mrpack) غير مستضاف على Modrinth، فسنتأكد من أنك على دراية بالمخاطر قبل تثبيته."
   },

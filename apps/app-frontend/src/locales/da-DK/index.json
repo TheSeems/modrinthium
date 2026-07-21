@@ -101,12 +101,6 @@
   "app.appearance-settings.show-play-time.title": {
     "message": "Vis tid spillet"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Aktivere muligheden for at slå sidepanelet til og fra."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Slå sidepanel til og fra"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Hvis du prøver at installere en Modrinth Pack fil (.mrpack) som ikke er hosted på Modrinth, så skal vi nok sikre os du forstår riskoen før du installere den."
   },

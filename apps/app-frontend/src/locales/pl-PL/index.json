@@ -182,12 +182,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Pomiń mało znaczące ostrzeżenia"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Umożliwia przełączenie paska bocznego."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Przełącz pasek boczny"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Jeżeli spróbujesz zainstalować plik Modrinth Pack (.mrpack) którego nie można znaleźć na Modrinth, poinformujemy cię o możliwym ryzyku, zanim go zainstalujesz."
   },

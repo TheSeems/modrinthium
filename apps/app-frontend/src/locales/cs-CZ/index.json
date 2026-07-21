@@ -122,12 +122,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Přeskočit nedůležitá upozornění"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Umožňí přepínat zobrazení postranního panelu."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Přepnout postranní panel"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Pokud se pokusíte nainstalovat soubor Modrinth Pack (.mrpack), který není hostován na Modrinth, zajistíme, abyste si před instalací uvědomili související rizika."
   },

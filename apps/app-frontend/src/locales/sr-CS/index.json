@@ -131,12 +131,6 @@
   "app.appearance-settings.skip-non-essential-warnings.title": {
     "message": "Preskači nebitna upozorenja"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Omogućava mogućnost prebacivanja bočne trake."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Prebaci bočnu traku"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Ako pokušaš da instaliraš datoteku Modrinth Pack datoteke (.mrpack) koja nije hostovana na Modrinthu, uverićemo se da razumeš rizike pre nego što je instaliraš."
   },

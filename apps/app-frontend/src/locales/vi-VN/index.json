@@ -95,12 +95,6 @@
   "app.appearance-settings.show-play-time.title": {
     "message": "Hiện thời gian chơi"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "Bật tính năng ẩn hiển thị thanh menu bên."
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "Ẩn/hiện thanh bên"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Nếu bạn cố gắng cài đặt tệp Modrinth Pack (.mrpack) không được lưu trữ trên máy chủ Modrinth, chúng tôi sẽ đảm bảo bạn hiểu rõ các rủi ro trước khi cài đặt."
   },

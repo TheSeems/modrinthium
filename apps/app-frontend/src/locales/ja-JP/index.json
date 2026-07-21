@@ -137,12 +137,6 @@
   "app.appearance-settings.show-play-time.title": {
     "message": "プレイ時間を表示"
   },
-  "app.appearance-settings.toggle-sidebar.description": {
-    "message": "サイドバーの表示/非表示を切り替える機能を有効にします。"
-  },
-  "app.appearance-settings.toggle-sidebar.title": {
-    "message": "サイドバーの表示切替を有効化"
-  },
   "app.appearance-settings.unknown-pack-warning.description": {
     "message": "Modrinthで配布されていないModrinth Pack（.mrpack）をインストールする場合、事前にリスクについて警告します。"
   },
