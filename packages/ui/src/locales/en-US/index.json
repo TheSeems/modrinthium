@@ -311,18 +311,6 @@
   "button.upload-image": {
     "defaultMessage": "Upload image"
   },
-  "changelog.justNow": {
-    "defaultMessage": "Just now"
-  },
-  "changelog.product.app": {
-    "defaultMessage": "App"
-  },
-  "changelog.product.hosting": {
-    "defaultMessage": "Hosting"
-  },
-  "changelog.product.web": {
-    "defaultMessage": "Platform"
-  },
   "collection-widget.empty-collection": {
     "defaultMessage": "This collection is empty."
   },
@@ -895,6 +883,12 @@
   },
   "creation-flow.modal.setup-type.option.modpack-base.title": {
     "defaultMessage": "Install modpack"
+  },
+  "creation-flow.modal.setup-type.option.seed-install.description": {
+    "defaultMessage": "Paste a seed link to install a modpack that isn’t published on Modrinth."
+  },
+  "creation-flow.modal.setup-type.option.seed-install.title": {
+    "defaultMessage": "Install from link"
   },
   "creation-flow.modal.setup-type.option.vanilla-minecraft.description": {
     "defaultMessage": "Classic Minecraft with no mods or plugins."

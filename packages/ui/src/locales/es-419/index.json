@@ -311,18 +311,6 @@
   "button.upload-image": {
     "defaultMessage": "Cargar imagen"
   },
-  "changelog.justNow": {
-    "defaultMessage": "Hace un momento"
-  },
-  "changelog.product.app": {
-    "defaultMessage": "Aplicación"
-  },
-  "changelog.product.hosting": {
-    "defaultMessage": "Hosting"
-  },
-  "changelog.product.web": {
-    "defaultMessage": "Plataforma"
-  },
   "collection-widget.empty-collection": {
     "defaultMessage": "Esta colección está vacía."
   },
@@ -5742,4 +5730,3 @@
     "defaultMessage": "Tipo"
   }
 }
-

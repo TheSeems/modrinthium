@@ -311,18 +311,6 @@
   "button.upload-image": {
     "defaultMessage": "Postavi sliku"
   },
-  "changelog.justNow": {
-    "defaultMessage": "Upravo sada"
-  },
-  "changelog.product.app": {
-    "defaultMessage": "Aplikacija"
-  },
-  "changelog.product.hosting": {
-    "defaultMessage": "Hostiranje"
-  },
-  "changelog.product.web": {
-    "defaultMessage": "Platforma"
-  },
   "collection-widget.empty-collection": {
     "defaultMessage": "Ova kolekcija je prazna."
   },
@@ -5736,4 +5724,3 @@
     "defaultMessage": "Tip"
   }
 }
-

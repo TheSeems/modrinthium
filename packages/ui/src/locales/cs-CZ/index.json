@@ -308,18 +308,6 @@
   "button.upload-image": {
     "defaultMessage": "Nahrát obrázek"
   },
-  "changelog.justNow": {
-    "defaultMessage": "Právě teď"
-  },
-  "changelog.product.app": {
-    "defaultMessage": "Aplikace"
-  },
-  "changelog.product.hosting": {
-    "defaultMessage": "Hosting"
-  },
-  "changelog.product.web": {
-    "defaultMessage": "Platforma"
-  },
   "collection-widget.empty-collection": {
     "defaultMessage": "Tato kolekce je prázdná."
   },
@@ -4569,4 +4557,3 @@
     "defaultMessage": "Typ"
   }
 }
-

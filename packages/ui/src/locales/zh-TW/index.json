@@ -311,18 +311,6 @@
   "button.upload-image": {
     "defaultMessage": "上傳圖片"
   },
-  "changelog.justNow": {
-    "defaultMessage": "現在"
-  },
-  "changelog.product.app": {
-    "defaultMessage": "App"
-  },
-  "changelog.product.hosting": {
-    "defaultMessage": "Hosting"
-  },
-  "changelog.product.web": {
-    "defaultMessage": "平臺"
-  },
   "collection-widget.empty-collection": {
     "defaultMessage": "這個收藏是空的。"
   },
@@ -5742,4 +5730,3 @@
     "defaultMessage": "類型"
   }
 }
-

@@ -311,18 +311,6 @@
   "button.upload-image": {
     "defaultMessage": "Ladda upp bild"
   },
-  "changelog.justNow": {
-    "defaultMessage": "Just nu"
-  },
-  "changelog.product.app": {
-    "defaultMessage": "App"
-  },
-  "changelog.product.hosting": {
-    "defaultMessage": "Hosting"
-  },
-  "changelog.product.web": {
-    "defaultMessage": "Plattform"
-  },
   "collection-widget.empty-collection": {
     "defaultMessage": "Den här samlingen är tom."
   },
@@ -3813,4 +3801,3 @@
     "defaultMessage": "Typ"
   }
 }
-

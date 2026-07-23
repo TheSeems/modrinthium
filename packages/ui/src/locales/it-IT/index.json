@@ -308,18 +308,6 @@
   "button.upload-image": {
     "defaultMessage": "Carica immagine"
   },
-  "changelog.justNow": {
-    "defaultMessage": "Ora"
-  },
-  "changelog.product.app": {
-    "defaultMessage": "App"
-  },
-  "changelog.product.hosting": {
-    "defaultMessage": "Hosting"
-  },
-  "changelog.product.web": {
-    "defaultMessage": "Piattaforma"
-  },
   "collection-widget.empty-collection": {
     "defaultMessage": "Questa raccolta è vuota."
   },
