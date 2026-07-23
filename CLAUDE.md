@@ -11,28 +11,27 @@ This is the Modrinthium monorepo — a de-branded fork of the Modrinth desktop a
 
 ### Apps (`apps/`)
 
-| App            | Description                                  |
-| -------------- | -------------------------------------------- |
-| `app-frontend` | Desktop app frontend (Vue 3)                 |
-| `app`          | Desktop app shell (Tauri)                    |
+| App            | Description                                     |
+| -------------- | ----------------------------------------------- |
+| `app-frontend` | Desktop app frontend (Vue 3)                    |
+| `app`          | Desktop app shell (Tauri)                       |
 | `seed-server`  | Minimal self-hosted seed manifest server (axum) |
 
 ### Packages (`packages/`)
 
-| Package                       | Description                                            |
-| ----------------------------- | ------------------------------------------------------ |
-| `ui`                          | Shared Vue component library (`@modrinth/ui`)          |
-| `assets`                      | Styling and auto-generated icons (`@modrinth/assets`)  |
-| `api-client`                  | API client for Tauri and Node/browser                  |
-| `app-lib`                     | Shared app library (theseus, Rust core)                |
-| `blog`                        | Changelog data (used by the UI changelog view)         |
-| `utils`                       | Shared utility functions (mostly deprecated)           |
-| `daedalus`                    | Daedalus protocol (Minecraft metadata)                 |
-| `tooling-config`              | ESLint, Prettier, TypeScript configs                   |
-| `ariadne`                     | Analytics library (telemetry disabled in this fork)    |
-| `async-minecraft-ping`        | Minecraft server ping (server world status)            |
-| `modrinth-content-management` | Content management helpers used by theseus             |
-| `path-util`                   | Path utilities                                         |
+| Package                       | Description                                           |
+| ----------------------------- | ----------------------------------------------------- |
+| `ui`                          | Shared Vue component library (`@modrinth/ui`)         |
+| `assets`                      | Styling and auto-generated icons (`@modrinth/assets`) |
+| `api-client`                  | API client for Tauri and Node/browser                 |
+| `app-lib`                     | Shared app library (theseus, Rust core)               |
+| `utils`                       | Shared utility functions (mostly deprecated)          |
+| `daedalus`                    | Daedalus protocol (Minecraft metadata)                |
+| `tooling-config`              | ESLint, Prettier, TypeScript configs                  |
+| `ariadne`                     | Analytics library (telemetry disabled in this fork)   |
+| `async-minecraft-ping`        | Minecraft server ping (server world status)           |
+| `modrinth-content-management` | Content management helpers used by theseus            |
+| `path-util`                   | Path utilities                                        |
 
 ## Pre-PR Commands
 
@@ -50,12 +49,14 @@ Run these from the **root** folder before opening a pull request - do not run th
 ## Code Guidelines
 
 ### Comments
+
 - DO NOT use "heading" comments like: `=== Helper methods ===`.
 - Use doc comments, but avoid inline comments unless ABSOLUTELY necessary for clarity. Code should aim to be self documenting!
 
 ## Bash Guidelines
 
 ### Output handling
+
 - DO NOT pipe output through `head`, `tail`, `less`, or `more`
 - NEVER use `| head -n X` or `| tail -n X` to truncate output
 - IMPORTANT: Run commands directly without pipes when possible
@@ -63,6 +64,7 @@ Run these from the **root** folder before opening a pull request - do not run th
 - ALWAYS read the full output — never pipe through filters
 
 ### General
+
 - Do not create new non-source code files (e.g. Bash scripts, SQL scripts) unless explicitly prompted to
 - For Frontend, when doing lint checks, only use the `prepr` commands, do not use `typecheck` or `tsc` etc.
 - Types in `@modrinth/utils` are considered highly outdated, if a component needs them, check if you can switch said component to use types from `packages/api-client`
@@ -73,12 +75,13 @@ Run these from the **root** folder before opening a pull request - do not run th
 The Read tool uses `→` to mark where line numbers end and file content begins.
 
 **Rule:** Copy the EXACT whitespace that appears after the `→` marker.
+
 - Whatever appears between `→` and the code text is what's actually in the file
 - That whitespace must be used EXACTLY in Edit tool's old_string
 - Don't count arrows, don't interpret - just copy what's after the `→`
 
 **Example:**
-14→		private byte tag;
+14→ private byte tag;
 For Edit, use: `		private byte tag;` (copy everything after →, including the two tabs)
 
 **If Edit fails:** Stop and explain the problem. Do not attempt sed/awk/bash workarounds.
