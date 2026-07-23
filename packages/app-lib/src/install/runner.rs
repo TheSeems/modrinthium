@@ -847,7 +847,9 @@ async fn remove_existing_imported_pack_content(
         };
         // Leave files that are byte-identical in the new pack in place so the
         // installer can reuse them instead of re-downloading.
-        if keep.get(&file.relative_path).is_some_and(|hash| hash == &file.sha1)
+        if keep
+            .get(&file.relative_path)
+            .is_some_and(|hash| hash == &file.sha1)
         {
             continue;
         }

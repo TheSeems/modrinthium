@@ -172,10 +172,7 @@ import { truncatedTooltip } from '../../utils/truncate'
 import Avatar from '../base/Avatar.vue'
 import ButtonStyled from '../base/ButtonStyled.vue'
 
-type NotificationToastType =
-	| 'instance-invite'
-	| 'instance-download'
-	| 'instance-ready'
+type NotificationToastType = 'instance-invite' | 'instance-download' | 'instance-ready'
 
 const props = withDefaults(
 	defineProps<{

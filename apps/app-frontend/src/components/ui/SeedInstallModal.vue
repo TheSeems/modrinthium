@@ -2,8 +2,8 @@
 	<NewModal ref="modal" header="Install from link" :closable="true" :on-hide="reset">
 		<div class="flex w-[480px] max-w-full flex-col gap-4">
 			<p class="m-0 text-sm text-secondary">
-				Paste a Modrinthium seed link to install a modpack that isn't published on Modrinth. You
-				can check it for updates later from the instance's settings.
+				Paste a Modrinthium seed link to install a modpack that isn't published on Modrinth. You can
+				check it for updates later from the instance's settings.
 			</p>
 
 			<div class="flex flex-col gap-1">
@@ -69,7 +69,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 import { installJobInstanceId } from '@/helpers/install'
-import { installFromSeed, type SeedManifest, seed_fetch_manifest } from '@/helpers/seed'
+import { installFromSeed, seed_fetch_manifest, type SeedManifest } from '@/helpers/seed'
 
 const { handleError } = injectNotificationManager()
 const router = useRouter()

@@ -730,8 +730,7 @@ const messages = defineMessages({
 							:placeholder="formatMessage(commonMessages.selectVersionPlaceholder)"
 							:search-placeholder="formatMessage(commonMessages.searchVersionPlaceholder)"
 							:display-value="
-								linkedLoaderVersionDisplay ||
-								formatMessage(commonMessages.selectVersionPlaceholder)
+								linkedLoaderVersionDisplay || formatMessage(commonMessages.selectVersionPlaceholder)
 							"
 							:aria-label="
 								formatMessage(messages.selectLoaderVersionAriaLabel, { loader: linkedLoaderName })

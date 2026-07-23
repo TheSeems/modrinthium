@@ -150,18 +150,17 @@ async function copyToClipboard(text) {
 					<template v-if="metadata.network">
 						<h3>Network issues</h3>
 						<p>
-							It looks like there were issues with Modrinthium connecting to Microsoft's
-							servers. This is often the result of a poor connection, so we recommend checking your
-							network connection and trying again.
+							It looks like there were issues with Modrinthium connecting to Microsoft's servers.
+							This is often the result of a poor connection, so we recommend checking your network
+							connection and trying again.
 						</p>
 					</template>
 					<template v-else-if="metadata.hostsFile">
 						<h3>Network issues</h3>
 						<p>
-							Modrinthium tried to connect to Microsoft / Xbox / Minecraft services, but the
-							remote server rejected the connection. This may indicate that these services are
-							blocked by your hosts file, firewall, or antivirus. Please check those settings and
-							try again.
+							Modrinthium tried to connect to Microsoft / Xbox / Minecraft services, but the remote
+							server rejected the connection. This may indicate that these services are blocked by
+							your hosts file, firewall, or antivirus. Please check those settings and try again.
 						</p>
 					</template>
 					<template v-else>
@@ -192,9 +191,8 @@ async function copyToClipboard(text) {
 					<template v-if="metadata.readOnly">
 						<h3>Change directory permissions</h3>
 						<p>
-							It looks like Modrinthium is unable to write to the directory you selected.
-							Please adjust the permissions of the directory and try again or cancel the directory
-							change.
+							It looks like Modrinthium is unable to write to the directory you selected. Please
+							adjust the permissions of the directory and try again or cancel the directory change.
 						</p>
 					</template>
 					<template v-else-if="metadata.notEnoughSpace">
@@ -206,8 +204,8 @@ async function copyToClipboard(text) {
 					</template>
 					<template v-else>
 						<p>
-							Modrinthium is unable to migrate to the new directory you selected. Please cancel
-							the directory change and try a different location.
+							Modrinthium is unable to migrate to the new directory you selected. Please cancel the
+							directory change and try a different location.
 						</p>
 					</template>
 
@@ -260,8 +258,8 @@ async function copyToClipboard(text) {
 				<template v-if="hasDebugInfo">
 					<div class="w-full h-[1px] bg-surface-5 mb-3"></div>
 					<p>
-						If nothing is working and you need help, the debug information below can help
-						diagnose the problem.
+						If nothing is working and you need help, the debug information below can help diagnose
+						the problem.
 					</p>
 				</template>
 			</div>

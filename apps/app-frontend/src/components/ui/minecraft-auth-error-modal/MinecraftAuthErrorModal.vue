@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import {
-	CheckIcon,
-	CopyIcon,
-	DropdownIcon,
-	LogInIcon,
-	WrenchIcon,
-} from '@modrinth/assets'
+import { CheckIcon, CopyIcon, DropdownIcon, LogInIcon, WrenchIcon } from '@modrinth/assets'
 import { Admonition, ButtonStyled, Collapsible, NewModal } from '@modrinth/ui'
 import { computed, ref } from 'vue'
 

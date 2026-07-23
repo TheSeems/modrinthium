@@ -19,9 +19,9 @@
 //! local registry. Checking for updates re-fetches the manifest and compares
 //! the `version`; updating re-installs the new `.mrpack` (a full sync).
 
+use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::path::PathBuf;
-use serde::{Deserialize, Serialize};
 
 use crate::State;
 
@@ -136,13 +136,15 @@ pub async fn attach(
     );
     write_registry(&state, &registry).await?;
 
-    if let Err(err) = sync_instance_link(&state, instance_id, name, version).await
+    if let Err(err) =
+        sync_instance_link(&state, instance_id, name, version).await
     {
         tracing::warn!("Failed to sync seed link for {instance_id}: {err}");
     }
 
     if let Some(icon_url) = icon_url
-        && let Err(err) = apply_instance_icon(&state, instance_id, icon_url).await
+        && let Err(err) =
+            apply_instance_icon(&state, instance_id, icon_url).await
     {
         tracing::warn!("Failed to apply seed icon for {instance_id}: {err}");
     }
@@ -161,11 +163,12 @@ async fn sync_instance_link(
 ) -> crate::Result<()> {
     use crate::state::InstanceLink;
 
-    let Some(metadata) = crate::state::instances::commands::get_instance_metadata(
-        instance_id,
-        &state.pool,
-    )
-    .await?
+    let Some(metadata) =
+        crate::state::instances::commands::get_instance_metadata(
+            instance_id,
+            &state.pool,
+        )
+        .await?
     else {
         return Ok(());
     };
@@ -329,11 +332,13 @@ pub async fn publish(
 ) -> crate::Result<()> {
     let state = State::get().await?;
     let metadata =
-        crate::api::instance::get(instance_id).await?.ok_or_else(|| {
-            crate::ErrorKind::InputError(format!(
-                "Unknown instance {instance_id}"
-            ))
-        })?;
+        crate::api::instance::get(instance_id)
+            .await?
+            .ok_or_else(|| {
+                crate::ErrorKind::InputError(format!(
+                    "Unknown instance {instance_id}"
+                ))
+            })?;
 
     let candidates =
         crate::api::instance::get_pack_export_candidates(instance_id)

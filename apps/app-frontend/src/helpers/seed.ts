@@ -2,9 +2,9 @@ import { invoke } from '@tauri-apps/api/core'
 
 import {
 	install_create_modpack_instance,
-	type InstallJobSnapshot,
 	install_pack_to_existing_instance,
 	installJobInstanceId,
+	type InstallJobSnapshot,
 	wait_for_install_job,
 } from './install'
 import {
@@ -149,7 +149,12 @@ async function applySeedServers(instanceId: string, manifest: SeedManifest) {
 		const key = normalizeServerAddress(server.address)
 		if (existingAddresses.has(key)) continue
 		try {
-			await add_server_to_instance(instanceId, server.name ?? manifest.name, server.address, 'prompt')
+			await add_server_to_instance(
+				instanceId,
+				server.name ?? manifest.name,
+				server.address,
+				'prompt',
+			)
 			existingAddresses.add(key)
 		} catch (err) {
 			console.error(`Failed to add seed server ${server.address}:`, err)

@@ -17,9 +17,7 @@
 			<Avatar
 				size="24px"
 				:src="
-					selectedAccount
-						? avatarUrl
-						: 'https://launcher-files.modrinth.com/assets/steve_head.png'
+					selectedAccount ? avatarUrl : 'https://launcher-files.modrinth.com/assets/steve_head.png'
 				"
 			/>
 			<span class="truncate">{{

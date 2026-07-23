@@ -18,11 +18,9 @@ import {
 	RightArrowIcon,
 	SettingsIcon,
 	WorldIcon,
-	XIcon,
 } from '@modrinth/assets'
 import {
 	Admonition,
-	ButtonStyled,
 	commonMessages,
 	ContentInstallModal,
 	ContentUpdaterModal,
@@ -392,7 +390,6 @@ async function setupApp() {
 		settings.pending_update_toast_for_version = null
 		await setSettings(settings)
 	}
-
 }
 
 const stateFailed = ref(false)

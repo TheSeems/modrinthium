@@ -594,7 +594,8 @@ pub async fn install_minecraft_with_reporter(
                         .unwrap_or_default();
                         let expected_hash =
                             expected_hash.trim_matches('\'').to_string();
-                        if resolved_path.is_empty() || expected_hash.is_empty() {
+                        if resolved_path.is_empty() || expected_hash.is_empty()
+                        {
                             satisfied = false;
                             run_reason = Some(format!(
                                 "unresolved output {key} -> {value}"

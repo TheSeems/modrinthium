@@ -328,11 +328,11 @@ import { useRoute, useRouter } from 'vue-router'
 
 import ContextMenu from '@/components/ui/ContextMenu.vue'
 import ExportModal from '@/components/ui/ExportModal.vue'
-import SeedPublishModal from '@/components/ui/modal/SeedPublishModal.vue'
-import SeedUpdateBanner from '@/components/ui/SeedUpdateBanner.vue'
-import SeedUpdateToPlayModal from '@/components/ui/modal/SeedUpdateToPlayModal.vue'
 import InstanceSettingsModal from '@/components/ui/modal/InstanceSettingsModal.vue'
+import SeedPublishModal from '@/components/ui/modal/SeedPublishModal.vue'
+import SeedUpdateToPlayModal from '@/components/ui/modal/SeedUpdateToPlayModal.vue'
 import UpdateToPlayModal from '@/components/ui/modal/UpdateToPlayModal.vue'
+import SeedUpdateBanner from '@/components/ui/SeedUpdateBanner.vue'
 import {
 	fetchCachedServerStatus,
 	getFreshCachedServerStatus,

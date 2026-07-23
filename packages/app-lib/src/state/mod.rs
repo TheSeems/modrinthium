@@ -78,7 +78,6 @@ pub struct State {
     //
     // /// App identifier string (like com.modrinth.ModrinthApp)
     // pub app_identifier: String,
-
     pub restart_after_pending_update: AtomicBool,
 
     pub(crate) pool: SqlitePool,
@@ -116,7 +115,6 @@ impl State {
             if let Err(e) = res {
                 tracing::error!("Error running discord RPC: {e}");
             }
-
         });
 
         Ok(())

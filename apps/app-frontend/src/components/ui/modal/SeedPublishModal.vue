@@ -43,7 +43,9 @@
 			</div>
 
 			<div class="flex flex-col gap-1">
-				<label class="text-sm font-semibold text-contrast" for="changelog">Changelog (optional)</label>
+				<label class="text-sm font-semibold text-contrast" for="changelog"
+					>Changelog (optional)</label
+				>
 				<textarea
 					id="changelog"
 					v-model="changelog"

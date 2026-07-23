@@ -1,8 +1,5 @@
 <template>
-	<div
-		v-if="seed"
-		class="mb-4 rounded-xl border border-solid border-surface-5 bg-bg-raised p-4"
-	>
+	<div v-if="seed" class="mb-4 rounded-xl border border-solid border-surface-5 bg-bg-raised p-4">
 		<div class="flex items-center gap-3">
 			<LinkIcon class="size-5 shrink-0 text-secondary" />
 			<div class="flex min-w-0 flex-col">
@@ -10,10 +7,7 @@
 				<span class="text-sm text-secondary">Seed &middot; installed v{{ seed.version }}</span>
 			</div>
 			<div class="ml-auto flex items-center gap-2">
-				<span
-					v-if="upToDate"
-					class="flex items-center gap-1 text-sm text-secondary"
-				>
+				<span v-if="upToDate" class="flex items-center gap-1 text-sm text-secondary">
 					<CheckIcon class="size-4 text-brand" /> Up to date
 				</span>
 				<ButtonStyled>
@@ -97,9 +91,12 @@ async function load() {
 	if (seed.value) {
 		// Re-attach (without the icon) to heal the instance's modpack link if it
 		// drifted — a no-op when everything already matches.
-		void seed_attach(props.instanceId, seed.value.seed_url, seed.value.version, seed.value.name).catch(
-			(err) => console.error('Failed to sync seed link:', err),
-		)
+		void seed_attach(
+			props.instanceId,
+			seed.value.seed_url,
+			seed.value.version,
+			seed.value.name,
+		).catch((err) => console.error('Failed to sync seed link:', err))
 		// Auto-check when the instance opens so pending updates surface immediately.
 		void check()
 	}

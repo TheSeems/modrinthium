@@ -28,10 +28,7 @@ export interface PopupNotificationProgressItem {
 	buttons?: PopupNotificationButton[]
 }
 
-export type PopupNotificationToastType =
-	| 'instance-invite'
-	| 'instance-download'
-	| 'instance-ready'
+export type PopupNotificationToastType = 'instance-invite' | 'instance-download' | 'instance-ready'
 
 export interface PopupNotificationToast {
 	type: PopupNotificationToastType
