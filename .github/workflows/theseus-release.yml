@@ -36,11 +36,11 @@ jobs:
           VERSION="${VERSION_TAG#v}"
           BASE="https://github.com/${{ github.repository }}/releases/download/${VERSION_TAG}"
 
-          win_zip=$(find artifacts -name 'Modrinthium_*-setup.nsis.zip' | head -1)
+          win_exe=$(find artifacts -name 'Modrinthium_*-setup.exe' | head -1)
           mac_tar=$(find artifacts -name 'Modrinthium.app.tar.gz' | head -1)
-          lin_tar=$(find artifacts -name 'Modrinthium_*.AppImage.tar.gz' | head -1)
+          lin_appimage=$(find artifacts -name 'Modrinthium_*.AppImage' | head -1)
 
-          for f in "$win_zip" "$mac_tar" "$lin_tar"; do
+          for f in "$win_exe" "$mac_tar" "$lin_appimage"; do
             if [ -z "$f" ] || [ ! -f "${f}.sig" ]; then
               echo "::error::Missing updater artifact or signature (is the TAURI_SIGNING_PRIVATE_KEY secret set?): ${f:-<none>}"
               exit 1
@@ -50,9 +50,9 @@ jobs:
           jq -nc \
             --arg version "$VERSION" \
             --arg pubDate "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-            --arg winSig "$(cat "${win_zip}.sig")" --arg winUrl "${BASE}/$(basename "$win_zip")" \
+            --arg winSig "$(cat "${win_exe}.sig")" --arg winUrl "${BASE}/$(basename "$win_exe")" \
             --arg macSig "$(cat "${mac_tar}.sig")" --arg macUrl "${BASE}/$(basename "$mac_tar")" \
-            --arg linSig "$(cat "${lin_tar}.sig")" --arg linUrl "${BASE}/$(basename "$lin_tar")" \
+            --arg linSig "$(cat "${lin_appimage}.sig")" --arg linUrl "${BASE}/$(basename "$lin_appimage")" \
             '{
               version: $version,
               pub_date: $pubDate,
@@ -78,9 +78,7 @@ jobs:
             -name 'Modrinthium_*.AppImage' -o \
             -name 'Modrinthium_*.deb' -o \
             -name 'Modrinthium-*.rpm' -o \
-            -name 'Modrinthium_*-setup.nsis.zip' -o \
-            -name 'Modrinthium.app.tar.gz' -o \
-            -name 'Modrinthium_*.AppImage.tar.gz' \))
+            -name 'Modrinthium.app.tar.gz' \))
 
           printf 'Attaching:\n'; printf '  %s\n' "${assets[@]}" updates.json
 

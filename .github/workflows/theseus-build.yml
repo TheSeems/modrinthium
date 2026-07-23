@@ -104,10 +104,10 @@ jobs:
           if-no-files-found: warn
           path: |
             target/release/bundle/appimage/Modrinthium_*.AppImage
-            target/release/bundle/appimage/Modrinthium_*.AppImage.tar.gz*
+            target/release/bundle/appimage/Modrinthium_*.AppImage.sig
             target/release/bundle/deb/Modrinthium_*.deb
             target/release/bundle/rpm/Modrinthium-*.rpm
             target/release/bundle/nsis/Modrinthium_*-setup.exe
-            target/release/bundle/nsis/Modrinthium_*-setup.nsis.zip*
+            target/release/bundle/nsis/Modrinthium_*-setup.exe.sig
             target/universal-apple-darwin/release/bundle/dmg/Modrinthium_*.dmg
             target/universal-apple-darwin/release/bundle/macos/Modrinthium.app.tar.gz*
